@@ -1,0 +1,554 @@
+xquery version "3.0";
+
+(:~
+ : XTriples
+ :
+ : A generic webservice to extract rdf statements from XML resources
+ :
+ : @author Torsten Schrade
+ : @email <Torsten.Schrade@adwmainz.de>
+ : @version 1.0.0 
+ : @licence MIT
+ :
+ : Main module containing the webservice
+:)
+
+(: ### PROLOGUE ### :)
+
+import module namespace functx="http://www.functx.com";
+
+declare namespace xtriples = "http://xtriples.spatialhumanities.de/";
+
+(: ### GLOBAL VARIABLES :)
+
+declare variable $setConfiguration := xtriples:getConfiguration();
+declare variable $setFormat := xtriples:getFormat();
+declare variable $xtriplesWebserviceURL := "http://xtriples.spatialhumanities.de/";
+declare variable $any23WebserviceURL := "http://any23.org/";
+declare variable $redeferWebserviceURL := "http://rhizomik.net/redefer-services/";
+declare variable $redeferWebserviceRulesURL := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
+
+(: ### CONFIGURATION FUNCTIONS ### :)
+
+(: retrieves the XTriples configuration from GET or POST :)
+declare function xtriples:getConfiguration() {
+
+	(: checks GET/POST for a configuration sent with the configuration parameter :)
+	let $submittedConfiguration := request:get-parameter("configuration", "")
+	(: checks the request body for a configuration :)
+	let $submittedConfigurationPOSTBody := request:get-data()
+
+	let $setConfiguration :=
+		(: case 1 - URI to a configuration file was sent - GET request :)
+		if (substring($submittedConfiguration, 1, 4) = "http") then 
+			fn:doc(xs:anyURI($submittedConfiguration))
+		(: case 2 - nothing submitted with a configuration parameter, use request body - direct POST request :)
+		else if ($submittedConfiguration = "") then
+			if ($submittedConfigurationPOSTBody) then
+				$submittedConfigurationPOSTBody
+			(: if no configuration could be retrieved to this point use a standard config that issues an error :)
+			else
+				fn:doc("configuration.xml")
+		(: case 3 - full configuration sent with the configuration parameter - form style POST request :)
+		else util:parse($submittedConfiguration)
+
+	return $setConfiguration
+};
+
+(: gets and sets the return format :)
+declare function xtriples:getFormat() {
+
+	let $HEADER := request:get-header("format")
+	let $GET := request:get-parameter("format", "rdf")
+	let $setFormat :=
+		if ($HEADER != "") then $HEADER
+		else $GET
+
+	return $setFormat
+};
+
+(: ### CRAWLING FUNCTIONS ### :)
+
+(: evaluates an XPATH expression in curly braces within a (URI) string and returns the string :)
+declare function xtriples:expressionBasedUriResolver($uri as xs:string, $resource as node()) as xs:string {
+
+	let $expression := concat('$resource', substring-after(substring-before($uri, "}"), "{"))
+	let $result := if (xtriples:expressionSanityCheck($expression) = true()) then 
+		try { util:eval($expression) } catch * { $err:description } 
+		else ""
+	let $uriWithSubstitution := replace($uri, "\{.*\}", $result)
+
+	return $uriWithSubstitution
+};
+
+(: evaluates a possible XPATH expression in curly braces within a document string and retrieves the document :)
+declare function xtriples:expressionBasedResourceResolver($collection as node()*) as item()* {
+
+	let $collectionContent := if (fn:doc-available($collection/@uri)) then fn:doc($collection/@uri) else ""
+
+	let $resourcesURI := string($collection/resource/@uri)
+	let $resourcesExpression := concat('$collectionContent', substring-after(substring-before($resourcesURI, "}"), "{"))
+	let $resourcesNodes := if (xtriples:expressionSanityCheck($resourcesExpression) = true()) then 
+		try { util:eval($resourcesExpression) } catch * { $err:description } 
+		else $resourcesExpression
+
+	let $resources := 
+		for $resource at $index in $resourcesNodes
+			return 
+				if ($resource/*) then
+					$resource
+				else
+					element {"resource"} {
+						attribute {"uri"} {replace($resourcesURI, "\{.*\}", $resource)}
+					}
+	return $resources
+};
+
+(: gets resources from a collection, possibly expression based :)
+declare function xtriples:getResources($collection as node()*) as item()* {
+
+	let $resources := 
+		for $resource in $collection/resource
+		return
+			if (matches($resource/@uri, "\{") and matches($resource/@uri, "\}")) then 
+				xtriples:expressionBasedResourceResolver($collection)
+			else $resource
+
+	return $resources
+};
+
+(: ### EXTRACTION FUNCTIONS ### :)
+
+(:
+Separate relatively similar functions are used for subject, predicate and object extraction.
+This keeps the query simpler even if it repeats some code. At the same time it opens up the possibility 
+to treat statement part extractions different in future versions (as it is already the case with subject/object 
+vs predicate extraction routines.
+:)
+
+(: safety filter for XPATH/XQuery expressions - dissallows executions from dangerous/not needed function namespaces :)
+declare function xtriples:expressionSanityCheck($expression as xs:string) as xs:boolean {
+
+	let $pattern := "((fn:.*\(.*\))|(doc*\(.*\))|(collection*\(.*\))|(v:.*\(.*\))|(backups:.*\(.*\))|(compression:.*\(.*\))|(contentextraction:.*\(.*\))|(counter:.*\(.*\))|(cqlparser:.*\(.*\))|(datetime:.*\(.*\))|(examples:.*\(.*\))|(exi:.*\(.*\))|(file:.*\(.*\))|(httpclient:.*\(.*\))|(image:.*\(.*\))|(inspection:.*\(.*\))|(jindi:.*\(.*\))|(kwic:.*\(.*\))|(lucene:.*\(.*\))|(mail:.*\(.*\))|(math:.*\(.*\))|(ngram:.*\(.*\))|(repo:.*\(.*\))|(request:.*\(.*\))|(response:.*\(.*\))|(scheduler:.*\(.*\))|(securitymanager:.*\(.*\))|(sequences:.*\(.*\))|(session:.*\(.*\))|(sort:.*\(.*\))|(sql:.*\(.*\))|(system:.*\(.*\))|(testing:.*\(.*\))|(text:.*\(.*\))|(transform:.*\(.*\))|(util:.*\(.*\))|(validation:.*\(.*\))|(xmldb:.*\(.*\))|(xmldiff:.*\(.*\))|(xqdoc:.*\(.*\))|(xslfo:.*\(.*\))|(config:.*\(.*\))|(docbook:.*\(.*\))|(app:.*\(.*\))|(dash:.*\(.*\))|(service:.*\(.*\))|(login-helper:.*\(.*\))|(packages:.*\(.*\))|(service:.*\(.*\))|(usermanager:.*\(.*\))|(demo:.*\(.*\))|(cex:.*\(.*\))|(ex:.*\(.*\))|(apputil:.*\(.*\))|(site:.*\(.*\))|(pretty:.*\(.*\))|(date:.*\(.*\))|(tei2:.*\(.*\))|(dbutil:.*\(.*\))|(docs:.*\(.*\))|(dq:.*\(.*\))|(review:.*\(.*\))|(epub:.*\(.*\))|(l18n:.*\(.*\))|(intl:.*\(.*\))|(restxq:.*\(.*\))|(tmpl:.*\(.*\))|(templates:.*\(.*\))|(trigger:.*\(.*\))|(jsjson:.*\(.*\))|(xqdoc:.*\(.*\)))"
+	let $check := matches($expression, $pattern)
+
+	return if ($check = true()) then false() else true()
+};
+
+(: extracts subject statements from the current resource :)
+declare function xtriples:extractSubjects($resource as node(), $statement as node()*, $index as xs:integer) as item()* {
+
+	let $externalResource := 
+		if (exists($statement/subject/@resource)) then
+			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/subject/@resource, $resource))) then 
+				fn:doc(xtriples:expressionBasedUriResolver($statement/subject/@resource, $resource)) 
+			else ""
+		else ""
+
+	let $subjectExpressionConcatenation := 
+		if ($externalResource) then concat("$externalResource", string($statement/subject))
+		else concat('$resource', string($statement/subject))
+
+	let $subjectExpression := 
+		if (matches($subjectExpressionConcatenation, "$index")) then replace($subjectExpressionConcatenation, "$index", $index)
+		else $subjectExpressionConcatenation
+
+	let $subjectNodes := if (xtriples:expressionSanityCheck($subjectExpression) = true()) then 
+		try { util:eval($subjectExpression) } catch * { $err:description } 
+		else $subjectExpression
+
+	let $subjects := 
+		for $subjectValue in $subjectNodes
+		return functx:copy-attributes(<subject>{string($subjectValue)}</subject>, $statement/subject)
+
+	return $subjects
+};
+
+(: extracts predicate statements from the current resource :)
+declare function xtriples:extractPredicate($resource as node(), $statement as node()*, $index as xs:integer) as item()* {
+
+	let $externalResource := 
+		if (exists($statement/predicate/@resource)) then
+			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/predicate/@resource, $resource))) then 
+				fn:doc(xtriples:expressionBasedUriResolver($statement/predicate/@resource, $resource)) 
+			else ""
+		else ""
+
+	let $predicateExpressionConcatenation := 
+		if ($externalResource) then concat("$externalResource", string($statement/predicate))
+		else concat('$resource', string($statement/predicate))
+
+	let $predicateExpression := 
+		if (matches($predicateExpressionConcatenation, "$index")) then replace($predicateExpressionConcatenation, "$index", $index)
+		else $predicateExpressionConcatenation
+
+	let $predicateValue := if (xtriples:expressionSanityCheck($predicateExpression) = true()) then 
+		try { string(util:eval($predicateExpression)) } catch * { $err:description } 
+		else $predicateExpression
+
+	let $predicate := <predicate prefix="{$statement/predicate/@prefix}">{string($predicateValue)}</predicate>
+
+	return $predicate
+};
+
+(: extracts object statements from the current resource :)
+declare function xtriples:extractObjects($resource as node(), $statement as node()*, $index  as xs:integer) as item()* {
+
+	let $externalResource := 
+		if (exists($statement/object/@resource)) then
+			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/object/@resource, $resource))) then 
+				fn:doc(xtriples:expressionBasedUriResolver($statement/object/@resource, $resource)) 
+			else ""
+		else ""
+
+	let $objectExpressionConcatenation := 
+		if ($externalResource) then concat("$externalResource", string($statement/object))
+		else concat("$resource", string($statement/object))
+
+	let $objectExpression := 
+		if (matches($objectExpressionConcatenation, "$index")) then replace($objectExpressionConcatenation, "$index", $index)
+		else $objectExpressionConcatenation
+
+	let $objectNodes := if (xtriples:expressionSanityCheck($objectExpression) = true()) then 
+		try { util:eval($objectExpression) } catch * { $err:description }
+		else $objectExpression
+
+	let $objects :=
+		for $objectValue in $objectNodes
+		return functx:copy-attributes(<object>{string($objectValue)}</object>, $statement/object)
+
+	return $objects
+};
+
+(: extracts expressions in prepend/append attributes from the current resource :)
+declare function xtriples:extractPrependAppend($resource as node(), $expressionString as xs:string*, $index as xs:integer) as xs:string* {
+	let $expression := substring-after(substring-before($expressionString, "}"), "{")
+	let $result := 
+		if ($expression and xtriples:expressionSanityCheck($expression) = true()) then 
+			try {
+				replace($expressionString, "\{.*\}", util:eval(concat("$resource", $expression))) 
+			} catch * { $err:description }
+		else $expressionString
+	return $result
+};
+
+(: XTriples core function - evaluates all configured statements for the current resource :)
+declare function xtriples:extractTriples($resource as node(), $configuration as node()*) as item()* {
+
+	(: ensure there is a XML resource - it could still be just a URI to a XML resource :)
+	let $resource := 
+		if (xs:anyURI($resource/@uri)) then 
+			fn:doc($resource/@uri)
+		else $resource
+
+	(: start statement pattern extraction :)
+	for $statement in $configuration//triples/*
+
+		let $repeat := if ($statement/@repeat > 0) then $statement/@repeat else 1
+
+		for $index in (1 to $repeat)
+
+			(: if a condition expression is given in the current statement, evaluate it :)
+			let $condition := 
+				if (exists($statement/condition)) then 
+					if (xtriples:expressionSanityCheck(string($statement/condition)) = true()) then
+						try { util:eval(concat('$resource', string($statement/condition))) } catch * { $err:description }
+					else true()
+				else true()
+
+			(: n possible subjects per statement declaration :)
+			let $subjects := 
+				if (starts-with(string($statement/subject), '/')) then 
+					xtriples:extractSubjects($resource, $statement, $index) 
+				else $statement/subject
+
+			(: 1 predicate per statement declaration :)
+			let $predicate := 
+				if (starts-with(string($statement/predicate), '/')) then 
+					xtriples:extractPredicate($resource, $statement, $index) 
+				else <predicate prefix="{$statement/predicate/@prefix}">{string($statement/predicate)}</predicate>
+
+			(: n possible objects per statement declaration :)
+			let $objects := 
+				if (starts-with(string($statement/object), '/')) then 
+					xtriples:extractObjects($resource, $statement, $index) 
+				else $statement/object
+
+			(: build statements - but only if the condition expression returned any value - boolean, string, node set etc. :)
+			let $statements := 
+				if ($condition != false()) then 
+					if ($statement/@type = 'mn') then 
+						for $subject at $mnIndex in $subjects
+
+							let $subjectPrepend := xtriples:extractPrependAppend($resource, $subject/@prepend, $index)
+							let $subjectAppend := xtriples:extractPrependAppend($resource, $subject/@append, $index)
+
+							let $predicatePrepend := xtriples:extractPrependAppend($resource, $predicate/@prepend, $index)
+							let $predicateAppend := xtriples:extractPrependAppend($resource, $predicate/@append, $index)
+
+							let $objectPrepend := if ($objects[$mnIndex]/@prepend) then
+									xtriples:extractPrependAppend($resource, $objects[$mnIndex]/@prepend, $index)
+								else $objects[$mnIndex]/@prepend
+							let $objectAppend := if ($objects[$mnIndex]/@append) then
+									xtriples:extractPrependAppend($resource, $objects[$mnIndex]/@append, $index)
+								else $objects[$mnIndex]/@append
+
+							let $statementToReturn :=
+								if ($subject = "") then "" 
+								else <statement>{(
+									functx:remove-attributes(functx:copy-attributes(<subject>{concat($subjectPrepend, $subject, $subjectAppend)}</subject>, $subject), ('append', 'prepend')),
+									functx:remove-attributes(functx:copy-attributes(<predicate>{concat($predicatePrepend, $predicate, $predicateAppend)}</predicate>, $predicate), ('append', 'prepend')),
+									functx:remove-attributes(functx:copy-attributes(<object>{concat($objectPrepend, $objects[$mnIndex], $objectAppend)}</object>, $objects[$mnIndex]), ('append', 'prepend'))
+									)}</statement>
+						return $statementToReturn
+					else 
+						for $subject in $subjects
+							let $subjectReturn :=
+								if ($subject = "") then "" else
+								for $object in $objects
+
+									let $subjectPrepend := xtriples:extractPrependAppend($resource, $subject/@prepend, $index)
+									let $subjectAppend := xtriples:extractPrependAppend($resource, $subject/@append, $index)
+
+									let $predicatePrepend := xtriples:extractPrependAppend($resource, $predicate/@prepend, $index)
+									let $predicateAppend := xtriples:extractPrependAppend($resource, $predicate/@append, $index)
+
+									let $objectPrepend := xtriples:extractPrependAppend($resource, $object/@prepend, $index)
+									let $objectAppend := xtriples:extractPrependAppend($resource, $object/@append, $index)
+
+									let $objectReturn := 
+										if ($object = "") then "" 
+										else <statement>{(
+											functx:remove-attributes(functx:copy-attributes(<subject>{concat($subjectPrepend, $subject, $subjectAppend)}</subject>, $subject), ('append', 'prepend')),
+											functx:remove-attributes(functx:copy-attributes(<predicate>{concat($predicatePrepend, $predicate, $predicateAppend)}</predicate>, $predicate), ('append', 'prepend')),
+											functx:remove-attributes(functx:copy-attributes(<object>{concat($objectPrepend, $object, $objectAppend)}</object>, $object), ('append', 'prepend'))
+										)}</statement>
+								return $objectReturn
+						return $subjectReturn
+				else ""
+
+	return $statements
+};
+
+(: ### FORMAT FUNCTIONS ### :)
+
+(: internal/intermediate XTriples RDF format, one RDF node per XTriples statement - will later be condensed by the any23 webservice to "real" RDF :)
+declare function xtriples:generateRDFTriples($xtriples as node()*) as item()* {
+
+	for $statement in $xtriples//statements/statement
+
+		let $subjectType := $statement/subject/@type
+		let $subjectPrefix := $statement/subject/@prefix
+		let $subjectUri := $xtriples/vocabularies/vocabulary[@prefix=$subjectPrefix]/@uri
+		let $subjectValue := $statement/subject
+
+		let $predicatePrefix := $statement/predicate/@prefix
+		let $predicateUri := $xtriples/vocabularies/vocabulary[@prefix=$predicatePrefix]/@uri
+		let $predicateValue := $statement/predicate
+
+		let $objectType := $statement/object/@type
+		let $objectPrefix := $statement/object/@prefix
+		let $objectUri := $xtriples/vocabularies/vocabulary[@prefix=$objectPrefix]/@uri
+		let $objectValue := $statement/object/text()
+
+		(: rdf triple construction using computed constructors with qualified names; builds single rdf triples which are later combined by any23 webservice :)
+		let $triple := 
+			(: outer RDF tag :)
+			element {QName("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:Description")} {
+			(: either is a blank node, then gets rdf:nodeID attribute :)
+			(if ($subjectType = 'bnode') then 
+				attribute {QName("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:nodeID")} { $subjectValue }
+			(: or is a URI, then gets rdf:about attribute :)
+			else
+				attribute {QName("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:about")} { concat($subjectUri, $subjectValue) }),
+				(: predicate = inner element of the RDF tag :)
+				element {QName($predicateUri, concat($predicatePrefix, ":", $predicateValue))} {
+				(: object uri; set rdf:resource as attribute to predicate :)
+				if ($objectType = 'uri') then 
+					attribute {QName("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:resource")} { 
+						if ($objectPrefix) then concat($objectUri, $objectValue) else $objectValue 
+					}
+				(: object blank node; set rdf:nodeIFD as attribute to predicate :)
+				else if ($objectType = 'bnode') then
+					attribute {QName("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:nodeID")} { $objectValue }
+				(: typed object literals; append rdf:datatype as attribute and set value as text node :)
+				else if ($statement/object/@datatype) then
+					(attribute {QName("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf:datatype")} { concat("http://www.w3.org/2001/XMLSchema#", $statement/object/@datatype) }, $objectValue)
+				(: language tagged object literals; append rdf:datatype as attribute and set value as text node :)
+				else if ($statement/object/@lang) then
+					(attribute {"xml:lang"} { $statement/object/@lang }, $objectValue)
+				(: plain object literals; set value as text node :)
+				else
+					$objectValue
+			}
+		}
+
+		return
+			$triple
+};
+
+(: gets the internal RDF format :)
+declare function xtriples:getRDFTriples($xtriples as node()*, $vocabularies as node()*) as item()* {
+	let $rdfTriples := <rdftriples>{$vocabularies}{xtriples:generateRDFTriples($xtriples)}</rdftriples>
+	return $rdfTriples
+};
+
+(: gets the internal RDF format and sends it to any23 for further transformation :)
+declare function xtriples:getRDF($xtriples as node()*, $vocabularies as node()*) as item()* {
+	(: internal RDF format :)
+	let $rdfstylesheet := doc("rdf.xsl")
+	let $rdfTriples := xtriples:getRDFTriples($xtriples, $vocabularies)
+	let $rdfInternal := transform:transform($rdfTriples, $rdfstylesheet, ())
+
+	(: official RDF format via any23 :)
+	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
+	let $POST_request := httpclient:post(xs:anyURI(concat($any23WebserviceURL, "rdfxml")), $rdfInternal, false(), $headers)
+	let $rdf := $POST_request//httpclient:body/*
+
+	return $rdf
+};
+
+(: gets ntriples format from any23 by sending in extracted RDF :)
+declare function xtriples:getNTRIPLES($rdf as node()*) as item()* {
+
+	(: url encoded ntriples :)
+	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
+	let $POST_request := httpclient:post(xs:anyURI(concat($any23WebserviceURL, "nt")), $rdf, false(), $headers)
+	let $ntriples := util:unescape-uri(replace(string($POST_request//httpclient:body), '%00', ''), "UTF-8")
+
+	return $ntriples
+};
+
+(: gets turtle format from any23 by sending in extracted RDF :)
+declare function xtriples:getTURTLE($rdf as node()*) as item()* {
+
+	(: eXist returns base64Binary turtle :)
+	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
+	let $POST_request := httpclient:post(xs:anyURI(concat($any23WebserviceURL, "turtle")), $rdf, false(), $headers)
+	let $turtle := util:binary-to-string(xs:base64Binary($POST_request//httpclient:body), "UTF-8")
+
+	return $turtle
+};
+
+(: gets nquads format from any23 by sending in extracted RDF :)
+declare function xtriples:getNQUADS($rdf as node()*) as item()* {
+
+	(: eXist returns base64Binary nquads :)
+	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
+	let $POST_request := httpclient:post(xs:anyURI(concat($any23WebserviceURL, "nq")), $rdf, false(), $headers)
+	let $nquads := util:binary-to-string(xs:base64Binary($POST_request//httpclient:body), "UTF-8")
+
+	return $nquads
+};
+
+(: gets json format from any23 by sending in extracted RDF :)
+declare function xtriples:getJSON($rdf as node()*) as item()* {
+
+	(: eXist returns base64Binary json :)
+	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
+	let $POST_request := httpclient:post(xs:anyURI(concat($any23WebserviceURL, "json")), $rdf, false(), $headers)
+	let $json := util:binary-to-string(xs:base64Binary($POST_request//httpclient:body), "UTF-8")
+
+	return $json
+};
+
+(: gets trix format from any23 by sending in extracted RDF :)
+declare function xtriples:getTRIX($rdf as node()*) as item()* {
+
+	(: eXist returns base64Binary json :)
+	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
+	let $POST_request := httpclient:post(xs:anyURI(concat($any23WebserviceURL, "trix")), $rdf, false(), $headers)
+	let $trix := $POST_request//httpclient:body/*
+
+	return $trix
+};
+
+(: gets svg format from rhizomik webservice by temporarily storing the extracted RDF and pointing the redefer to the temporary file :)
+declare function xtriples:getSVG($rdf as node()*) as item()* {
+
+	(: svg format with temporary file :)
+	let $filename := concat(util:uuid(), ".xml")
+	let $store := xmldb:store("/db/apps/xtriples/temp/", $filename, $rdf)
+	let $svgHeaders := 
+		<headers>
+			<header name="format" value="RDF/XML"/>
+			<header name="mode" value="svg" />
+			<headers name="rules" value="{$redeferWebserviceRulesURL}" />
+		</headers>
+	
+	let $GET_request := httpclient:get(xs:anyURI(concat($redeferWebserviceURL, "render?rdf=", $xtriplesWebserviceURL, "temp/", $filename, "&amp;format=RDF/XML&amp;mode=svg&amp;rules=", $redeferWebserviceRulesURL)), false(), $svgHeaders)
+	let $svg := $GET_request//httpclient:body/*
+	let $delete := xmldb:remove("/db/apps/xtriples/temp/", $filename)
+
+	return $svg
+};
+
+(: ### QUERY BODY ### :)
+
+(: set basic vars :)
+let $collection := $setConfiguration/xtriples/collection
+let $configuration := $setConfiguration/xtriples/configuration
+let $vocabularies := $configuration/vocabularies
+
+(: dynamic namespace declaration for all configured vocabularies :)
+let $namespaces := 
+	if ($configuration/vocabularies/*) then
+		for $namespace in $configuration/vocabularies/*
+		return util:declare-namespace($namespace/@prefix, $namespace/@uri)
+	else ""
+
+(: @todo - test if each resource has exactly one child :)
+let $resources := 
+	(: configuration case 1 - all resources are provided statically within the collection :)
+	if ($collection//resource/*) then
+		$collection//resource/*
+	(: otherwise resources should be retrieved from uris or by expression :)
+	else xtriples:getResources($collection)
+
+let $maxResources :=
+	if ($collection/@max > 0) then
+		$collection/@max
+	else 1000
+
+(: extract triples from resources :)
+let $triples := 
+	for $resource at $index in $resources
+	return
+		if ($index <= $maxResources) then
+			<statements>{xtriples:extractTriples($resource, $configuration)}</statements>
+		else ""
+
+let $xtriples := <xtriples>{$vocabularies, $triples}</xtriples>
+
+return (
+	if ($setFormat = "xtriples") then
+		$xtriples
+	else if ($setFormat = "rdftriples") then
+		xtriples:getRDFTriples($xtriples, $vocabularies)
+	else if ($setFormat = "ntriples") then (
+		response:set-header("Content-Type", "text/plain; charset=UTF-8"),
+		response:stream(xtriples:getNTRIPLES(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+		)
+	else if ($setFormat = "turtle") then (
+		response:set-header("Content-Type", "text/turtle; charset=UTF-8"),
+		response:stream(xtriples:getTURTLE(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+		)
+	else if ($setFormat = "nquads") then (
+		response:set-header("Content-Type", "text/x-nquads; charset=UTF-8"),
+		response:stream(xtriples:getNQUADS(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+		)
+	else if ($setFormat = "json") then (
+		response:set-header("Content-Type", "text/json; charset=UTF-8"),
+		response:stream(xtriples:getJSON(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+		)
+	else if ($setFormat = "trix") then (
+		response:set-header("Content-Type", "application/trix; charset=UTF-8"),
+		xtriples:getTRIX(xtriples:getRDF($xtriples, $vocabularies))
+		)
+	else if ($setFormat = "svg") then
+		(: response:set-header("Content-Type", "image/svg+xml; charset=UTF-8"), :)
+		xtriples:getSVG(xtriples:getRDF($xtriples, $vocabularies))
+	else 
+		(: response:set-header("Content-Type", "application/rdf+xml; charset=UTF-8"), :)
+		xtriples:getRDF($xtriples, $vocabularies)
+)

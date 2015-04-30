@@ -1,0 +1,255 @@
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content"><div class="row-fluid"><div class="span16"><div class="page-header"><h1 data-template="config:app-title">Generated page</h1><p>A generic webservice to extract RDF statements from XML resources.</p></div><div class="row-fluid"><div class="span8"><h2>Documentation</h2><h3 id="background">Background</h3><p>
+						The extraction of RDF statements from XML data can be complicated process involving lots of XSLT or a specific markup strategy.
+						The result of such extractions is mostly specific to the XML data in question and not easily transferable to other XML resources. 
+						With each XML repository you start again. It gets even more difficult if the XML data you want to extract cannot be influenced markupwise.
+					</p><p>
+						However, the underlying principle of creating RDF statments out of XML data is not that complicated.
+					</p><ul><li>If we take an XML resource or a value in it as the thing we want to talk about, that is our <strong>subject</strong>.</li><li>Next want to join this subject to something else using a <strong>predicate</strong>.</li><li>This "something else" is our <strong>object</strong>, consisting either of the XML resource itself, some value in it or some other resource on the semantic web.</li></ul><p>
+						The XTriples webservice allows such statements based on a simple configuration. The configuration defines the XML resources to crawl, the vocabularies to use
+						and a number of <strong>XPATH/XQuery based statement patterns</strong> to apply during the extraction.
+					</p><p>
+						The webservice accepts POST or GET request to <code>http://xtriples.spatialhumanities.de/extract.xql</code>. A configuration and the response format must be specified. The webservice then
+                    	crawls all XML resources and applies the XPATH/XQuery expressions for the <em>subjects</em> and <em>objects</em>, joining them using the defined <em>predicates</em>.
+					</p><h3 id="Request">Requests</h3><h4>POST requests</h4><p>You can submit POST requests to <code>http://xtriples.spatialhumanities.de/extract.xql</code></p><p>The request body should contain your XTriples configuration. Additionally, you need to send the <code>Content-Type</code> HTTP header with a value of <code>application/xml</code> and the <code>format</code> HTTP header with one of the following values:</p><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>value</th><th>result</th></tr></thead><tbody><tr><td>rdf</td><td>returns extraction result as RDF</td></tr><tr><td>turtle</td><td>returns extraction result in Turtle notation</td></tr><tr><td>ntriples</td><td>returns extraction result as N-Triples</td></tr><tr><td>nquads</td><td>returns extraction result as N-Quads</td></tr><tr><td>trix</td><td>returns extraction result as TriX named graph</td></tr><tr><td>json</td><td>returns extraction result as JSON-LD</td></tr><tr><td>svg</td><td>returns extraction result as SVG Graph</td></tr><tr><td>xtriples</td><td>returns extraction result as XTriples XML for extractging purposes</td></tr></tbody></table><p>If you send no format header, the format defaults to rdf.</p><h4>GET requests</h4><p>The most compact way to use the webservice is via HTTP GET requests. This is the URL scheme:</p><p><code>http://xtriples.spatialhumanities.de/extract.xql?configuration=###YOUR_URI###&amp;format=###FORMAT_KEYWORD###</code></p><p>The keywords for the format parameter are the same as for direct POST requests (see above).</p><h3 id="basic-configuration">Basic configuration</h3><p>
+						A configuration consists of a simple XML structure that tells the webservice which XML collections to crawl and which statements to extract from each resource of a collection. It has three relevant
+						areas.
+					</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;xtriples&gt;
+    &lt;configuration&gt;
+        &lt;vocabularies&gt;
+            [1]
+        &lt;/vocabularies&gt;
+        &lt;triples&gt;
+            &lt;statement&gt;[...]&lt;/statement&gt;
+            &lt;statement&gt;[...]&lt;/statement&gt;
+            &lt;statement&gt;[...]&lt;/statement&gt;
+            [2]
+        &lt;/triples&gt;
+    &lt;/configuration&gt;
+    &lt;collection&gt;
+        [3]
+    &lt;/collection&gt;
+&lt;/xtriples&gt;</pre><p>
+						Below <code>&lt;collection&gt;</code> you configure the XML data that should be processed by the service. Below <code>&lt;vocabularies&gt;</code> you can configure the RDF vocabularies you would
+						like to use. Below <code>&lt;triples&gt;</code> you configure one ore more <code>&lt;statement&gt;</code> patterns that contain your <em>subjects</em>, <em>predicates</em> and <em>objects</em>.
+					</p><h4 id="collection">The &lt;collection&gt; tag</h4><p>
+						A collection in the sense of XTriples consists of XML data. It can be a single XML file 
+						with repeating nodes that represent the "resources". It can also be a XML based list of URLs pointing to single XML resources. 
+						During extraction the webservice 
+						crawls over all resources of a collection and applies the configured statements patterns to each XML resource. 
+						Only one <code>&lt;collection&gt;</code> tag is allowed per configuration. 
+                    	There are three methods for crawling the resources of a collection: XPATH based, link based and literal.
+					</p><h5>XPATH based resource crawling</h5><p>
+						XPATH based resource crawling is an automatic way of extracting XML resources. It is very handy if you want to crawl a collection with an unkown number of resources.
+						The XPATH constructs the path to the single XML resources of a collection. You specify it with curly braces in the <code>uri</code>
+                    	attribute of a single child <code>&lt;resource&gt;</code> to your &lt;collection&gt; tag.
+					</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;xtriples&gt;
+    &lt;configuration&gt;
+    [...]
+    &lt;/configuration&gt;
+    &lt;collection uri="http://xml.collection.somewhere/resources.xml"&gt;
+        &lt;resource uri="http://xml.collection.somewhere/resources/{//id}.xml" /&gt;
+    &lt;/collection&gt;
+&lt;/xtriples&gt;</pre><p>
+						In this example, the <code>uri</code> attribute of the <code>&lt;collection&gt;</code> tag points to a XML file that contains 
+                    	a list of IDs of XML resources to harvest. During extraction, this list provides the context for the expression 
+                    	in the <code>uri</code> attribute of the child <code>&lt;resource&gt;</code> tag. The attribute of the single <code>&lt;resource&gt;</code> 
+                    	tag contains a URL. At any position within the URL string you are allowed to use a XPATH expressions in curly braces that will be 
+                    	executed on the XML of the index document of the <code>&lt;collection&gt;</code>. In the above example, the service will walk through all ids 
+                    	found by the XPATH expression in the collection list and substitute the curly brackets, building the correct links to the single XML resources 
+                    	of the collection.
+					</p><h6>Example 1: XPATH based resource crawling with resources all in one single file</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/all.xml" class="btn btn-info btn-mini">XML</a><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-01.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-01.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 2: XPATH based resource crawling with resources spread over multiple files</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/index.xml" class="btn btn-info btn-mini">XML</a><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-02.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-02.xml" class="btn btn-info btn-mini">Result</a></p><h5>Link based resource crawling</h5><p>
+						Link based resource crawling works by submitting a number of <code>&lt;resource&gt;</code> tags below the <code>&lt;collection&gt;</code> tag. 
+						This approach is handy if you know all URLs of a collection in advance or if you want to crawl a fixed number of resources.
+						Just add any number of resource tags below the <code>&lt;collection&gt;</code> tag with the link to the according resource in the 
+						<code>uri</code> attribute. Here is an example:
+					</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;xtriples&gt;
+    &lt;configuration&gt;
+    [...]
+    &lt;/configuration&gt;
+    &lt;collection&gt;
+        &lt;resource uri="http://xml.collection.somewhere/resources/1.xml" /&gt;
+        &lt;resource uri="http://xml.collection.somewhere/resources/2.xml" /&gt;
+        &lt;resource uri="http://xml.collection.somewhere/resources/3.xml" /&gt;
+    &lt;/collection&gt;
+&lt;/xtriples&gt;</pre><p>
+						This will make the webservice crawl the three resources in question.
+					</p><h6>Example 3: Link based resource crawling with fixed resources in the configuration file</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-03.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-03.xml" class="btn btn-info btn-mini">Result</a></p><h5>Literal resource crawling</h5><p>
+						Crawling of literal XML resources is the fastest way of extracting statements. In this approach all resources are submitted literally to the webservice
+						together with the configuration. Just submit any well formed XML below the <code>&lt;resource&gt;</code> tags of a  <code>&lt;collection&gt;</code>.
+					</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;xtriples&gt;
+    &lt;configuration&gt;
+    [...]
+    &lt;/configuration&gt;
+    &lt;collection&gt;
+        &lt;resource&gt;
+            &lt;!-- Any wellformed XML --&gt;
+        &lt;/resource&gt;
+        &lt;resource&gt;
+            &lt;!-- Some more wellformed XML --&gt;
+        &lt;/resource&gt;
+    &lt;/collection&gt;
+&lt;/xtriples&gt;</pre><h6>Example 4: Literal resource crawling with XML resources sent together with the configuration</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-04.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-04.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="vocabularies">The &lt;vocabularies&gt; tag</h4><p>
+						Below the <code>&lt;vocabularies&gt;</code> tag you can configure any number of RDF vocabularies you would like to use for your statements.
+						Its comparable to the header of a SPARQL query where you declare your vocabularies. Each <code>&lt;vocabulary&gt;</code> tag can have the 
+						following attributes.
+					</p><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>attributes</th><th>required</th><th>values</th><th>description</th></tr></thead><tbody><tr><td>prefix</td><td>yes</td><td>string</td><td>
+									Sets the prefix for the vocabulary. This prefix can then be used in the <code>prefix</code> attribute 
+									of a <code>&lt;subject&gt;</code>, <code>&lt;predicate&gt;</code> or <code>&lt;object&gt;</code> tag
+									(see below).
+								</td></tr><tr><td>uri</td><td>yes</td><td>xsAnyURI</td><td>
+									Sets the URI for the vocabulary.
+								</td></tr></tbody></table><h6>Code</h6><pre class="prettyprint linenums">
+&lt;xtriples&gt;
+    &lt;configuration&gt;
+        &lt;vocabularies&gt;
+            &lt;vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/&gt;
+            &lt;vocabulary prefix="dc" uri="http://purl.org/dc/elements/1.1/"/&gt;
+            &lt;vocabulary prefix="owl" uri="http://www.w3.org/2002/07/owl#"/&gt;
+        &lt;/vocabularies&gt;
+        [...]
+    &lt;/configuration&gt;
+    [...]
+&lt;/xtriples&gt;</pre><h4 id="triples">The &lt;triples&gt; tag</h4><p>
+						Below the <code>&lt;tiples&gt;</code> tag you can define any number of <code>&lt;statement&gt;</code> patterns for the extraction.
+						The statement patterns are the core of the XTriples webservice.
+					</p><pre class="prettyprint linenums">
+&lt;triples&gt;
+    &lt;statement&gt;[...]&lt;/statement&gt;
+    &lt;statement&gt;[...]&lt;/statement&gt;
+    &lt;statement&gt;[...]&lt;/statement&gt;
+&lt;/triples&gt;</pre><h4 id="statement">The &lt;statement&gt; tag</h4><p>
+						Each <code>&lt;statement&gt;</code> consists of exactly one <code>&lt;subject&gt;</code>, <code>&lt;predicate&gt;</code> and 
+                    	<code>&lt;object&gt;</code> tag. An optional <code>&lt;condition&gt;</code> tag is allowed. Together they form a statement pattern that 
+                    	will be applied to each XML resource that is crawled by the webservice.
+					</p><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>attributes</th><th>required</th><th>values</th><th>description</th></tr></thead><tbody><tr><td>type</td><td>no</td><td>nm</td><td><span class="text-error">experimental</span></td></tr><tr><td>repeat</td><td>no</td><td>integer</td><td><span class="text-error">experimental</span></td></tr></tbody></table><p>
+                		For examples for these attributes please refer to the <a href="#advanced-configuration">"Advanced configuration"</a> section below.
+                	</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;statement&gt;
+    &lt;subject prefix="resource"&gt;//id&lt;/subject&gt;
+    &lt;predicate prefix="rdf"&gt;type&lt;/predicate&gt;
+    &lt;object prefix="skos" type="uri"&gt;/string("Concept")&lt;/object&gt;
+&lt;/statement&gt;</pre><p>
+						The code above results in a skos statement for each resource from the configured XML repository.
+					</p><h6>Example 5: FOAF statement for one resource</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/1.xml" class="btn btn-info btn-mini">XML</a><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-05.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-05.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="subject">The &lt;subject&gt; tag</h4><p>
+                    	The <code>&lt;subject&gt;</code> tag of a statement pattern can either result in an URI or a blank node. In case of a blank node the blank node
+                    	must have been created already by an earlier <code>&lt;object&gt;</code> tag.
+					</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;statement&gt;
+    &lt;subject prefix="###MY_VOCABULARY_PREFIX###"&gt;//id&lt;/subject&gt;
+    [...]
+&lt;/statement&gt;</pre><p>
+						In the above example, the XPATH expression will fetch the id value from each crawled resource. It is used together with the <code>prefix</code> attribute
+						to construct the subject URIs.
+					</p><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>attributes</th><th>required</th><th>values</th><th>description</th></tr></thead><tbody><tr><td>prefix</td><td>no</td><td>string</td><td>
+									The <code>prefix</code> attribute can contain a value 
+                                	defined in one of the vocabularies' <code>prefix</code> attributes. This binds the <code>&lt;subject&gt;</code> to a <code>&lt;vocabulary&gt;</code> 
+                                	namespace. During exraction the value of the <code>prefix</code> attribute is substituted with the URI that has been defined 
+									for the vocabulary's <code>uri</code> attribute. Similar to the prefix concept known from SPARQL.
+								</td></tr><tr><td>type</td><td>no</td><td><ul style="list-style-type: none; margin: 0; padding: 0;"><li>bnode</li></ul></td><td>
+                                	Only needed for connecting blank nodes. When you set the type of a <code>&lt;subject&gt;</code> tag to <em>bnode</em>, then you should 
+                                	apply the same identifier that has already been created by an earlier <code>&lt;object&gt;</code> tag expression. This will make the former
+                                	object (blank node) the subject of a new statement.
+								</td></tr><tr><td>resource</td><td>no</td><td>xsAnyURI</td><td>
+									If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code> 
+                                	XPATH/Xquery will be executed on the external XML rather than the XML of the current resource.
+								</td></tr><tr><td>prepend</td><td>no</td><td>string + {XPATH/XQuery}</td><td>
+									The <code>prepend</code> attribute is handy if you need to prepend a value to the current patterns XPATH/XQuery result. The attribute value should contain
+									a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;subject&gt;</code> 
+                                	expression and it's result will be <em>prepended</em> to the overall result.
+								</td></tr><tr><td>append</td><td>no</td><td>string + {XPATH/XQuery}</td><td>
+                                	The <code>append</code> attribute works the same as the <code>prepend</code> attribute only that the result will be <em>appended</em> to the overall result.
+								</td></tr></tbody></table><h5>Examples</h5><h6>Example 6: Extracting a subject URI</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-06.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-06.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 7: Creating a subject blank node</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-07.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-07.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 8: Including a value from an external XML resource in the subject</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-08.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-08.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 9: Prepend and append values to the subject result</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-09.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-09.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="predicate">The &lt;predicate&gt; tag</h4><p>
+                		The <code>&lt;predicate&gt;</code> tag of a statement pattern contains the property URIs of the vocabularies defined in the <code>&lt;vocabularies&gt;</code>
+						section of the configuration. The final result of a predicate expression must always be an URI.
+						The predicate tag mostly contains simple property strings. But it is also possible to execute an XPATH/XQuery in the tag or 
+						retrieve a value from an external XML resource by using the <code>&lt;resource&gt;</code> attribute.
+                	</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;statement&gt;
+    [...]
+    &lt;predicate prefix="###MY_VOCABULARY_PREFIX###"&gt;###MY_PROPERTY###&lt;/subject&gt;
+    [...]
+&lt;/statement&gt;</pre><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>attributes</th><th>required</th><th>values</th><th>description</th></tr></thead><tbody><tr><td>prefix</td><td>yes</td><td>string</td><td>
+                                	The required <code>prefix</code> attribute of the <code>&lt;predicate&gt;</code> must contain a value defined in a vocabulary's <code>prefix</code> attribute. 
+                                	This binds the <code>&lt;predicate&gt;</code> to a <code>&lt;vocabulary&gt;</code> namespace.
+									The value of the <code>prefix</code> attribute is substituted with the URI that has been defined in the vocabulary's <code>uri</code> attribute.
+								</td></tr><tr><td>resource</td><td>no</td><td>xsAnyURI</td><td>
+                                	If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code> 
+                                	XPATH/Xquery will be executed on the external XML rather than the XML of the current resource.
+                                </td></tr><tr><td>prepend</td><td>no</td><td>string + {XPATH/XQuery}</td><td>
+                                	The <code>prepend</code> attribute is handy if you need to prepend a value to the current patterns XPATH/XQuery result. The attribute value should contain
+                                	a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;predicate&gt;</code> 
+                                	expression and it's result will be <em>prepended</em> to the overall result.
+                        		</td></tr><tr><td>append</td><td>no</td><td>string + {XPATH/XQuery}</td><td>
+                        			The <code>append</code> attribute works the same as the <code>prepend</code> attribute only that the result will be <em>appended</em> to the overall result.
+                        		</td></tr></tbody></table><h4 id="object">The &lt;object&gt; tag</h4><p>
+                		The <code>&lt;object&gt;</code> tag of a statement pattern can either result in an URI, a literal value or a blank node. Literal values
+                    	can be typed or tagged with a language code. In case of a blank node, the object expression should lead to a 
+                    	unique identifier for the node.
+                	</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;statement&gt;
+    [...]
+    &lt;object prefix="###MY_VOCABULARY_PREFIX###" type="uri"&gt;###MY_VALUE###&lt;/object&gt;
+    [...]
+    &lt;object type="literal" lang="en"&gt;###MY_VALUE###&lt;/object&gt;
+    [...]
+    &lt;object type="literal" datatype="integer"&gt;###MY_VALUE###&lt;/object&gt;
+    [...]
+    &lt;object type="bnode"&gt;###MY_UNIQUE_ID###&lt;/object&gt;
+&lt;/statement&gt;</pre><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>attributes</th><th>required</th><th>values</th><th>description</th></tr></thead><tbody><tr><td>prefix</td><td>no</td><td>string</td><td>
+									If the result of the <code>&lt;object&gt;</code> tag is a URI, the <code>prefix</code> attribute can be used to bind
+                                	the <code>&lt;object&gt;</code> to a defined <code>&lt;vocabulary&gt;</code> namespace. The value of the <code>prefix</code> 
+                                	attribute is substituted with the URI that has been defined in the according vocabulary's <code>uri</code> attribute. Similar 
+                                	to the prefix concept known from SPARQL.
+								</td></tr><tr><td>type</td><td>no</td><td><ul style="list-style-type: none; margin: 0; padding: 0;"><li>uri</li><li>literal</li><li>bnode</li></ul></td><td>
+                                	If the value is set to <em>uri</em>, the final result of the object expression should be a xsAnyURI. The <code>&lt;prefix&gt;</code>
+                                	attribute can be used to bind a vocabulary namespace to the object value. Alternatively, you can of course construct or extract full 
+                                	URIs out of values in the current resource's XML without using a prefix. If the value is set to <em>literal</em>, a plain string value
+                                	is expected as the result of the object expression. This value can then be typed using the <code>&lt;datatype&gt;</code> attribute
+                                	or tagged with a language attribute by using the <code>&lt;lang&gt;</code> attribute. If the value is set to <em>bnode</em> the result
+                                	of the object expression should be a unique identifier (see below for more details about blank nodes and some examples).
+								</td></tr><tr><td>resource</td><td>no</td><td>xsAnyURI</td><td>
+                                	If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code> 
+                                	XPATH/Xquery will be executed on the external XML rather than the XML of the current resource.
+								</td></tr><tr><td>lang</td><td>no</td><td>ISO code</td><td>
+                                	You can language tag your object literals by using this attribute. Set the attribute value to one of the ISO language codes.
+								</td></tr><tr><td>datatype</td><td>no</td><td>XML Schema datatype</td><td>
+                                	You can type your object literals with this attribute. The attribute value can contain any of the official data types from
+                                	XML schema (like integer, float, double, decimal, time, date etc.)
+								</td></tr><tr><td>prepend</td><td>no</td><td>string + {XPATH/XQuery}</td><td>
+                                	The <code>prepend</code> attribute is handy if you need to prepend a value to the current patterns XPATH/XQuery result. The attribute value should contain
+                                	a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;object&gt;</code> 
+                                	expression and it's result will be <em>prepended</em> to the overall result.
+                        		</td></tr><tr><td>append</td><td>no</td><td>string + {XPATH/XQuery}</td><td>
+                        			The <code>append</code> attribute works the same as the <code>prepend</code> attribute only that the result will be <em>appended</em> to the overall result.
+                        		</td></tr></tbody></table><h6>Example 10: Creating an object URI</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-10.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-10.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 11: Creating a typed object literal</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-11.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-11.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 12: Creating a language tagged literal</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-12.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-12.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 13: Including a value from an external resource in the object</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-13.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-13.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="condition">The &lt;condition&gt; tag</h4><p>
+                		Sometimes a statement pattern should only be applied to resources if a specific condition matches.
+                		The &lt;condition&gt; tag allows you to define an expression and only if the result returns TRUE the statement pattern will be applied to the
+                		resource.
+                	</p><h6>Code</h6><pre class="prettyprint linenums">
+&lt;statement&gt;
+    &lt;condition&gt;/image&lt;/condition&gt;
+    &lt;subject type="uri"&gt;/image/@url&lt;/subject&gt;
+    &lt;predicate prefix="rdf"&gt;type&lt;/predicate&gt;
+    &lt;object prefix="foaf" type="uri"&gt;Image&lt;/object&gt;
+&lt;/statement&gt;</pre><p>
+                		The above statement pattern would only be applied to resources that have an image tag. If there is no image tag, the XPATH returns
+                		empty and the statement pattern is not executed.
+                	</p><h6>Example 14: Applying a &lt;condition&gt; to a statement pattern</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-14.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-14.xml" class="btn btn-info btn-mini">Result</a></p><h3 id="advanced-configuration">Advanced configuration</h3><h4 id="variables">Context variables</h4><p>
+                		A word about context...
+                	</p><h6>Reference</h6><table class="table table-bordered"><thead><tr><th>variable</th><th>description</th></tr></thead><tbody><tr><td>$resource</td><td>
+                                	The <code>$resource</code> variable contains the full XML content of the current resource. It can be used in all XQuery
+                               	 	functions and XPATH expressions of the XTriples webservice (see example below).
+                                </td></tr><tr><td>$externalResource</td><td>
+                        			Same as $resource but only in contexts where you load an external XML resource instead of the current one using the <code>resource</code>
+                        			attribute in a subject, predicate or object tag.
+                        		</td></tr><tr><td>$index</td><td>
+                            		The <code>$index</code> variable contains the iteration number of the current statement pattern. This will normally
+                            		be 1. But in case you use the <code>repeat</code> attribute with the statement it will contain the number of the current
+                            		iteration of the statement. This is especially helpful in situations where you extract m:n relations (see example below).
+                            	</td></tr></tbody></table><h6>Example 15: Using the $resource variable in statement patterns</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-15.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-15.xml" class="btn btn-info btn-mini">Result</a></p><h6>Example 16: Using the $index variable in statement patterns</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-16.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-16.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="oneton">1:n statements</h4><h6>Example 17: Creating a 1:n statements with a node sets</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-17.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-17.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="ntoone">n:1 statements</h4><h6>Example 18: Creating n:1 statements with node sets</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-18.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-18.xml" class="btn btn-info btn-mini">Result</a></p><h4 id="ntom">n:m statements</h4><h6>Example 19: Matching n:m resources in a statement pattern</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-19.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-19.xml" class="btn btn-info btn-mini">Result</a></p><h3 id="errors">Error handling and debugging</h3><h6>Example 20: Using the internal xtriples result format for debugging purposes</h6><p class="btn-group"><a href="http://xtriples.spatialhumanities.de/examples/gods/conf-20.xml" class="btn btn-info btn-mini">Configuration</a><a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-20.xml&amp;format=xtriples" class="btn btn-info btn-mini">Result</a></p><h3 id="compontents">Webservice components</h3><h4 id="exist">eXist XML database</h4><h4 id="any23">Apache an23 webservice</h4><h4 id="rhizomik">Rhizomik RDF to SVG webservice</h4></div><div class="span4"><h3>Outline</h3><ol><li><a href="#background">Background</a></li><li><a href="#requests">Requests</a></li><li><a href="#basic-configuration">Basic configuration</a><ul><li><a href="#collection">&lt;collection&gt;</a></li><li><a href="#vocabularies">&lt;vocabularies&gt;</a></li><li><a href="#triples">&lt;triples&gt;</a></li><li><a href="#statement">&lt;statement&gt;</a></li><li><a href="#subject">&lt;subject&gt;</a></li><li><a href="#predicate">&lt;predicate&gt;</a></li><li><a href="#object">&lt;object&gt;</a></li><li><a href="#condition">&lt;condition&gt;</a></li></ul></li><li><a href="#advanced-configuration">Advanced configuration</a><ul><li><a href="#variables">Context variables</a></li><li><a href="#oneton">1:n statements</a></li><li><a href="#ntoone">n:1 statements</a></li><li><a href="#ntom">n:m statements</a></li></ul></li><li><a href="#errors">Error handling and debugging</a></li><li><a href="#components">Webservice components</a><ul><li><a href="#exist">eXist XML database</a></li><li><a href="#any23">Apache any23 webservice</a></li><li><a href="#rhizomik">Rhizomik RDF to SVG webservice</a></li></ul></li></ol></div><div class="span4"><h3>Schema</h3><p>
+						Check out the RelaxNG <a href="xtriples.rng">schema</a> for an exact documentation of all configuration options. 
+					</p></div></div></div></div></div>

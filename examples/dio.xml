@@ -1,0 +1,739 @@
+<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><!-- Deutsche Inschriften Online --><xtriples><configuration><vocabularies><vocabulary prefix="dio" uri="http://www.inschriften.net/rest/di060/articles/"/><vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><vocabulary prefix="dc" uri="http://purl.org/dc/elements/1.1/"/><vocabulary prefix="owl" uri="http://www.w3.org/2002/07/owl#"/><vocabulary prefix="owltime" uri="http://www.w3.org/2006/time#"/><vocabulary prefix="geo" uri="http://www.w3.org/2003/01/geo/wgs84_pos#"/><vocabulary prefix="gn" uri="http://www.geonames.org/ontology#"/><vocabulary prefix="dbpedia" uri="http://dbpedia.org/ontology/"/><vocabulary prefix="cdwa" uri="http://www.getty.edu/research/publications/electronic_publications/cdwa/"/><vocabulary prefix="tei" uri="http://www.tei-c.org/ns/1.0"/></vocabularies><triples><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dc">title</predicate><object type="literal">//tei:titleStmt/tei:title</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dc">creator</predicate><object type="literal">//tei:author</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="owl">seeAlso</predicate><object type="uri">//tei:publicationStmt/tei:availability/tei:p/tei:ref/@target</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="owltime">intervalStarts</predicate><object type="literal">//tei:origDate/tei:date/@from</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="owltime">intervalFinishes</predicate><object type="literal">//tei:origDate/tei:date/@to</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">condition</predicate><object type="literal">//tei:condition/@n</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">width</predicate><object type="literal">//tei:dim/substring-before(substring-after(., "H. "), ", B.")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">height</predicate><object type="literal">//tei:dim/substring-before(substring-after(., "B. "), ", Bu")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">Settlement</predicate><object type="literal">//tei:settlement</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">Place</predicate><object type="literal">//tei:placeName</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">typeface</predicate><object type="literal">//tei:typeNote/substring(., 1, string-length(.)-1)</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">inscription</predicate><object type="literal">//tei:div[@type='edition']/functx:remove-elements-deep(., "note")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">translation</predicate><object type="literal">//tei:div[@type='translation']/functx:remove-elements-deep(., "note")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">heraldry</predicate><object type="literal">//tei:heraldry/functx:remove-elements-deep(., "note")</object></statement>
+<!--
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0029')]</condition>
+                <subject prefix="dio">/string("di060-0029")</subject>
+                <predicate prefix="geo">SpatialThing</predicate>
+                <object type="uri">/string("http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/50")</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0029')]</condition>
+                <subject prefix="dio">/string("di060-0029")</subject>
+                <predicate prefix="geo">polygon</predicate>
+                <object type="literal" resource="http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/50">//geom</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0033')]</condition>
+                <subject prefix="dio">/string("di060-0033")</subject>
+                <predicate prefix="geo">SpatialThing</predicate>
+                <object type="uri">/string("http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/77")</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0033')]</condition>
+                <subject prefix="dio">/string("di060-0033")</subject>
+                <predicate prefix="geo">polygon</predicate>
+                <object type="literal" resource="http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/33">//geom</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0157')]</condition>
+                <subject prefix="dio">/string("di060-0157")</subject>
+                <predicate prefix="geo">SpatialThing</predicate>
+                <object type="uri">/string("http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/29")</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0157')]</condition>
+                <subject prefix="dio">/string("di060-0157")</subject>
+                <predicate prefix="geo">polygon</predicate>
+                <object type="literal" resource="http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/29">//geom</object>
+            </statement>
+--></triples></configuration>
+	<!--
+    <collection uri="http://www.inschriften.net/rest/di060/articles/">
+        <resources uri="{//resource/@href}"/>
+    </collection>
+    -->
+	<!--
+    <collection>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0019"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0027"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0029"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0030"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0032"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0033"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0034"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0035"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0036"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0037"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0039"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0041"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0042"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0046"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0052"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0061"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0062"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0068"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0073"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0075"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0077"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0078"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0081"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0084"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0086"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0111"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0120"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0122"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0123"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0128"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0129"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0130"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0131"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0132"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0135"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0138"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0139"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0140"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0141"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0144"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0151"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0153"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0157"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0158"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0159"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0163"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0169"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0171"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0177"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0179"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0180"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0181"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0182"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0183"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0184"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0185"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0197"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0204"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0207"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0229"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0231"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0232"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0241"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0242"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0252"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0257"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0260"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0264"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0270"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0273"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0277"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0283"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0284"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0290"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0293"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0311"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0317"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0337"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0339"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0343"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0345"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0356"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0362"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0371"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0383"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0384"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0401"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0423"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0430"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0461"/>
+        <resource uri="http://www.inschriften.net/rest/di060/articles/di060-0464"/>
+    </collection>
+    --><collection><resource>
+			<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="de"><teiHeader><fileDesc><titleStmt><title>DI 60, Nr. 27</title><author>Eberhard J. Nikitsch</author>
+      </titleStmt><editionStmt><p>Deutsche Inschriften Online: <ref type="external" target="http://www.inschriften.net/rest/di060/articles/di060-0027"/>
+                            </p>
+      </editionStmt><publicationStmt><authority>Akademie der Wissenschaften und der Literatur | Mainz - Digitale Akademie</authority><availability><licence>Bereitgestellt unter einer <ref target="http://creativecommons.org/licenses/by-sa/2.0/de/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 2.0 Deutschland Lizenz (CC BY-SA 2.0 DE)</ref>
+                                </licence><p>Bei Verwendung müssen Sie die Namen des Urhebers und der Zuschreibungsempfänger, den Rechtevermerk, den Lizenzvermerk, den Haftungsausschluss und folgenden Link zum Material angeben: <ref type="external" target="http://nbn-resolving.de/urn:nbn:de:0238-di060mz08k0002707"/>
+                                </p>
+        </availability><date>2004</date>
+      </publicationStmt><seriesStmt><title>Rhein-Hunsrück-Kreis I</title><respStmt><resp>Gesammelt und bearbeitet von</resp><name>Eberhard J. Nikitsch</name>
+        </respStmt><biblScope unit="volume">Band <num>60</num> der Reihe "Die Deutschen Inschriften"</biblScope>
+      </seriesStmt><sourceDesc><msDesc><msIdentifier><repository>Deutsche Inschriften Online</repository><idno type="urn">di060mz08k0002707</idno><altIdentifier><idno type="catalogue">di060-0027</idno>
+            </altIdentifier><altIdentifier><idno type="uid">28</idno>
+            </altIdentifier>
+          </msIdentifier><msPart xml:id="di060-0027-01"><msIdentifier><idno>di060-0027-01</idno>
+            </msIdentifier><physDesc><objectDesc><supportDesc><support><p>Glasfenster mit Bauinschrift. Sie besteht aus einem Anfangskreuz
+                        und 44 Einzelbuchstaben und befindet sich in jener Maßwerkbrücke, die die
+                        fünf 18,50 m hohen Chorfenster auf halber Höhe unterteilt. Da an dieser
+                        Stelle jede der drei Bahnen eines Fensters mit einem liegenden Dreiblatt
+                        abschließt, dessen Lanzetten jeweils einem Buchstaben Platz bieten, verläuft
+                        die Inschrift in zwei Zeilen, die mit der oberen beginnend von links nach
+                        rechts zu lesen sind. Das Trägermaterial der gemalten bzw. zugeschnittenen
+                            Buchstaben<note n="1">Für die Herstellung der originalen Buchstaben wurden zwei Verfahren
+                            angewandt: Der gewünschte Buchstabe wurde zum einen von der unter dem
+                            kreisrunden Trägerglas liegenden Vorlage durchgepaust und die
+                            verbleibende Fläche zwischen seinem Umriß und dem Glasrand mit
+                            Schwarzlot ausgemalt. So entstanden helle, durchscheinende Buchstaben
+                            vor einem dunklen Hintergrund (so hergestellt: Anfangskreuz und 24
+                            Buchstaben). Zum andern schnitt man die Buchstaben gemäß der Vorlage aus
+                            dem Glas und fixierte sie mit Bleiruten (so hergestellt: 6 Buchstaben);
+                            allerdings wurden auch hier die in Zierlinien auslaufenden
+                            Buchstabenenden mit Schwarzlot gestaltet. Die Malfarbe wurde dann durch
+                            Aufbrennen mit dem Grundglas verbunden.</note> besteht aus hellen, gelbgrünen Glasscheiben. Die
+                        Zwickel zwischen ihnen und dem schmalen weißen Rand des jeweiligen
+                        Dreiblattes sind bahnenweise wechselnd mit rotem und blauem Glas gefüllt.
+                        Bis auf wenige Reste ist der sonstige mittelalterliche Bestand der
+                        Glasmalereien in Liebfrauen verloren; die heutigen Glasmalereien in den
+                        Rechteckfeldern der Chorfenster stammen aus einer in den Jahren 1895 bis
+                        1898 von dem Freiburger Glasmaler Fritz Geiges durchgeführten
+                            Neuverglasung<note n="2">Vgl. dazu Parello, Glasmalereien pass.</note>. Die bereits Ende des 16. Jahrhunderts
+                        erstmals erwähnte, 1855 im Wortlaut publizierte und 1877 mustergültig durch
+                        F. Schneider edierte Inschrift galt spätestens seit 1912<note n="3">Vgl. Oidtmann 152 Anm. 2. - Noch Petz Anm. 101 war der Ansicht, daß
+                            die Inschrift während der Restaurierung der Kirche 1892-95 verloren
+                            gegangen war.</note> als
+                        verloren. Sie wurde jedoch - allerdings in desolatem Zustand - im Jahr 1991
+                        im Verlauf langjähriger Renovierungsmaßnahmen an Ort und Stelle aufgefunden,
+                        ausgebaut, identifiziert<note n="4">Vgl. dazu und zur gesamten Inschrift die beiden damals entstandenen
+                            Aufsätze des Verf., Wiederentdeckung, pass. und Kirchenbau,
+                            pass.</note>, anschließend restauriert, textlich
+                        wiederhergestellt und im Sommer 1996 erneut an ihrem ursprünglichen Platz
+                        angebracht. Von den insgesamt 44 Buchstaben haben sich 30 sowie das
+                        Anfangskreuz im Original erhalten<note n="5">Dr. Hartmut Scholz (CVMA, Arbeitsstelle Freiburg) und den mit der
+                            Wiederherstellung der Oberweseler Glasfenster betrauten Restauratoren
+                            der Firma Binsfeld in Trier, allen voran Herrn Norbert Kölzer, bin ich
+                            für ihre gern gewährten fachlichen Auskünfte zu größtem Dank
+                            verpflichtet. Ihrer Erfahrung ist es zu verdanken, daß bei jedem
+                            einzelnen Buchstaben aufgrund der Beschaffenheit des Trägerglases sicher
+                            entschieden werden konnte, ob es sich um ein mittelalterliches Original
+                            oder um eine im 19. oder 20. Jh. hergestellte Kopie handelte.</note>. </p><p n="source"><bibl>Erg. nach Schneider<note n="6">Schneider überlieferte die Inschrift in gotische Majuskeln
+                            nachahmenden Drucktypen in folgender Version: <hi rend="italic">+ IN[C]HOATA [F][V]IT
+                                ECCLESIA SCE MARIE A[N]O DNI [MC]CC OCTAVO</hi>, wobei er die damals
+                            bereits verlorenen bzw. nicht mehr lesbaren, von ihm ergänzten
+                            Buchstaben in eckige Klammern setzte. - Vgl. dazu und zu den
+                            verschiedenen Erhaltungsgraden der Inschrift Nikitsch, Kirchenbau
+                            pass.</note>.</bibl>
+                    </p><dim>Dm. (einer Glasscheibe) 15, Bu. 11,5-14,5 cm.</dim>
+                  </support><condition n="0">erhalten</condition>
+                </supportDesc>
+              </objectDesc><typeDesc><typeNote>Gotische Majuskel.</typeNote>
+              </typeDesc>
+            </physDesc><history><origin><origPlace><settlement>Oberwesel</settlement><placeName>Kath. Pfarrkirche Unserer Lieben Frau</placeName>
+                </origPlace><origDate><date from="1308-01-01" to="1345-12-31" datingPoint="1331BAD8692AABA3">(1308), um 1331</date>
+                </origDate>
+              </origin>
+            </history>
+          </msPart>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader><text><group><text corresp="#di060-0027-01"><body><div type="edition"><div type="textpart" subtype="section" xml:id="di060-0027-01-01"><lb n="1"/><lg type="par"><l n="lno">+ I[NC]HO[A]T[A FV]I·T·<ref type="annotation" corresp="#an-a"/> EC<lb n="2"/>CL[E]SI[A]
+                                            S(AN)C(T)[E] MARIE· ·AN(N)O<ref type="annotation" corresp="#an-b"/> [D(OMI)NI
+                                                MC]CC<ref type="annotation" corresp="#an-oc"/>· ·OCT·AVO·</l>
+          </lg>
+        </div>
+                                </div><div type="apparatus"><list n="annotations"><item xml:id="an-a">Diese Konstruktion ist zwar im klassischen Latein nicht nachweisbar,
+                            wird aber in mittellateinischen Texten und auch gelegentlich in
+                            mittelalterlichen Inschriften verwendet; vgl. dazu Nikitsch, Kirchenbau
+                            8 Anm. 28 und 31.</item><item xml:id="an-b">Über <hi rend="italic">A</hi> waagerechter Kürzungsstrich.</item><item xml:id="an-oc"><hi rend="italic">o</hi> über dem mittleren <hi rend="italic">C</hi>, dessen linke Hälfte neu
+                            angefertigt wurde.</item>
+                                    </list>
+          </div><div type="translation"><ab>Begonnen wurde die Kirche der heiligen Maria im Jahre des Herrn
+                        1308.</ab>
+          </div><div type="commentary"><ab>Bei der Schrift handelt es sich um eine für das zweite Viertel des
+                        14.21 Jh. typische gotische Majuskel mit flächigen, keilförmig verbreiterten
+                        Schäften, starken Bogenschwellungen und leicht eingerollten bzw.
+                        ausgezogenen Zierlinien an den Buchstabenenden. Das mit nahezu parallelen
+                        Schäften gebildete<hi rend="italic"> A</hi> ist flachgedeckt, dabei ist der rechte Schaft
+                        ausgesprochen breit, Deck- und Mittelbalken sind dagegen auffällig
+                        dünnstrichig ausgeführt. An Zierformen werden lediglich Halbnodus und ein
+                        den Schaft begleitender Zierstrich bei <hi rend="italic">I</hi> verwendet. Als Worttrenner
+                        dienen unregelmäßig gesetzte Punkte<note n="7">Die Worttrenner treten nicht nur an ihrer üblichen Stelle zwischen
+                            zwei Einzelwörtern auf, sondern - schwer erklärbar -auch innerhalb eines
+                            Wortes. Da jedoch bei den verschiedenen Restaurierungen auch originale
+                            Buchstaben untereinander vertauscht wurden, könnte etwa das <hi rend="italic">I·</hi>
+                            bei <hi rend="italic">FVIT</hi> das Wortende des neuangefertigten <hi rend="italic">D(OMI)NI</hi>
+                            markiert haben, während das <hi rend="italic">T·</hi> bei <hi rend="italic">OCTAVO</hi> rätselhaft
+                            bleibt.</note>. Mangels vergleichbarer
+                        Quellen stellt die wiedergewonnene Inschrift ein äußerst wichtiges Zeugnis
+                        für die Geschichte<note n="8">Vgl. zum Folgenden Einleitung Kap. 2.1.7.</note> der Liebfrauenkirche dar und läßt sich gut
+                        mit den bisher bekannten Daten vereinbaren: 1309 bzw. 1312 erhielt
+                        Erzbischof Balduin von Trier die damalige Reichsstadt Oberwesel von König
+                        Heinrich VII., seinem Bruder, als Pfandbesitz, 1331 erfolgte die Weihe des
+                        Hochaltars im neuerbauten Chor der Kirche, 1339 verlieh er dem
+                        Liebfrauenstift neue Statuten, und 1351 (dendrochronologisch datiert) war
+                        der Westturm fertiggestellt. Es ist offensichtlich, daß die Chorverglasung
+                        mit der Inschrift frühestens mit der baulichen Fertigstellung der mittleren
+                        Maßwerkzone der Chorfenster angebracht werden konnte<note n="9">Die vorgeschlagene Datierung wird durch die jüngsten Ergebnisse der
+                            Bauforschung (vgl. Sebald, Großinventar 30) unterstützt, wonach "zum
+                            Zeitpunkt der Weihe (...) Apsis, Chorjoche und Turm (...) vielleicht bis
+                            in die Höhe des Obergadens vollendet" waren. Die von Sebald selbst (ebd.
+                            33 Anm. 14) vorgenommene Datierung der Oberweseler Scheiben in die "40er
+                            Jahre des 14. Jhs., spätestens um 1350", erscheint von daher zwar nicht
+                            ausgeschlossen, ist jedoch keinesfalls zwingend. Daß der Chor bis zu
+                            seiner erst 1386/89 erfolgten Einwölbung möglicherweise ein
+                            provisorisches Flachdach besessen haben dürfte, spielt in diesem
+                            Zusammenhang keine Rolle.</note> - somit
+                        dürfte die Inschrift frühestens im Zusammenhang mit der Kirchweihe 1331 und
+                        nicht schon 1308 angefertigt worden sein. Trifft dies zu, ergeben sich
+                        einige fundamentale Fragen: Welchen Grund gab es für den oder die
+                        unbekannten Auftraggeber der Inschrift, weit über 20 Jahre später mit
+                        ungewöhnlich großen, geradezu monumentalen, öffentlich sichtbaren und gut zu
+                        lesenden Buchstaben ausdrücklich auf das Jahr des Baubeginns hinzuweisen?
+                        Wieso plazierte man die Inschrift gerade an diesem ausgefallenen
+                            Standort<note n="10">Die Durchsicht der bislang publizierten Bände des CVMA (Deutschland)
+                            und der Editionen des deutschen Inschriften-Unternehmens führte zu dem
+                            erstaunlichen Ergebnis, daß eine in der vorliegenden Art konzipierte
+                            Bauinschrift auf Glasfenstern sonst nirgends nachzuweisen ist; vgl. dazu
+                            Nikitsch, Kirchenbau 9f. Anm. 31. - Hinsichtlich Ausführung und
+                            Anbringungsart lassen sich zum Vergleich die ebenfalls aus
+                            Einzelbuchstaben bestehenden Inschriften auf einigen, Ende des 12. Jh.
+                            entstandenen Glasfenstern des Straßburger Münsters heranziehen, die
+                            allerdings Szenen aus der Genesis kommentieren; vgl. dazu Beyer, Les
+                            vitreaux 477 mit Abb. 420; freundlicher Hinweis meines Heidelberger
+                            Kollegen Dr. Harald Drös.</note> und verwandte mit farbigem Glas<note n="11">Da spätmittelalterliche Glasfenster in der Regel mit figürlichen
+                            Szenen und Darstellungen geschmückt werden, dienen die beigegebenen
+                            Inschriften meist der erläuternden Erklärung; daher handelt es sich
+                            typologisch oft um Namens- und Stifterinschriften; vgl. dazu die
+                            Beispiele bei Becksmann, Fensterstiftungen 65ff. und Schmid,
+                            Selbstdarstellung 101ff. - Bauinschriften finden sich dagegen
+                            überwiegend auf mit dem entsprechenden Bauwerk fest verbundenen
+                            Bauteilen wie Pfeilern und Mauern eingehauen oder auf separaten Tafeln
+                            in das Mauerwerk eingelassen, nur gelegentlich werden sie auch an die
+                            Wände gemalt; vgl. dazu Kloos, Epigraphik 64f.; Funken, Bauinschriften
+                            8ff. und Neumüllers-Klauser, Schrift und Sprache 62ff.</note> ein
+                        für Bauinschriften kostbares Material als Beschreibstoff? Warum wurde auf
+                        die naheliegende Nennung und Darstellung des bzw. der Stifter
+                            verzichtet<note n="12">Selbst wenn man annimmt, diese Informationen hätten auf den heute
+                            verlorenen Glasscheiben gestanden, bliebe es unwahrscheinlich, daß
+                            dieses den seit der 2. Hälfte des 16. Jh. nachweisbaren Überlieferern
+                            der Inschrift entgangen wäre oder daß sie es nicht mitgeteilt
+                            hätten.</note> und nicht einmal die zugehörigen Wappen in den
+                        Glasfenstern angebracht? Im Gegensatz zur bisherigen
+                        Forschung<note n="13">Vgl. dazu die bibliographischen Nachweise bei Sebald, Goldaltar
+                            88ff., der sich dieser Auffassung anschließt und die Liebfrauenkirche
+                            als einen "blockhaft vor der Stadtmauer aufragenden Baukörper"
+                            interpretiert, der "auch die politischen Interessen dieses mächtigen
+                            Bauherren" (ebd. 90) wiederspiegele.</note>, die nahezu einstimmig in Erzbischof Balduin von
+                        Trier den Erbauer der Liebfrauenkirche und den Stifter ihrer Ausstattung
+                        sieht und in ihr gar den "Höhepunkt des Balduinischen
+                            Kirchenbaues"<note n="14">So Ronig, Kunst unter Balduin 498.</note> feiert, ergab die eingehende Diskussion
+                        dieser Fragen ein völlig neues Bild<note n="15">Vgl. zum Folgenden ausführlich Nikitsch, Kirchenbau 9ff.</note>: Der für den Verlust des
+                        Reichsfreiheit Oberwesels verantwortliche Balduin war weder Bauherr noch
+                        Stifter noch ein besonderer Wohltäter der Liebfrauenkirche. Stadt und Stift,
+                        die wirklichen Bauherren, dürften aus Opportunitätsgründen auf die
+                        figürliche Darstellung ihrer selbst verzichtet haben, ebenso auf die Nennung
+                        von Namen und die Anbringung von Wappen. Standort, Inhalt und Form dieser
+                        Inschrift dürften demnach eher als inhaltlich zwar dezenten, sonst aber
+                        unübersehbaren Hinweis<note n="16">Bezeichnenderweise kann die sich über die fünf Chorfenster
+                            erstreckende Inschrift nur von einem bestimmten Punkt der Kirche aus
+                            rasch und vollständig erfaßt und gelesen werden: vom Hauptaltar aus, dem
+                            Standort des mit dem Gesicht nach Osten zelebrierenden Priesters. Und
+                            der Priester, der 1331 die ersten sakralen Handlungen an diesem Altar
+                            vollzog, war der Konsekrator der Kirche, Erzbischof Balduin von
+                            Trier.</note> der Stadt und der Stiftsherren an den
+                        ungeliebten Stadtherren Balduin zu verstehen sein, daß mit dem Bau ihrer
+                        Kirche bereits im Jahr 1308, also vor seiner Zeit, begonnen worden war und
+                        daß Planung und Bau in einem reichsstädtischen Bewußtsein wurzelten, das
+                        durch die Pfandherrschaft Balduins nicht obsolet geworden war. Als
+                        Hersteller der Oberweseler Glasmalereien könnte eine in Mainz ansässige
+                            Werkstatt<note n="17">Vgl. dazu Becksmann, Farbverglasung 386 mit Anm. 74 und Rauch
+                            65f.</note> in Frage kommen, die zwischen 1320 und 1340 auch
+                        in Bacharach, Mainz und Oppenheim tätig war.</ab>
+          </div><div type="bibliography"><list n="literature"><item>Braun und Hogenberg, Urbium fol. 24 (erw.).</item><item>Bertius, Commentariorum 3, 289 (erw.)</item><item>Merian, Topographia Hassiae 171 (erw.).</item><item>Brouwer/Masen, Antiquitatum 2, 211 (erw.).</item><item>Manuscripta fol. 55v (freundlicher Hinweis meines Kollegen Dr. Rüdiger
+                        Fuchs).</item><item>Brouwer/Masen, Metropolis 1, 253.</item><item>Rhein. Antiquarius II 8, 14.</item><item>Lotz, Kunst-Topographie 1, 482.</item><item>NN., Liebfrauenkirche 3.</item><item>Bock, Baudenkmale 1. Serie (Art. Die ehemalige Stiftskirche Unserer
+                        Lieben Frau zu Oberwesel) 1.</item><item>Schneider, Ober-Wesel 184 (mit zeichnerischer Wiedergabe der
+                        Inschrift).</item><item>Vuy, Geschichte 148.</item><item>Hermann, Führer 19.</item><item>Oidtmann, Glasmalereien 1, 152f. mit Abb. 266 (zeichnerische Wiedergabe
+                        eines Details der Inschrift aus Fenster I 10 A).</item><item>Rave, Baukunst 47.</item><item>von Lepel, Wandmalereien 10.</item><item>Clemen, Gotische Monumentalmalereien 342.</item><item>Jahn, Stiftskirche 419 Anm. 4.</item><item>Pauly, Stifte 268.</item><item>Schwarz, Chronik 29.</item><item>Petz, Lettner 80</item><item>Nikitsch, Oberwesel 181.</item><item>Nikitsch, Wiederentdeckung 18 mit Abb. 1 (Wiedergabe der gesamten
+                        Inschrift).</item><item>Sebald, Großinventar 33 Anm. 14.</item><item>Nikitsch, Kirchenbau 8.</item><item>Rauch, Memoria und Macht 66 Anm. 1.</item><item>Kdm. Rhein-Hunsrück 2.2, 201f. mit Abb. 64.</item><item>Fuchs, Mos Treverensis 114.</item>
+            </list>
+          </div>
+        </body>
+      </text>
+    </group>
+  </text>
+
+</TEI></resource><resource>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="de"><teiHeader><fileDesc><titleStmt><title>DI 60, Nr. 157</title><author>Eberhard J. Nikitsch</author>
+      </titleStmt><editionStmt><p>Deutsche Inschriften Online: <ref type="external" target="http://www.inschriften.net/rest/di060/articles/di060-0157"/>
+                            </p>
+      </editionStmt><publicationStmt><authority>Akademie der Wissenschaften und der Literatur | Mainz - Digitale Akademie</authority><availability><licence>Bereitgestellt unter einer <ref target="http://creativecommons.org/licenses/by-sa/2.0/de/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 2.0 Deutschland Lizenz (CC BY-SA 2.0 DE)</ref>
+                                </licence><p>Bei Verwendung müssen Sie die Namen des Urhebers und der Zuschreibungsempfänger, den Rechtevermerk, den Lizenzvermerk, den Haftungsausschluss und folgenden Link zum Material angeben: <ref type="external" target="http://nbn-resolving.de/urn:nbn:de:0238-di060mz08k0015704"/>
+                                </p>
+        </availability><date>2004</date>
+      </publicationStmt><seriesStmt><title>Rhein-Hunsrück-Kreis I</title><respStmt><resp>Gesammelt und bearbeitet von</resp><name>Eberhard J. Nikitsch</name>
+        </respStmt><biblScope unit="volume">Band <num>60</num> der Reihe "Die Deutschen Inschriften"</biblScope>
+      </seriesStmt><sourceDesc><msDesc><msIdentifier><repository>Deutsche Inschriften Online</repository><idno type="urn">di060mz08k0015704</idno><altIdentifier><idno type="catalogue">di060-0157</idno>
+            </altIdentifier><altIdentifier><idno type="uid">156</idno>
+            </altIdentifier>
+          </msIdentifier><msPart xml:id="di060-0157-01"><msIdentifier><idno>di060-0157-01</idno>
+            </msIdentifier><physDesc><objectDesc><supportDesc><support><p>Dreiteilige Lehrtafel mit der Darstellung der Zeichen der letzten
+                        15 Tage vor dem Jüngsten Gericht. Im Jahr 1854 mit unbestimmtem Standort
+                        erstmals erwähnt<note n="1">Vgl. Kugler, Kleine Schriften 313f.</note>, heute an der Wand des nördlichen
+                        Seitenschiffs befestigt. Querrechteckiges Triptychon aus Holz mit
+                        profiliertem Rahmen und rotumrandeter Innenseite. Die teils auf Leinwand,
+                        teils auf Pergament ausgeführte Ölmalerei nimmt die Innenseiten der
+                        quadratischen Mitteltafel und der beiden Flügel ein. Die Außenseiten mit der
+                        Darstellung des Sündenfalls und der Vertreibung aus dem Paradies sind
+                        inschriftlos. Dem Thema entsprechend umfaßt die gesamte Bildfläche 15 in
+                        drei Reihen übereinander angeordnete Einzelbilder, deren Inhalt durch
+                        überschriebene, gold auf Schwarz gemalte Inschriften erklärt wird. Die
+                        Bildfolge beginnt links oben auf dem linken Flügel mit einem geteilten Bild,
+                        das den schreibenden hl. Hieronymus in seiner Studierstube zeigt. Über ihm
+                        eine weiß auf Schwarz gemalte, siebenzeilige Inschrift (A1), die die Quelle
+                        der folgenden Bildinhalte und Texte angibt. In den einzelnen Bildfeldern
+                        werden die zeichenhaften Ereignisse der einzelnen Tage vorgeführt und durch
+                        die Beischriften (A2 bis P1) kommentiert. Dargestellt wird in der Regel eine
+                        kleine Gruppe Menschen aus unterschiedlichen bürgerlichen Schichten, die den
+                        jeweiligen Katastrophen ausgesetzt sind oder sie zumindest erstaunt,
+                        verängstigt oder gar entsetzt verfolgen und gestenreich kommentieren. Das
+                        mit Inschrift und Bibelzitat (P1) überschriebene Schlußbild auf dem rechten
+                        Flügel unten zeigt den 15. Tag mit dem Jüngsten Gericht. In der Mitte thront
+                        Christus als Weltenrichter auf Regenbogen und Weltkugel, flankiert von den
+                        Fürbitte leistenden Maria und Johannes dem Täufer. Unterhalb dieser
+                        Deesis-Gruppe entsteigen die Auferstehenden ihren Gräbern und werden nach
+                        links in den Himmel, nach rechts in die Hölle gewiesen. Auf der Seite der
+                        Erlösten kniet (in stark verkleinertem Maßstab) der Stifter in
+                        Kanonikertracht, in den Händen sein abgenommenes Birett. Ihm beigegeben sind
+                        sein Wappen und ein Spruchband mit hexametrisch gereimter, schwarz auf Weiß
+                        gemalter Fürbittinschrift (P2). Das Triptychon wurde in den Jahren 1895-98
+                        und 1979-81 restauriert<note n="2">Kdm. 292.</note>.</p><dim>H. 204, B. 395, Bu. 2,5 (A1), 4 (A2-P1), 1,5 (P2) cm.</dim>
+                  </support><condition n="0">erhalten</condition>
+                </supportDesc>
+              </objectDesc><typeDesc><typeNote>Gotische Minuskel mit Versalien, gemalt.</typeNote>
+              </typeDesc>
+            </physDesc><history><origin><origPlace><settlement>Oberwesel</settlement><placeName>Kath. Pfarrkirche Unserer Lieben Frau</placeName>
+                </origPlace><origDate><date from="1490-01-01" to="1514-12-31" datingPoint="1515AAB0000000A3">vor 1515</date>
+                </origDate>
+              </origin>
+            </history>
+          </msPart>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader><text><group><text corresp="#di060-0157-01"><body><div type="edition"><div type="textpart" subtype="section" n="A1" xml:id="di060-0157-01-01"><lb n="1"/><lg type="par"><l n="lno">De signis · xv · dieru(m) <lb n="2"/> Ieronims<ref type="annotation" corresp="#an-a"/> ·
+                                            i(n) · an(n)alibus · he=<lb n="3"/>breor(um) i(n)uenit · signa xv
+                                            · dier(um) <lb n="4"/> an(te) · diem · iudicii · S(ed) · vtru(m) <lb n="5"/>
+                                            (con)tinui · futuri · sint · dies · illi · <lb n="6"/> an ·
+                                            int(er)<milestone unit="block"/>polati(m) · no(n) <lb n="7"/> expre<milestone unit="block"/>ssit</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="A2" xml:id="di060-0157-01-02"><lb n="1"/><lg type="par"><l n="lno">P(ri)mo die eriget se mare xl · cubitis sup(er)
+                                            altitudine(m) mo(n)tiu(m) stans in loco <lb n="2"/> suo q(ua)si
+                                                murus<ref type="annotation" corresp="#an-b"/>
+                                            </l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="B" xml:id="di060-0157-01-03"><lb n="1"/><lg type="par"><l n="lno">Secundo · t(antu)m · <hi rend="ligature">de</hi>scen<hi rend="ligature">de</hi> t·
+                                            vt · vix · vi<hi rend="ligature">de</hi>ri · possit ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="C" xml:id="di060-0157-01-04"><lb n="1"/><lg type="par"><l n="lno">Tercio · marine · belue · a<hi rend="ligature">pp</hi>(are)ntes ·
+                                                mare<ref type="annotation" corresp="#an-a"/> · dabu(n)t · rugit(us) · vsq(ue) ·
+                                            ad ·</l><l n="lno">celu(m) ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="D" xml:id="di060-0157-01-05"><lb n="1"/><lg type="par"><l n="lno">Quarto · ardebit · mare ·<ref type="annotation" corresp="#an-c"/>
+                                            </l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="E" xml:id="di060-0157-01-06"><lb n="1"/><lg type="par"><l n="lno">Qui(n)to · herbe · (et)<ref type="annotation" corresp="#an-d"/> · arbores ·
+                                            dabu(n)t · rore(m) · sanguineum ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="F" xml:id="di060-0157-01-07"><lb n="1"/><lg type="par"><l n="lno">Sexto · ruent · edificia ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="G" xml:id="di060-0157-01-08"><lb n="1"/><lg type="par"><l n="lno">Septimo · petre · ad · inuice(m) · collident(ur)
+                                            ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="H" xml:id="di060-0157-01-09"><lb n="1"/><lg type="par"><l n="lno">Octauo · g(e)n(e)ralis<ref type="annotation" corresp="#an-e"/> · fiet ·
+                                            terremotus ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="I" xml:id="di060-0157-01-10"><lb n="1"/><lg type="par"><l n="lno">Nono · equabit(ur) · terra ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="K" xml:id="di060-0157-01-11"><lb n="1"/><lg type="par"><l n="lno">Decimo · exibu(n)t · ho(min)es · <hi rend="ligature">de</hi> ·
+                                            cauernis · (et)<ref type="annotation" corresp="#an-d"/> · ibu(n)t ·
+                                                ve(lu)d<ref type="annotation" corresp="#an-f"/> · ame(n)tes · (et)<ref type="annotation" corresp="#an-d"/>
+                                            · no(n) · poteru(n)t · mutuo · loqui</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="L" xml:id="di060-0157-01-12"><lb n="1"/><lg type="par"><l n="lno">Un<hi rend="ligature">de</hi>(cim)o<ref type="annotation" corresp="#an-g"/> · surge(n)t · ossa
+                                            · mortuor(um) · (et)<ref type="annotation" corresp="#an-d"/> · stabu(n)t · sup(er)
+                                            · sepulcra ·</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="M" xml:id="di060-0157-01-13"><lb n="1"/><lg type="par"><l n="lno">Duodecimo cadent stelle</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="N" xml:id="di060-0157-01-14"><lb n="1"/><lg type="par"><l n="lno">Tercio<hi rend="ligature">de</hi>ci(m)o<ref type="annotation" corresp="#an-g"/> · morie(n)t(ur)
+                                            · viue(n)tes · vt · cu(m) · mortuis ·
+                                        resurga(n)t</l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="O" xml:id="di060-0157-01-15"><lb n="1"/><lg type="par"><l n="lno">Quarto<hi rend="ligature">de</hi>ci(m)o ·
+                                                ar<hi rend="ligature">de</hi>b(i)t<ref type="annotation" corresp="#an-h"/> · celu(m) ·
+                                                (et)<ref type="annotation" corresp="#an-d"/> · terra<ref type="annotation" corresp="#an-i"/> · i(n)
+                                            sup(er)ficies · terre · (et)<ref type="annotation" corresp="#an-d"/> ·
+                                                <hi rend="ligature">ae</hi>ris<ref type="annotation" corresp="#an-k"/>
+                                            </l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="P1" xml:id="di060-0157-01-16"><lb n="1"/><lg type="par"><l n="lno">Qui(n)to<hi rend="ligature">de</hi>ci(m)o · fiet · celu(m) · nouu(m)
+                                            · (et)<ref type="annotation" corresp="#an-d"/> · t(e)rra · noua · et · resurge(n)t
+                                            · om(ne)s · Vt · ait · d(omi)n(u)s · sic(ut) · fulgur ·
+                                            ab · ori(ente) · (et)<ref type="annotation" corresp="#an-l"/> · paret · i(n) · <lb n="2"/><hi rend="ligature">oc</hi>cid(ent)em<ref type="annotation" corresp="#an-m"/>
+                                                (et)c(etera)<ref type="annotation" corresp="#an-d"/>
+                                            </l>
+          </lg>
+        </div><div type="textpart" subtype="section" n="P2" xml:id="di060-0157-01-17"><lb n="1"/><lg type="par"><l n="lno">Dum · <hi rend="ligature">ve</hi>neris · iudicare <lb n="2"/> noli · me <lb n="3"/>
+                                            con<hi rend="ligature">de</hi>mpnare</l>
+          </lg>
+        </div>
+                                </div><div type="apparatus"><list n="annotations"><item xml:id="an-a">Sic!</item><item xml:id="an-b">Die letzten drei Worte sind aus Platzgründen kleiner
+                            geschrieben.</item><item xml:id="an-c">Bei Comestor (vgl. Anm. 5) folgt "et aquae".</item><item xml:id="an-d"><hi rend="italic">et</hi> als tironische Note.</item><item xml:id="an-e"><hi rend="italic">r</hi> klein hochgestellt.</item><item xml:id="an-f"><hi rend="italic">d</hi> klein hochgestellt, so für <hi rend="italic">velut</hi>.</item><item xml:id="an-g"><hi rend="italic">o</hi> klein hochgestellt.</item><item xml:id="an-h"><hi rend="italic">t</hi> klein hochgestellt.</item><item xml:id="an-i">Der folgende Textteil fehlt bei Comestor; vgl. Anm. 5.</item><item xml:id="an-k"><hi rend="italic">in</hi> bis <hi rend="italic">aeris</hi> fehlt bei Slenzcka. -
+                            Letztes Wort aus Platzgründen kleiner geschrieben.</item><item xml:id="an-l"><hi rend="italic">et</hi> als tironische Note. - Diese hier nur scheinbar keinen
+                            Sinn ergebende kopulative Konjunktion erklärt sich durch das fehlende
+                            Verb im vorhergehenden Satzteil, der bei Comestor (wie Anm. 5)
+                            vollständig "Sicut fulgur exit ab oriente" lautet.</item><item xml:id="an-m">Bei Comestor (vgl. Anm. 5) folgt nach <hi rend="italic">occidentem</hi> "sic erit
+                            adventus Filii hominis" (Mt. 24,27).</item>
+                                    </list><ab type="heraldry"><seg><heraldry>
+        Lutern
+      </heraldry>
+              </seg>
+            </ab><ab type="verse">Ein Hexameter, leoninisch gereimt (P2).</ab>
+          </div><div type="translation"><ab>Über die Zeichen der 15 Tage. Hieronymus hat in den Büchern der
+                        Juden die Zeichen der 15 Tage vor dem Jüngsten Gericht gefunden. Ob aber
+                        jene Tage aufeinander folgen oder mit Unterbrechungen eintreten werden, hat
+                        er nicht gesagt (A1). - Am ersten Tag wird sich das Meer vierzig Ellen hoch
+                        über die Höhe der Berge erheben und auf seinem Platze stehen wie eine Mauer
+                        (A2). - Am zweiten (Tag) wird es so sehr sinken, daß man es kaum noch sehen
+                        kann (B). - Am dritten (Tag) werden aus dem Meer Seeungeheuer erscheinen und
+                        ein Gebrüll erheben bis zum Himmel hin (C). - Am vierten (Tag) wird das Meer
+                        brennen (D). - Am fünften (Tag) werden Kräuter und Bäume blutigen Tau (von
+                        sich) geben (E). - Am sechsten (Tag) werden die Gebäude einstürzen (F). - Am
+                        siebten (Tag) werden die Felsen gegeneinander stoßen (G). - Am achten (Tag)
+                        wird es ein allgemeines Erdbeben geben (H). - Am neunten (Tag) wird die Erde
+                        eingeebnet werden (I). - Am zehnten (Tag) werden die Menschen aus Höhlen
+                        herauskommen und wie Wahnsinnige herumgehen und nicht miteinander sprechen
+                        können (K). - Am elften (Tag) werden die Gebeine der Toten auferstehen und
+                        über den Gräbern stehen (L). - Am zwölften (Tag) werden die Sterne
+                        niederfallen (M). - Am dreizehnten (Tag) werden die Lebenden sterben, um mit
+                        den Toten aufzuerstehen (N). - Am vierzehnten (Tag) werden Himmel und Erde
+                        brennen an der Oberfläche von Erde und Luft (O). - Am fünfzehnten (Tag) wird
+                        ein neuer Himmel und eine neue Erde werden und alle werden auferstehen; wie
+                        der Herr sagt: Gleich wie ein Blitz (ausgeht) vom Aufgang und leuchtet bis
+                        zum Niedergang (usw.) (P1). - Wenn Du kommen wirst zu richten, verdamme mich
+                        nicht (P2).</ab>
+          </div><div type="commentary"><ab>Die hervorragend ausgeführte und entsprechend der Schreibtechnik
+                        feinstrukturierte Minuskel zeigt als Besonderheiten flachgedecktes
+                            <hi rend="italic">g</hi>, gespaltenes oberes Schaftende bei <hi rend="italic">b</hi>, <hi rend="italic">h</hi>
+                            und<hi rend="italic"> l</hi> sowie einmal gerundetes Schluß-s (bei
+                            <hi rend="italic">superficies</hi>). Die als Quadrangel gestaltete Fahne des Schaft-r
+                        ist gelegentlich mit einem beidseitig ausgezogenen Zierstrich geschmückt
+                        (etwa bei <hi rend="italic">terra</hi>), zudem wechseln sich in Wörtern mit mehreren
+                            <hi rend="italic">r</hi> Schaft-r und Bogen-r ab. Vokalisches <hi rend="italic">u</hi> wird durch
+                        einen kleinen v-förmigen Haken gekennzeichnet, <hi rend="italic">i</hi> durch einen
+                        winzigen Punkt, <hi rend="italic">e</hi> wird - im Gegensatz zur Vorlage (s. u.) - stets
+                        anstelle von <hi rend="italic">ae</hi> verwendet. Die kunstvoll aus Elementen der
+                        gotischen Majuskel und Minuskel zusammengesetzten, zudem frakturähnlich
+                        gestalteten Versalien sind zum Teil eigenwillige Schöpfungen, die man ohne
+                        den Wortzusammenhang kaum in ihrem hier gebrauchten Sinn interpretieren
+                        würde: Versales <hi rend="italic">D</hi> ähnelt einem unzialen D, versales <hi rend="italic">N</hi>
+                        einem runden N mit gebrochenem Bogen, versales <hi rend="italic">Q</hi> einem konturierten
+                        Minuskel-k und versales <hi rend="italic">S</hi> einem Minuskel-b mit gerundetem Bogen.
+                        Einige in der epigraphischen Schrift kaum übliche Kürzungszeichen (wie
+                        kleines <hi rend="italic">z</hi> nach <hi rend="italic">S</hi> für <hi rend="italic">Sed</hi> und klein
+                        überschriebenes <hi rend="italic">d</hi> nach <hi rend="italic">ve</hi> für <hi rend="italic">velud</hi>) lassen
+                        darauf schließen, daß der Schriftenmaler mit den Usancen der
+                        Handschriftenschreiber vertraut war. Die herausragende Bedeutung des letzten
+                        Bildes mit dem Jüngsten Gericht wird auch durch aufwendige Worttrenner (drei
+                        rote, übereinander gesetzte Punkte, vertikal begleitet von längeren
+                        gefiederten Strichen) betont, die auch sonst variantenreich eingesetzt
+                        werden: Neben einfachen Punkten erscheinen Quadrangeln, punktierte Rauten,
+                        kleine Blüten und Sternchen. Für die im insularen Bereich<note n="4">Vgl. zum Folgenden ausführlich Heist, Signs pass. und Simon
+                            51ff.</note> seit
+                        dem 9. Jahrhundert entwickelte und Ende des 10. Jahrhunderts erstmals in der
+                        vorliegenden Form nachweisbare Legende von den 15 Zeichen, die den
+                        Weltuntergang und das damit verbundene Jüngste Gericht ankündigen sollen,
+                        sind keine direkten älteren Quellen nachzuweisen. Die allen Varianten der
+                        Legende gemeinsame Berufung auf die sonst unbekannten und nicht
+                        überlieferten "Annales Hebraeorum", die der im 4. und 5. Jahrhundert als
+                        Theologe und Kirchenlehrer tätige hl. Hieronymus verwendet haben soll, ist
+                        wohl fiktiv und dürfte zur höheren Glaubwürdigkeit des Textes eingesetzt
+                        worden sein. Die lateinischen Beischriften des Oberweseler Triptychons gehen
+                        - abgesehen von kleinen inhaltlichen Abweichungen - letztlich auf eine von
+                        dem Pariser Theologen Petrus Comestor in seinem 1173 vollendeten Hauptwerk
+                        "Historia Scholastica"<note n="5">Obwohl der lateinische Text des Petrus Comestor als nicht gesichert
+                            gilt und die Edition bei Migne keine Textvarianten verzeichnet, muß
+                            aufgrund der - wenn auch geringen - Abweichungen in Inhalt und
+                            Schreibweise davon ausgegangen werden, daß für die textliche Fassung der
+                            Oberweseler Inschriften nicht Comestor direkt, sondern eine bislang
+                            nicht bekannte Variante benutzt wurde.</note> verbreitete Fassung der Legende zurück.
+                        Obwohl diese in erweiterter Form in die um 1270 entstandene Sammlung
+                        "Legenda aurea" des Jakobus de Voragine aufgenommen wurde, war sie -
+                        versehen mit lateinischen oder auch volkssprachlichen Texten<note n="6">Vgl. dazu den jüngsten Überblick über das volkssprachliche
+                            "15-Zeichen-Korpus" bei Schmidt, Ausbildung 9f.</note> -
+                        in bildlichen Darstellungen des Mittelalters wie illustrierten Handschriften
+                        oder Holzschnittfolgen nicht übermäßig weit verbreitet. Die Fünfzehn Zeichen
+                        in Oberwesel gelten als die einzige bekannte vollständige Behandlung dieses
+                        Themas innerhalb der mittelalterlichen Tafelmalerei. Das Triptychon gehört
+                        zusammen mit den Retabeln des Nikolaus- und des Martha-Altars<note n="7">Vgl. dazu Nrr. 151 und 153.</note>
+                        zu den herausragenden spätmittelalterlichen Ausstattungsstücken der
+                        Liebfrauenkirche, die durch Stifterwappen und Stifterbild eindeutig als
+                        Schenkungen des als ergrauten Mann dargestellten Petrus Lutern - seit 1475
+                        Kanoniker an Liebfrauen und seit 1508 Propst von St. Martin zu Oberwesel -
+                        zu identifizieren sind. Die Tafeln führen dem Kirchgänger auf der Außenseite
+                        der Flügel den Beginn, auf deren Innenseiten eindrucksvoll das Ende des
+                        Heilsgeschehens vor Augen; sie dienen einerseits der Erbauung und Belehrung
+                        aller Betrachter, warnen vor der ewigen Verdammnis und rufen zur Umkehr auf,
+                        fördern andererseits aber auch die schnellere Erlangung des Seelenheils
+                        ihres Stifters. Obwohl die Oberweseler Tafeln durchaus als konventionelles
+                        Altarretabel mit liturgischer Nutzung an Werk- und Feiertagen gedient haben
+                        könnten, wurden sie von der jüngsten historischen Forschung überzeugend dem
+                        fast vergessenen spätmittelalterlichen Ausstattungstypus
+                            "Lehrtafel"<note n="8">Ausgangspunkt dieser erstmals von Boockmann, Belehrung 2, 15 und 17
+                            vorgenommenen Einordnung war - angesichts des vorliegenden Bildthemas -
+                            die von ihm gestellte (und bislang ungeklärte) Frage, "was das denn für
+                            ein Altar und wem dieser wohl geweiht gewesen sein mag" (ebd.
+                            2).</note> bzw. "lehrhafte Bildtafel"<note n="9">Vgl. dazu ausführlich Slenczka 13ff.</note>
+                        zugeordnet. Da die Schriftformen keine enge Datierung zulassen und sowohl
+                        eindeutige stilistische Kriterien als auch geeignete Vergleichsbeispiele
+                            fehlen<note n="10">Vgl. dazu Kdm. 296f.</note>, kann sich die Datierung des in einer
+                        mittelrheinischen Werkstatt hergestellten Triptychons letztlich nur an den
+                        Lebensdaten des in der Liebfrauenkirche begrabenen Stifters (†
+                            1515)<note n="11">Vgl. Nr. 159. - Offen bleibt, ob Lutern selbst als "Entwerfer des
+                            Programms" (Kdm. 296) anzusehen ist und ob er als zusammenstürzende
+                            Stadt auf dem Bild des 6. Tages wirklich Oberwesel und die Wernerkapelle
+                            darstellen ließ (so Rothfuß 14).</note> orientieren; andere Datierungsvorschläge (Anf. 16.
+                        Jh., nach 1506, um 1510, 1512) sind möglich, bleiben aber
+                        spekulativ.</ab>
+          </div><div type="bibliography"><list n="literature"><item>NN., Liebfrauenkirche 16-18.</item><item>Lehfeldt, Bau- und Kunstdenkmäler 615.</item><item>Hermann, Führer, Abb. S. 34.</item><item>Fowler, Fifteen last days, 320f. mit Taf. III</item><item>Campignier, Rundgang, Abb. S. 44.</item><item>Simon, Fünfzehn Zeichen 213-215 (beschr.).</item><item>Boockmann, Stadt, Abb. 505.</item><item>Rothfuß, Flügelaltar.</item><item>Kdm. Rhein-Hunsrück 2.2, 292-297 mit Farbtafel 13 und Abb.
+                        170-173.</item><item>Slenczka, Bildtafeln 224f. mit Abb. I.4 und Titelbild.</item><item>Schwarz, Kirche, Abb. S. 16.</item>
+            </list>
+          </div>
+        </body>
+      </text>
+    </group>
+  </text>
+
+</TEI></resource><resource>
+			<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="de"><teiHeader><fileDesc><titleStmt><title>DI 60, Nr. 159</title><author>Eberhard J. Nikitsch</author>
+      </titleStmt><editionStmt><p>Deutsche Inschriften Online: <ref type="external" target="http://www.inschriften.net/rest/di060/articles/di060-0159"/>
+                            </p>
+      </editionStmt><publicationStmt><authority>Akademie der Wissenschaften und der Literatur | Mainz - Digitale Akademie</authority><availability><licence>Bereitgestellt unter einer <ref target="http://creativecommons.org/licenses/by-sa/2.0/de/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 2.0 Deutschland Lizenz (CC BY-SA 2.0 DE)</ref>
+                                </licence><p>Bei Verwendung müssen Sie die Namen des Urhebers und der Zuschreibungsempfänger, den Rechtevermerk, den Lizenzvermerk, den Haftungsausschluss und folgenden Link zum Material angeben: <ref type="external" target="http://nbn-resolving.de/urn:nbn:de:0238-di060mz08k0015902"/>
+                                </p>
+        </availability><date>2004</date>
+      </publicationStmt><seriesStmt><title>Rhein-Hunsrück-Kreis I</title><respStmt><resp>Gesammelt und bearbeitet von</resp><name>Eberhard J. Nikitsch</name>
+        </respStmt><biblScope unit="volume">Band <num>60</num> der Reihe "Die Deutschen Inschriften"</biblScope>
+      </seriesStmt><sourceDesc><msDesc><msIdentifier><repository>Deutsche Inschriften Online</repository><idno type="urn">di060mz08k0015902</idno><altIdentifier><idno type="catalogue">di060-0159</idno>
+            </altIdentifier><altIdentifier><idno type="uid">158</idno>
+            </altIdentifier>
+          </msIdentifier><msPart xml:id="di060-0159-01"><msIdentifier><idno>di060-0159-01</idno>
+            </msIdentifier><physDesc><objectDesc><supportDesc><support><p>Epitaph des Stiftsherrn und Propstes Petrus Lutern. Ursprünglich an
+                        unbekannter Stelle im Kircheninnern, spätestens seit 1818 am heutigen
+                            Standort<note n="1">Das große Epitaph verdeckt die Stelle, an der sich ehemals ein beim
+                            Bau des Kapitelhauses verblendetes Westfenster (so Kdm. 323 mit Abb.
+                            248) bzw. der Aufgang von der Kirche zum Kapitelhaus befunden hat (so
+                            Rhein. Antiquarius II 8, 6f.).</note> innen an der Westwand des südlichen Seitenschiffs
+                        in ca. 3 m Höhe angebracht. Grau gefaßter Tuffstein, Sockel und
+                        Inschrifttafel aus Sandstein. Die nahezu vollplastisch gestaltete Figur des
+                        Verstorbenen in priesterlichem Gewand<note n="2">Manipel über der linken Hand, Kasel mit Kreuzstab, Albe, Amikt, auf
+                            dem Kopf ein Birett und in den Händen einen Meßkelch mit flacher,
+                            bortengefaßter Bedeckung (palla calicis).</note> mit dem Kelch vor der
+                        Brust steht mit leicht vorgesetztem linken Bein in einer Nische unter einem
+                        doppelt überschnittenen Kielbogenbaldachin. Daneben stehen unter schmalen
+                        übereckgestellten Nischen zwei kleine Figuren in zeitgenössischer Tracht auf
+                        korbförmigen Konsolen, zur Rechten des Verstorbenen die hl. Martha (von
+                        Bethanien), zur Linken - stark beschädigt - wohl ihre Schwester
+                            Maria<note n="3">Die Figuren sind heute vertauscht; vgl. dazu die Identifizierung bei
+                            Lehfeldt und die Abb. bei Hermann bzw. Kautzsch.</note>. Der reich profilierte Sockel zeigt eine von Putten
+                        gehaltene tabula ansata mit der fünfzeiligen Grabinschrift, darunter in der
+                        Mitte das flachreliefierte Wappen des Verstorbenen. Das Grabdenkmal ist im
+                        Unterteil bestoßen, die Schrifttafel aus Sandstein leicht zerkratzt und
+                        durch neuzeitliche Ritzinschriften verunstaltet.</p><dim>H. 247, B. 105, Bu. 2,5 cm.</dim>
+                  </support><condition n="0">erhalten</condition>
+                </supportDesc>
+              </objectDesc><typeDesc><typeNote>Kapitalis.</typeNote>
+              </typeDesc>
+            </physDesc><history><origin><origPlace><settlement>Oberwesel</settlement><placeName>Kath. Pfarrkirche Unserer Lieben Frau</placeName>
+                </origPlace><origDate><date from="1515-01-01" to="1515-12-31" datingPoint="1515AAA0000000A3">1515</date>
+                </origDate>
+              </origin>
+            </history>
+          </msPart>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader><text><group><text corresp="#di060-0159-01"><body><div type="edition"><div type="textpart" subtype="section" xml:id="di060-0159-01-01"><lb n="1"/><lg type="par"><l n="lno">PETRVS · LVTERN · VIR · INTEGER · DIVI · MARTINI ·
+                                            ECCL(ESI)E · P(RE)POSITVS <lb n="2"/> HVIVSQVE · EDIS ·
+                                            CANO(NI)CVS · POST · ALIA · PROBITATIS · OFFICIA · <lb n="3"/>
+                                            SACELLV(M) · ISTVD<ref type="annotation" corresp="#an-a"/> · SVIS · SVMPTIBVS · AD
+                                            · LAVDE(M) · DEI · ET · HONORE(M) · DIVE · <lb n="4"/> MARTHE ·
+                                            HOSPITE · CHRISTI · DICARE · CVRAVIT · TANDEM · <lb n="5"/>
+                                            FELICITER · OBYT · ANNO · SALVTIS · M · D · XV · NONAS ·
+                                                MARCIAS<ref type="annotation" corresp="#an-b"/>
+                                            </l>
+          </lg>
+        </div>
+                                </div><div type="apparatus"><list n="annotations"><item xml:id="an-a">In winzigen Buchstaben über dem folgenden Wort (zeitgleich)
+                            nachgetragen.</item><item xml:id="an-b">So für <hi rend="italic">NONIS MARCIIS</hi>.</item>
+                                    </list><ab type="heraldry"><seg><heraldry>
+        Lutern
+      </heraldry>
+              </seg>
+            </ab>
+          </div><div type="translation"><ab>Petrus Lutern, ein unbescholtener Mann, Propst der Kirche des
+                        heiligen Martin und Kanoniker dieser Kirche, hat - nach anderen Werken der
+                        Freigiebigkeit - auf seine Kosten diese Kapelle zum Lobe Gottes und zu Ehren
+                        der heiligen Martha, der Gastgeberin Christi, weihen lassen. Schließlich
+                        starb er glückselig im Jahr des Heils 1515 an den Nonen des März (7.
+                            März)<note n="4">Pauly 272 gibt dagegen als Todestag den 5. Februar an.</note>.</ab>
+          </div><div type="commentary"><ab>Die sorgfältig mit deutlicher Linksschrägenverstärkung und
+                        Schattenachse bei <hi rend="italic">O</hi> ausgeführte Kapitalis vermittelt durch ihre
+                        ausgewogene Gestaltung einen nahezu klassisch-römischen Eindruck, der durch
+                        die Verwendung dreiecksförmiger Worttrenner und langer waagerechter Striche
+                        als Kürzungszeichen noch verstärkt wird. Lediglich kleine unauffällige
+                        Merkmale wie etwa der deutlich verlängerte untere Balken des <hi rend="italic">E</hi>, der
+                        etwas gedrückte Bogen des <hi rend="italic">G</hi>, das durchgehend geschlossene
+                            <hi rend="italic">P</hi> und die am unteren Scheitel des Buchstabens ansetzende, kurze
+                        hakenförmige Cauda des <hi rend="italic">Q</hi> verweisen auf die renaissancezeitliche
+                        Entstehung dieser Inschrift. Weitere zeittypische Zeichen sind die
+                        deutlichen Hinweise auf die Stiftungstätigkeit des Verstorbenen, die
+                        antikisierende Wortwahl und die Datumsformel. Der vermutlich aus dem
+                        rechtsrheinischen Bornich (Rhein-Lahn-Kreis)<note n="5">Vgl. dazu das Epitaph seiner Mutter Nr. 111.</note> stammende Petrus
+                            Lutern<note n="6">Vgl. zum Folgenden die Nachweise bei Pauly (Reg.).</note> ist seit 1475 als Kanoniker von Liebfrauen bezeugt,
+                        1508 erhält er dort zusätzlich das Amt des Kustoden und wird somit für den
+                        geordneten Ablauf des Chor- und Gottesdienstes verantwortlich. Am 6. März
+                        1508 wird Lutern durch den Patronatsherrn Michael von Schönburg auf Wesel -
+                        unter Beibehaltung seines Kanonikates in Liebfrauen - zum Propst von St.
+                        Martin, der zweiten Oberweseler Stiftskirche, präsentiert und bereits am 23.
+                        März durch den Trierer Erzbischof Jakob von Baden eingesetzt. Da dieses hohe
+                        Amt von Anfang an eher als Ehren- und Versorgungspfründe eingerichtet worden
+                        war, wundert es nicht, daß Lutern nicht St. Martin, sondern die von ihm
+                        reich mit Kunstgegenständen ausgestattete und auch teilweise
+                            renovierte<note n="7">Als Stifter ließ er sich mit seinem Wappen auf dem 1503 datierten
+                            Retabel des Martha-Altars (Nr. 151), dem Retabel des 1506 datierten
+                            Nikolaus-Altars (Nr. 153), ebenso auf der Fünfzehn-Zeichen-Tafel (Nr.
+                            157) und neben einer Renovierungsinschrift (vorhergehende Nr.)
+                            darstellen. Zudem findet sich sein Wappen auf einem der Schlußsteine im
+                            Südflügel des Kreuzgangs von Liebfrauen. - Die reiche Stiftungstätigkeit
+                            Luterns, die sicher mit der Fürsorge für sein Seelenheil verbunden war,
+                            wäre eine eigene Untersuchung wert und würde ein ähnlich
+                            aufschlußreiches Bild über die Mentalität eines hohen Klerikers um 1500
+                            ergeben, wie es jüngst Fuhrmann für den 1516 verstorbenen Halberstädter
+                            Dompropst Balthasar von Neuenstadt zeichnen konnte.</note> Liebfrauenkirche zu seiner Begräbnisstätte
+                        bestimmte. In seiner Grabinschrift kommt eine besondere Verehrung für die
+                        hl. Martha zum Ausdruck, die sich durch die nur dort bezeugte Einrichtung
+                        einer ihr geweihten Kapelle und die Stiftung des heute auf dem Altar des
+                        Südchors stehenden Martha-Retabels aus dem Jahr 1503 ablesen läßt. Da in
+                        Liebfrauen kein eigenständiger Kapellenbau bekannt ist, ist wohl davon
+                        auszugehen, daß sich die bislang nicht lokalisierte Martha-Kapelle mit
+                        Altar, zugehörigem Retabel und Epitaph des Stifters ehemals im südlichen
+                        Nebenchor von Liebfrauen befunden hat. Allerdings kann es sich in diesem
+                        Fall nur um eine kurze Zeitspanne gehandelt haben, da sich dort seit 1550
+                        der Altar der Marienvikarie<note n="8">Vgl. dazu Pauly 326.</note> (als Pfarraltar) nachweisen läßt.
+                        Das mit großer Meisterschaft in der Verwendung spätgotischer und
+                        renaissancezeitlicher Formen hergestellte Grabdenkmal zeigt den Verstorbenen
+                        porträthaft als älteren Mann und galt lange als eigenhändige Schöpfung des
+                        Mainzer Bildhauers Hans Backoffen<note n="9">Erstmals Dehio 151 und Kautzsch 41f., zuletzt Dehio Rheinland-Pfalz
+                            775.</note>. Ob die jüngste
+                        stilgeschichtliche Kritik und die damit verbundene Zuweisung des
+                        Lutern-Epitaphs an einen unbekannten oberschwäbischen Meister<note n="10">So Goeltzer 53, der demselben Meister - aus rein stilistischen
+                            Gründen - das von ihm erstmals in die Zeit um 1520 datierte Grabdenkmal
+                            des 1508 verstorbenen Mainzer Erzbischofs Jakob von Liebenstein zuweist.
+                            - Nur bedingt nachvollziehbar ist allerdings seine versuchte
+                            Identifizierung dieses Bildhauers mit dem unbekannten (sogenannten
+                            jüngeren) Meister des Ulrich-Epitaphs aus Kloster Adelberg bei
+                            Göppingen; vgl. ebd. 34. Dieser wird von der neuesten kunsthistorischen
+                            Forschung zwar als Backoffenschüler bezeichnet, soll jedoch Mainz um
+                            1515 verlassen und in Adelberg in den Jahren 1515 bis 1520 zumindest
+                            zwei bedeutende Bildwerke geschaffen haben; vgl. dazu ausführlich
+                            Deutsch, Bildhauerwerkstatt 85-97.</note>
+                        plausibel ist, muß der weiteren kunstgeschichtlichen Diskussion überlassen
+                        bleiben.</ab>
+          </div><div type="bibliography"><list n="literature"><item>NN., Liebfrauenkirche 14f.</item><item>Lehfeldt, Bau- und Kunstdenkmäler 613.</item><item>Hermann, Führer, Abb. S. 31.</item><item>Dehio, Gemmingendenkmal 150 mit Abb. 10</item><item>Kautzsch, Backoffen, Abb. 28 auf Taf. 9.</item><item>Back, Werke, Abb. S. 51.</item><item>Müllenbach, Lutern, Abb. S. 87.</item><item>Campignier, Liebfrauenstift 47 (übers.) mit Abb. S. 46.</item><item>Campignier, Rundgang 43 (übers.) mit Abb. S. 42.</item><item>Pauly, Stifte 486.</item><item>Bornheim gen. Schilling, Oberwesel, Abb. S. 7.</item><item>Goeltzer, Backoffen II 32 mit Abb. 21.</item><item>Kdm. Rhein-Hunsrück 2.2, 323 mit Abb. 194.</item><item>Schwarz, Kirche, Abb. S. 14.</item>
+            </list>
+          </div>
+        </body>
+      </text>
+    </group>
+  </text>
+
+</TEI></resource></collection></xtriples>

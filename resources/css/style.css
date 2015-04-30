@@ -1,0 +1,12 @@
+/* Application styles could go here */
+#content .page-header {
+	margin-bottom: 0;
+}
+
+ol.linenums {
+	margin-left: 2.5em;
+}
+
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{ list-style-type: decimal !important }
