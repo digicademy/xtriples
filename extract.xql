@@ -7,7 +7,7 @@ xquery version "3.0";
  :
  : @author Torsten Schrade
  : @email <Torsten.Schrade@adwmainz.de>
- : @version 1.0.0 
+ : @version 1.1.0 
  : @licence MIT
  :
  : Main module containing the webservice
@@ -70,9 +70,9 @@ declare function xtriples:getFormat() {
 (: ### CRAWLING FUNCTIONS ### :)
 
 (: evaluates an XPATH expression in curly braces within a (URI) string and returns the string :)
-declare function xtriples:expressionBasedUriResolver($uri as xs:string, $resource as node()) as xs:string {
+declare function xtriples:expressionBasedUriResolver($uri as xs:string, $currentResource as node()) as xs:string {
 
-	let $expression := concat('$resource', substring-after(substring-before($uri, "}"), "{"))
+	let $expression := concat('$currentResource', substring-after(substring-before($uri, "}"), "{"))
 	let $result := if (xtriples:expressionSanityCheck($expression) = true()) then 
 		try { util:eval($expression) } catch * { $err:description } 
 		else ""
@@ -136,21 +136,21 @@ declare function xtriples:expressionSanityCheck($expression as xs:string) as xs:
 };
 
 (: extracts subject statements from the current resource :)
-declare function xtriples:extractSubjects($resource as node(), $statement as node()*, $index as xs:integer) as item()* {
+declare function xtriples:extractSubjects($currentResource as node(), $statement as node()*, $repeatIndex as xs:integer, $resourceIndex as xs:integer) as item()* {
 
 	let $externalResource := 
 		if (exists($statement/subject/@resource)) then
-			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/subject/@resource, $resource))) then 
-				fn:doc(xtriples:expressionBasedUriResolver($statement/subject/@resource, $resource)) 
+			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/subject/@resource, $currentResource))) then 
+				fn:doc(xtriples:expressionBasedUriResolver($statement/subject/@resource, $currentResource)) 
 			else ""
 		else ""
 
 	let $subjectExpressionConcatenation := 
 		if ($externalResource) then concat("$externalResource", string($statement/subject))
-		else concat('$resource', string($statement/subject))
+		else concat('$currentResource', string($statement/subject))
 
 	let $subjectExpression := 
-		if (matches($subjectExpressionConcatenation, "$index")) then replace($subjectExpressionConcatenation, "$index", $index)
+		if (matches($subjectExpressionConcatenation, "$repeatIndex")) then replace($subjectExpressionConcatenation, "$repeatIndex", $repeatIndex)
 		else $subjectExpressionConcatenation
 
 	let $subjectNodes := if (xtriples:expressionSanityCheck($subjectExpression) = true()) then 
@@ -165,21 +165,21 @@ declare function xtriples:extractSubjects($resource as node(), $statement as nod
 };
 
 (: extracts predicate statements from the current resource :)
-declare function xtriples:extractPredicate($resource as node(), $statement as node()*, $index as xs:integer) as item()* {
+declare function xtriples:extractPredicate($currentResource as node(), $statement as node()*, $repeatIndex as xs:integer, $resourceIndex as xs:integer) as item()* {
 
 	let $externalResource := 
 		if (exists($statement/predicate/@resource)) then
-			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/predicate/@resource, $resource))) then 
-				fn:doc(xtriples:expressionBasedUriResolver($statement/predicate/@resource, $resource)) 
+			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/predicate/@resource, $currentResource))) then 
+				fn:doc(xtriples:expressionBasedUriResolver($statement/predicate/@resource, $currentResource)) 
 			else ""
 		else ""
 
 	let $predicateExpressionConcatenation := 
 		if ($externalResource) then concat("$externalResource", string($statement/predicate))
-		else concat('$resource', string($statement/predicate))
+		else concat('$currentResource', string($statement/predicate))
 
 	let $predicateExpression := 
-		if (matches($predicateExpressionConcatenation, "$index")) then replace($predicateExpressionConcatenation, "$index", $index)
+		if (matches($predicateExpressionConcatenation, "$repeatIndex")) then replace($predicateExpressionConcatenation, "$repeatIndex", $repeatIndex)
 		else $predicateExpressionConcatenation
 
 	let $predicateValue := if (xtriples:expressionSanityCheck($predicateExpression) = true()) then 
@@ -192,21 +192,21 @@ declare function xtriples:extractPredicate($resource as node(), $statement as no
 };
 
 (: extracts object statements from the current resource :)
-declare function xtriples:extractObjects($resource as node(), $statement as node()*, $index  as xs:integer) as item()* {
+declare function xtriples:extractObjects($currentResource as node(), $statement as node()*, $repeatIndex as xs:integer, $resourceIndex as xs:integer) as item()* {
 
 	let $externalResource := 
 		if (exists($statement/object/@resource)) then
-			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/object/@resource, $resource))) then 
-				fn:doc(xtriples:expressionBasedUriResolver($statement/object/@resource, $resource)) 
+			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource))) then 
+				fn:doc(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource)) 
 			else ""
 		else ""
 
 	let $objectExpressionConcatenation := 
 		if ($externalResource) then concat("$externalResource", string($statement/object))
-		else concat("$resource", string($statement/object))
+		else concat("$currentResource", string($statement/object))
 
 	let $objectExpression := 
-		if (matches($objectExpressionConcatenation, "$index")) then replace($objectExpressionConcatenation, "$index", $index)
+		if (matches($objectExpressionConcatenation, "$repeatIndex")) then replace($objectExpressionConcatenation, "$repeatIndex", $repeatIndex)
 		else $objectExpressionConcatenation
 
 	let $objectNodes := if (xtriples:expressionSanityCheck($objectExpression) = true()) then 
@@ -221,110 +221,85 @@ declare function xtriples:extractObjects($resource as node(), $statement as node
 };
 
 (: extracts expressions in prepend/append attributes from the current resource :)
-declare function xtriples:extractPrependAppend($resource as node(), $expressionString as xs:string*, $index as xs:integer) as xs:string* {
+declare function xtriples:extractPrependAppend($currentResource as node(), $expressionString as xs:string*, $repeatIndex as xs:integer, $resourceIndex as xs:integer) as xs:string* {
 	let $expression := substring-after(substring-before($expressionString, "}"), "{")
 	let $result := 
 		if ($expression and xtriples:expressionSanityCheck($expression) = true()) then 
 			try {
-				replace($expressionString, "\{.*\}", util:eval(concat("$resource", $expression))) 
+				replace($expressionString, "\{.*\}", util:eval(concat("$currentResource", $expression))) 
 			} catch * { $err:description }
 		else $expressionString
 	return $result
 };
 
 (: XTriples core function - evaluates all configured statements for the current resource :)
-declare function xtriples:extractTriples($resource as node(), $configuration as node()*) as item()* {
+declare function xtriples:extractTriples($currentResource as node(), $resourceIndex as xs:integer, $configuration as node()*) as item()* {
 
 	(: ensure there is a XML resource - it could still be just a URI to a XML resource :)
-	let $resource := 
-		if (xs:anyURI($resource/@uri)) then 
-			fn:doc($resource/@uri)
-		else $resource
+	let $currentResource := 
+		if (xs:anyURI($currentResource/@uri)) then 
+			fn:doc($currentResource/@uri)
+		else $currentResource
 
 	(: start statement pattern extraction :)
 	for $statement in $configuration//triples/*
 
 		let $repeat := if ($statement/@repeat > 0) then $statement/@repeat else 1
 
-		for $index in (1 to $repeat)
+		for $repeatIndex in (1 to $repeat)
 
 			(: if a condition expression is given in the current statement, evaluate it :)
 			let $condition := 
 				if (exists($statement/condition)) then 
 					if (xtriples:expressionSanityCheck(string($statement/condition)) = true()) then
-						try { util:eval(concat('$resource', string($statement/condition))) } catch * { $err:description }
+						try { util:eval(concat('$currentResource', string($statement/condition))) } catch * { $err:description }
 					else true()
 				else true()
 
 			(: n possible subjects per statement declaration :)
 			let $subjects := 
 				if (starts-with(string($statement/subject), '/')) then 
-					xtriples:extractSubjects($resource, $statement, $index) 
+					xtriples:extractSubjects($currentResource, $statement, $repeatIndex, $resourceIndex) 
 				else $statement/subject
 
 			(: 1 predicate per statement declaration :)
 			let $predicate := 
 				if (starts-with(string($statement/predicate), '/')) then 
-					xtriples:extractPredicate($resource, $statement, $index) 
+					xtriples:extractPredicate($currentResource, $statement, $repeatIndex, $resourceIndex) 
 				else <predicate prefix="{$statement/predicate/@prefix}">{string($statement/predicate)}</predicate>
 
 			(: n possible objects per statement declaration :)
 			let $objects := 
 				if (starts-with(string($statement/object), '/')) then 
-					xtriples:extractObjects($resource, $statement, $index) 
+					xtriples:extractObjects($currentResource, $statement, $repeatIndex, $resourceIndex) 
 				else $statement/object
 
 			(: build statements - but only if the condition expression returned any value - boolean, string, node set etc. :)
 			let $statements := 
 				if ($condition != false()) then 
-					if ($statement/@type = 'mn') then 
-						for $subject at $mnIndex in $subjects
+					for $subject in $subjects
+						let $subjectReturn :=
+							if ($subject = "") then "" else
+							for $object in $objects
 
-							let $subjectPrepend := xtriples:extractPrependAppend($resource, $subject/@prepend, $index)
-							let $subjectAppend := xtriples:extractPrependAppend($resource, $subject/@append, $index)
+								let $subjectPrepend := xtriples:extractPrependAppend($currentResource, $subject/@prepend, $repeatIndex, $resourceIndex)
+								let $subjectAppend := xtriples:extractPrependAppend($currentResource, $subject/@append, $repeatIndex, $resourceIndex)
 
-							let $predicatePrepend := xtriples:extractPrependAppend($resource, $predicate/@prepend, $index)
-							let $predicateAppend := xtriples:extractPrependAppend($resource, $predicate/@append, $index)
+								let $predicatePrepend := xtriples:extractPrependAppend($currentResource, $predicate/@prepend, $repeatIndex, $resourceIndex)
+								let $predicateAppend := xtriples:extractPrependAppend($currentResource, $predicate/@append, $repeatIndex, $resourceIndex)
 
-							let $objectPrepend := if ($objects[$mnIndex]/@prepend) then
-									xtriples:extractPrependAppend($resource, $objects[$mnIndex]/@prepend, $index)
-								else $objects[$mnIndex]/@prepend
-							let $objectAppend := if ($objects[$mnIndex]/@append) then
-									xtriples:extractPrependAppend($resource, $objects[$mnIndex]/@append, $index)
-								else $objects[$mnIndex]/@append
+								let $objectPrepend := xtriples:extractPrependAppend($currentResource, $object/@prepend, $repeatIndex, $resourceIndex)
+								let $objectAppend := xtriples:extractPrependAppend($currentResource, $object/@append, $repeatIndex, $resourceIndex)
 
-							let $statementToReturn :=
-								if ($subject = "") then "" 
-								else <statement>{(
-									functx:remove-attributes(functx:copy-attributes(<subject>{concat($subjectPrepend, $subject, $subjectAppend)}</subject>, $subject), ('append', 'prepend')),
-									functx:remove-attributes(functx:copy-attributes(<predicate>{concat($predicatePrepend, $predicate, $predicateAppend)}</predicate>, $predicate), ('append', 'prepend')),
-									functx:remove-attributes(functx:copy-attributes(<object>{concat($objectPrepend, $objects[$mnIndex], $objectAppend)}</object>, $objects[$mnIndex]), ('append', 'prepend'))
+								let $objectReturn := 
+									if ($object = "") then "" 
+									else <statement>{(
+										functx:remove-attributes(functx:copy-attributes(<subject>{concat($subjectPrepend, $subject, $subjectAppend)}</subject>, $subject), ('append', 'prepend')),
+										functx:remove-attributes(functx:copy-attributes(<predicate>{concat($predicatePrepend, $predicate, $predicateAppend)}</predicate>, $predicate), ('append', 'prepend')),
+										functx:remove-attributes(functx:copy-attributes(<object>{concat($objectPrepend, $object, $objectAppend)}</object>, $object), ('append', 'prepend'))
 									)}</statement>
-						return $statementToReturn
-					else 
-						for $subject in $subjects
-							let $subjectReturn :=
-								if ($subject = "") then "" else
-								for $object in $objects
-
-									let $subjectPrepend := xtriples:extractPrependAppend($resource, $subject/@prepend, $index)
-									let $subjectAppend := xtriples:extractPrependAppend($resource, $subject/@append, $index)
-
-									let $predicatePrepend := xtriples:extractPrependAppend($resource, $predicate/@prepend, $index)
-									let $predicateAppend := xtriples:extractPrependAppend($resource, $predicate/@append, $index)
-
-									let $objectPrepend := xtriples:extractPrependAppend($resource, $object/@prepend, $index)
-									let $objectAppend := xtriples:extractPrependAppend($resource, $object/@append, $index)
-
-									let $objectReturn := 
-										if ($object = "") then "" 
-										else <statement>{(
-											functx:remove-attributes(functx:copy-attributes(<subject>{concat($subjectPrepend, $subject, $subjectAppend)}</subject>, $subject), ('append', 'prepend')),
-											functx:remove-attributes(functx:copy-attributes(<predicate>{concat($predicatePrepend, $predicate, $predicateAppend)}</predicate>, $predicate), ('append', 'prepend')),
-											functx:remove-attributes(functx:copy-attributes(<object>{concat($objectPrepend, $object, $objectAppend)}</object>, $object), ('append', 'prepend'))
-										)}</statement>
-								return $objectReturn
-						return $subjectReturn
+							return $objectReturn
+					return $subjectReturn
 				else ""
 
 	return $statements
@@ -508,14 +483,18 @@ let $resources :=
 let $maxResources :=
 	if ($collection/@max > 0) then
 		$collection/@max
-	else 1000
+	else 0
 
 (: extract triples from resources :)
 let $triples := 
-	for $resource at $index in $resources
+	for $currentResource at $resourceIndex in $resources
 	return
-		if ($index <= $maxResources) then
-			<statements>{xtriples:extractTriples($resource, $configuration)}</statements>
+		if ($maxResources > 0 and $resourceIndex <= $maxResources) 
+		then
+			<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
+		else if ($maxResources = 0)
+		then
+			<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
 		else ""
 
 let $xtriples := <xtriples>{$vocabularies, $triples}</xtriples>

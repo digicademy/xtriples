@@ -1,0 +1,39 @@
+<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><!-- Deutsche Inschriften Online --><xtriples><configuration><vocabularies><vocabulary prefix="dio" uri="http://www.inschriften.net/rest/di060/articles/"/><vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><vocabulary prefix="dc" uri="http://purl.org/dc/elements/1.1/"/><vocabulary prefix="owl" uri="http://www.w3.org/2002/07/owl#"/><vocabulary prefix="owltime" uri="http://www.w3.org/2006/time#"/><vocabulary prefix="geo" uri="http://www.w3.org/2003/01/geo/wgs84_pos#"/><vocabulary prefix="gn" uri="http://www.geonames.org/ontology#"/><vocabulary prefix="dbpedia" uri="http://dbpedia.org/ontology/"/><vocabulary prefix="cdwa" uri="http://www.getty.edu/research/publications/electronic_publications/cdwa/"/><vocabulary prefix="tei" uri="http://www.tei-c.org/ns/1.0"/></vocabularies><triples><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dc">title</predicate><object type="literal">//tei:titleStmt/tei:title</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dc">creator</predicate><object type="literal">//tei:author</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="owl">seeAlso</predicate><object type="uri">//tei:publicationStmt/tei:availability/tei:p/tei:ref/@target</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="owltime">intervalStarts</predicate><object type="literal">//tei:origDate/tei:date/@from</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="owltime">intervalFinishes</predicate><object type="literal">//tei:origDate/tei:date/@to</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">condition</predicate><object type="literal">//tei:condition/@n</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">width</predicate><object type="literal">//tei:dim/substring-before(substring-after(., "H. "), ", B.")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">height</predicate><object type="literal">//tei:dim/substring-before(substring-after(., "B. "), ", Bu")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">Settlement</predicate><object type="literal">//tei:settlement</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="dbpedia">Place</predicate><object type="literal">//tei:placeName</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">typeface</predicate><object type="literal">//tei:typeNote/substring(., 1, string-length(.)-1)</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">inscription</predicate><object type="literal">//tei:div[@type='edition']/functx:remove-elements-deep(., "note")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">translation</predicate><object type="literal">//tei:div[@type='translation']/functx:remove-elements-deep(., "note")</object></statement><statement><subject prefix="dio">//tei:idno[@type='catalogue']</subject><predicate prefix="cdwa">heraldry</predicate><object type="literal">//tei:heraldry/functx:remove-elements-deep(., "note")</object></statement>
+<!--
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0029')]</condition>
+                <subject prefix="dio">/string("di060-0029")</subject>
+                <predicate prefix="geo">SpatialThing</predicate>
+                <object type="uri">/string("http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/50")</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0029')]</condition>
+                <subject prefix="dio">/string("di060-0029")</subject>
+                <predicate prefix="geo">polygon</predicate>
+                <object type="literal" resource="http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/50">//geom</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0033')]</condition>
+                <subject prefix="dio">/string("di060-0033")</subject>
+                <predicate prefix="geo">SpatialThing</predicate>
+                <object type="uri">/string("http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/77")</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0033')]</condition>
+                <subject prefix="dio">/string("di060-0033")</subject>
+                <predicate prefix="geo">polygon</predicate>
+                <object type="literal" resource="http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/33">//geom</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0157')]</condition>
+                <subject prefix="dio">/string("di060-0157")</subject>
+                <predicate prefix="geo">SpatialThing</predicate>
+                <object type="uri">/string("http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/29")</object>
+            </statement>
+            <statement>
+                <condition>//tei:idno[@type='catalogue' and contains(text(), 'di060-0157')]</condition>
+                <subject prefix="dio">/string("di060-0157")</subject>
+                <predicate prefix="geo">polygon</predicate>
+                <object type="literal" resource="http://ibr.spatialhumanities.de/ibr/rest/oberwesel/features/29">//geom</object>
+            </statement>
+--></triples></configuration><collection><resource uri="http://www.inschriften.net/rest/di060/articles/di060-0027"/><resource uri="http://www.inschriften.net/rest/di060/articles/di060-0157"/><resource uri="http://www.inschriften.net/rest/di060/articles/di060-0159"/></collection></xtriples>
