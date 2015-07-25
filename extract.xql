@@ -24,7 +24,7 @@ declare namespace xtriples = "http://xtriples.spatialhumanities.de/";
 declare variable $setConfiguration := xtriples:getConfiguration();
 declare variable $setFormat := xtriples:getFormat();
 declare variable $xtriplesWebserviceURL := "http://xtriples.spatialhumanities.de/";
-declare variable $any23WebserviceURL := "http://any23.org/";
+declare variable $any23WebserviceURL := "https://any23.apache.org/";
 declare variable $redeferWebserviceURL := "http://rhizomik.net/redefer-services/";
 declare variable $redeferWebserviceRulesURL := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
 
@@ -463,7 +463,7 @@ declare function xtriples:getSVG($rdf as node()*) as item()* {
 (: ### QUERY BODY ### :)
 
 (: set basic vars :)
-let $collection := $setConfiguration/xtriples/collection
+let $collections := $setConfiguration/xtriples/collection
 let $configuration := $setConfiguration/xtriples/configuration
 let $vocabularies := $configuration/vocabularies
 
@@ -474,39 +474,46 @@ let $namespaces :=
 		return util:declare-namespace($namespace/@prefix, $namespace/@uri)
 	else ""
 
-(: get resources for extraction :)
-let $resources := xtriples:getResources($collection)
+(: extract triples from collections :)
+let $extraction := 
 
-let $maxResources :=
-	if ($collection/@max > 0) then
-		$collection/@max
-	else 0
+	for $collection in $collections
 
-(: extract triples from resources :)
-let $triples := 
-	for $resource at $resourceIndex in $resources
-		let $currentResource :=
-			if (name($resource) = 'resource') then
-				$resource
-			else <resource>{$resource}</resource>
-	return
-		if ($maxResources > 0 and $resourceIndex <= $maxResources) 
-		then
-			<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
-		else if ($maxResources = 0)
-		then
-			<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
-		else ""
+		let $maxResources :=
+			if ($collection/@max > 0) then
+				$collection/@max
+			else 0
 
+		let $resources := xtriples:getResources($collection)
+
+		let $triples :=
+			for $resource at $resourceIndex in $resources
+				let $currentResource :=
+					if (name($resource) = 'resource') then
+						$resource
+					else <resource>{$resource}</resource>
+			return
+				if ($maxResources > 0 and $resourceIndex <= $maxResources) 
+				then
+					<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
+				else if ($maxResources = 0)
+				then
+					<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
+				else ""
+
+	return <result>{(functx:copy-attributes(<collection>{$resources}</collection>, $collection),<triples>{$triples}</triples>)}</result>
+
+(: construct internal result format :)
 let $xtriples := 
 	<xtriples>
 		<configuration>
 			{$vocabularies}
-			<triples>{$triples}</triples>
+			<triples>{$extraction//triples/*}</triples>
 		</configuration>
-		{functx:copy-attributes(<collection>{$resources}</collection>, $collection)}
+		{$extraction//collection}
 	</xtriples>
 
+(: transform and return result :)
 return (
 	if ($setFormat = "xtriples") then
 		$xtriples
