@@ -235,11 +235,13 @@ declare function xtriples:extractPrependAppend($currentResource as node(), $expr
 (: XTriples core function - evaluates all configured statements for the current resource :)
 declare function xtriples:extractTriples($currentResource as node(), $resourceIndex as xs:integer, $configuration as node()*) as item()* {
 
-	(: ensure there is a XML resource - it could still be just a URI to a XML resource :)
+	(: set the content of the current resource :)
 	let $currentResource := 
+		(: it can be a resource tag with an URI :)
 		if (xs:anyURI($currentResource/@uri)) then 
 			fn:doc($currentResource/@uri)
-		else $currentResource
+		(: or a resource tag with children :)
+		else $currentResource/*
 
 	(: start statement pattern extraction :)
 	for $statement in $configuration//triples/*
@@ -472,13 +474,8 @@ let $namespaces :=
 		return util:declare-namespace($namespace/@prefix, $namespace/@uri)
 	else ""
 
-(: @todo - test if each resource has exactly one child :)
-let $resources := 
-	(: configuration case 1 - all resources are provided statically within the collection :)
-	if ($collection//resource/*) then
-		$collection//resource/*
-	(: otherwise resources should be retrieved from uris or by expression :)
-	else xtriples:getResources($collection)
+(: get resources for extraction :)
+let $resources := xtriples:getResources($collection)
 
 let $maxResources :=
 	if ($collection/@max > 0) then
@@ -487,7 +484,11 @@ let $maxResources :=
 
 (: extract triples from resources :)
 let $triples := 
-	for $currentResource at $resourceIndex in $resources
+	for $resource at $resourceIndex in $resources
+		let $currentResource :=
+			if (name($resource) = 'resource') then
+				$resource
+			else <resource>{$resource}</resource>
 	return
 		if ($maxResources > 0 and $resourceIndex <= $maxResources) 
 		then
