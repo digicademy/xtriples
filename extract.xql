@@ -7,7 +7,7 @@ xquery version "3.0";
  :
  : @author Torsten Schrade
  : @email <Torsten.Schrade@adwmainz.de>
- : @version 1.1.0 
+ : @version 1.2.0 
  : @licence MIT
  :
  : Main module containing the webservice
@@ -95,7 +95,7 @@ declare function xtriples:expressionBasedResourceResolver($collection as node()*
 	let $resources := 
 		for $resource at $index in $resourcesNodes
 			return 
-				if ($resource/*) then
+				if ($resource instance of element()) then
 					$resource
 				else
 					element {"resource"} {
@@ -314,16 +314,16 @@ declare function xtriples:generateRDFTriples($xtriples as node()*) as item()* {
 
 		let $subjectType := $statement/subject/@type
 		let $subjectPrefix := $statement/subject/@prefix
-		let $subjectUri := $xtriples/vocabularies/vocabulary[@prefix=$subjectPrefix]/@uri
+		let $subjectUri := $xtriples//vocabularies/vocabulary[@prefix=$subjectPrefix]/@uri
 		let $subjectValue := $statement/subject
 
 		let $predicatePrefix := $statement/predicate/@prefix
-		let $predicateUri := $xtriples/vocabularies/vocabulary[@prefix=$predicatePrefix]/@uri
+		let $predicateUri := $xtriples//vocabularies/vocabulary[@prefix=$predicatePrefix]/@uri
 		let $predicateValue := $statement/predicate
 
 		let $objectType := $statement/object/@type
 		let $objectPrefix := $statement/object/@prefix
-		let $objectUri := $xtriples/vocabularies/vocabulary[@prefix=$objectPrefix]/@uri
+		let $objectUri := $xtriples//vocabularies/vocabulary[@prefix=$objectPrefix]/@uri
 		let $objectValue := $statement/object/text()
 
 		(: rdf triple construction using computed constructors with qualified names; builds single rdf triples which are later combined by any23 webservice :)
@@ -497,7 +497,14 @@ let $triples :=
 			<statements>{xtriples:extractTriples($currentResource, $resourceIndex, $configuration)}</statements>
 		else ""
 
-let $xtriples := <xtriples>{$vocabularies, $triples}</xtriples>
+let $xtriples := 
+	<xtriples>
+		<configuration>
+			{$vocabularies}
+			<triples>{$triples}</triples>
+		</configuration>
+		{functx:copy-attributes(<collection>{$resources}</collection>, $collection)}
+	</xtriples>
 
 return (
 	if ($setFormat = "xtriples") then

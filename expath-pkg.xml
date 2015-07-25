@@ -1,1 +1,1 @@
-<package xmlns="http://expath.org/ns/pkg" name="http://xtriples.spatialhumanities.de/" abbrev="xtriples" version="1.1.0" spec="1.0"><title>XTriples</title><dependency package="http://exist-db.org/apps/shared"/></package>
+<package xmlns="http://expath.org/ns/pkg" name="http://xtriples.spatialhumanities.de/" abbrev="xtriples" version="1.2.0" spec="1.0"><title>XTriples</title><dependency package="http://exist-db.org/apps/shared"/></package>

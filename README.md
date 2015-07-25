@@ -13,7 +13,7 @@ This repository contains the source code of the XTriples webservice.
 
 The webservice is distributed as a single .xar file, which can be installed into an eXist-db instance via the package manager.
 
-You can download the latest version right here: http://download.spatialhumanities.de/ibr/xtriples-1.1.0.xar
+You can download the latest version right here: http://download.spatialhumanities.de/ibr/xtriples-1.2.0.xar
 
 Read the documentation on how to setup your own instance of XTriples: http://xtriples.spatialhumanities.de/documentation.html#setup
 
@@ -35,4 +35,4 @@ This should create a .xar file in the build directory.
 ## Credits
 
 Released under MIT license.
-@author: <a href="http://www.adwmainz.de/mitarbeiter/profil/torsten-schrade.html">Torsten Schrade</a> (<a href="https://github.com/tesselation">@tesselation</a>)
+@author: <a href="http://www.adwmainz.de/mitarbeiter/profil/torsten-schrade.html">Torsten Schrade</a> (<a href="https://github.com/metacontext">@metacontext</a>)
