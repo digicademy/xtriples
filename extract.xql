@@ -82,11 +82,11 @@ declare function xtriples:expressionBasedUriResolver($uri as xs:string, $current
 };
 
 (: evaluates a possible XPATH expression in curly braces within a document string and retrieves the document :)
-declare function xtriples:expressionBasedResourceResolver($collection as node()*) as item()* {
+declare function xtriples:expressionBasedResourceResolver($collection as node()*, $resource as node()*) as item()* {
 
 	let $collectionContent := if (fn:doc-available($collection/@uri)) then fn:doc($collection/@uri) else ""
 
-	let $resourcesURI := string($collection/resource/@uri)
+	let $resourcesURI := string($resource/@uri)
 	let $resourcesExpression := concat('$collectionContent', substring-after(substring-before($resourcesURI, "}"), "{"))
 	let $resourcesNodes := if (xtriples:expressionSanityCheck($resourcesExpression) = true()) then 
 		try { util:eval($resourcesExpression) } catch * { $err:description } 
@@ -111,7 +111,7 @@ declare function xtriples:getResources($collection as node()*) as item()* {
 		for $resource in $collection/resource
 		return
 			if (matches($resource/@uri, "\{") and matches($resource/@uri, "\}")) then 
-				xtriples:expressionBasedResourceResolver($collection)
+				xtriples:expressionBasedResourceResolver($collection, $resource)
 			else $resource
 
 	return $resources
