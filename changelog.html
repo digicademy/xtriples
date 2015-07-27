@@ -1,68 +1,70 @@
 <div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
-    <div class="row-fluid">
-        <div class="span16">
-            <div class="page-header">
-                <h1 data-template="config:app-title">Generated page</h1>
-                <p>A generic webservice to extract RDF statements from XML resources.</p>
-            </div>
-            <div class="row-fluid">
-                <div class="span8">
-                    <h2>Changelog</h2>
-                    <h3>1.2.0</h3>
-                    <ul>
-                        <li>INFO: Minor changes to documentation.</li>
-                        <li>BUGFIX: Avoid type error in expressionBasedResourceResolver if resources are a sequence of atomic values.</li>
-                        <li>FEATURE: Modified internal xtriples result format to also include the resources. This makes it far easier to debug XPATH expressions that construct the resources of a collection.</li>
-                    </ul>
-                    <h3>1.1.0</h3>
-                    <ul>
-                        <li>INFO: Change in context variable name: $resource is now $currentResource.</li>
-                        <li>INFO: Change in context variable name: $index is now $repeatIndex.</li>
-                        <li>INFO: New XML examples from several Digital Humanities projects.</li>
-                        <li>INFO: Modifications, illustrations and corrections in documentation.</li>
-                        <li>FEATURE: Introduce $resourceIndex variable that contains the number of the resource currently crawled</li>
-                    </ul>
-                    <h3>1.0.0</h3>
-                    <ul>
-                        <li>INFO: Feature complete first stable version</li>
-                        <li>INFO: Finished documentation</li>
-                        <li>INFO: Added many XML examples</li>
-                        <li>FEATURE: Better error handling. Errors are now caught and do not lead to query termination. Error descriptions can be comfortably looked up by setting the output format to "xtriples"</li>
-                        <li>BUGFIXES: Several smaller bugfixes</li>
-                    </ul>
-                    <h3>0.5.0</h3>
-                    <ul>
-                        <li>FEATURE: Possibilty to dynamically construct full resources (and not only resource uris) out of a collection by expression</li>
-                        <li>FEATURE (experimental): Introduced m:n combination with &lt;statement type="mn"&gt;</li>
-                    </ul>
-                    <h3>0.4.0</h3>
-                    <ul>
-                        <li>FEATURE: Dynamic namespace declaration; all configured vocabularies are also declared als XML namespaces for the XPATH statements</li>
-                        <li>FEATURE: Allow an expression based syntax in the resource attribute making it possible to construct dynamic uris to external resources</li>
-                        <li>FEATURE: First steps towards a RELAX NG schema for the xtriples configuration</li>
-                    </ul>
-                    <h3>0.3.0</h3>
-                    <ul>
-                        <li>FEATURE: Add more response formats from any23; the webservice can now respond with rdf,turtle,ntriples,nquads,json,trix,svg and xtriples</li>
-                        <li>FEATURE: Allow the resource attribute also for &lt;subject&gt; and &lt;predicate&gt; tags; makes it possible to extract values from external resources during statement extraction</li>
-                        <li>FEATURE: Allow and evaluate XPATH expressions for &lt;predicate&gt; tags</li>
-                        <li>FEATURE: Simple strings are now also allowed within &lt;subject&gt;, &lt;predicate&gt; and &lt;object&gt; tags; it will not be evaluated and just transferred to the extraction result</li>
-                        <li>BUGFIX: Plaintext formats (turtle, ntriples etc.) are now correctly streamed as plaintext by eXist and need not be urlencoded any longer</li>
-                    </ul>
-                    <h3>0.2.0</h3>
-                    <ul>
-                        <li>FEATURE: Allow nodesets for subjects and objects. Makes it possible to create 1:n and n:1 triples with a single statement declaration.</li>
-                        <li>FEATURE: Extract/create blank nodes: set value of type attribute for &lt;subject&gt; and &lt;object&gt; tags to "bnode"</li>
-                        <li>FEATURE: Typed object literals: set datatype attribute in &lt;object&gt; tag to one of the XSD datatypes (integer, float etc)</li>
-                        <li>FEATURE: Language tagged object literals: set lang attribute in &lt;object&gt; tag to a value according to <a href="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">RFC 3066</a>
-                        </li>
-                    </ul>
-                    <h3>0.1.0</h3>
-                    <ul>
-                        <li>INFO: First public version of the service</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row-fluid">
+		<div class="span16">
+			<div class="page-header">
+				<h1 data-template="config:app-title">Generated page</h1>
+				<p>A generic webservice to extract RDF statements from XML resources.</p>
+			</div>
+			<div class="row-fluid">
+				<div class="span8">
+					<h2>Changelog</h2>
+					<h3>1.2.0</h3>
+					<ul>
+						<li>INFO: Minor changes to documentation.</li>
+						<li>BUGFIX: Avoid type error in expressionBasedResourceResolver if resources are a sequence of atomic values</li>
+						<li>FEATURE: Allow multiple &lt;collection&gt; tags per &lt;xtriples&gt; configuration</li>
+						<li>FEATURE: Allow mixing of &lt;resource&gt; types (literal, static, expression) per &lt;collection&gt;</li>
+						<li>FEATURE: Modified internal xtriples result format to also include the crawled resources for debugging</li>
+					</ul>
+					<h3>1.1.0</h3>
+					<ul>
+						<li>INFO: Change in context variable name: $resource is now $currentResource</li>
+						<li>INFO: Change in context variable name: $index is now $repeatIndex</li>
+						<li>INFO: New XML examples from several Digital Humanities projects</li>
+						<li>INFO: Modifications, illustrations and corrections in documentation</li>
+						<li>FEATURE: Introduce $resourceIndex variable that contains the number of the resource currently crawled</li>
+					</ul>
+					<h3>1.0.0</h3>
+					<ul>
+						<li>INFO: Feature complete first stable version</li>
+						<li>INFO: Finished documentation</li>
+						<li>INFO: Added many XML examples</li>
+						<li>FEATURE: Better error handling. Errors are now caught and do not lead to query termination. Error descriptions can be comfortably looked up by setting the output format to "xtriples"</li>
+						<li>BUGFIXES: Several smaller bugfixes</li>
+					</ul>
+					<h3>0.5.0</h3>
+					<ul>
+						<li>FEATURE: Possibilty to dynamically construct full resources (and not only resource uris) out of a collection by expression</li>
+						<li>FEATURE (experimental): Introduced m:n combination with &lt;statement type="mn"&gt;</li>
+					</ul>
+					<h3>0.4.0</h3>
+					<ul>
+						<li>FEATURE: Dynamic namespace declaration; all configured vocabularies are also declared als XML namespaces for the XPATH statements</li>
+						<li>FEATURE: Allow an expression based syntax in the resource attribute making it possible to construct dynamic uris to external resources</li>
+						<li>FEATURE: First steps towards a RELAX NG schema for the xtriples configuration</li>
+					</ul>
+					<h3>0.3.0</h3>
+					<ul>
+						<li>FEATURE: Add more response formats from any23; the webservice can now respond with rdf,turtle,ntriples,nquads,json,trix,svg and xtriples</li>
+						<li>FEATURE: Allow the resource attribute also for &lt;subject&gt; and &lt;predicate&gt; tags; makes it possible to extract values from external resources during statement extraction</li>
+						<li>FEATURE: Allow and evaluate XPATH expressions for &lt;predicate&gt; tags</li>
+						<li>FEATURE: Simple strings are now also allowed within &lt;subject&gt;, &lt;predicate&gt; and &lt;object&gt; tags; it will not be evaluated and just transferred to the extraction result</li>
+						<li>BUGFIX: Plaintext formats (turtle, ntriples etc.) are now correctly streamed as plaintext by eXist and need not be urlencoded any longer</li>
+					</ul>
+					<h3>0.2.0</h3>
+					<ul>
+						<li>FEATURE: Allow nodesets for subjects and objects. Makes it possible to create 1:n and n:1 triples with a single statement declaration.</li>
+						<li>FEATURE: Extract/create blank nodes: set value of type attribute for &lt;subject&gt; and &lt;object&gt; tags to "bnode"</li>
+						<li>FEATURE: Typed object literals: set datatype attribute in &lt;object&gt; tag to one of the XSD datatypes (integer, float etc)</li>
+						<li>FEATURE: Language tagged object literals: set lang attribute in &lt;object&gt; tag to a value according to <a href="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">RFC 3066</a>
+						</li>
+					</ul>
+					<h3>0.1.0</h3>
+					<ul>
+						<li>INFO: First public version of the service</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

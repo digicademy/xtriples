@@ -118,7 +118,7 @@
 						with repeating nodes that represent the "resources". It can also be a XML based list of URLs pointing to single XML resources. 
 						During extraction the webservice 
 						crawls over all resources of a collection and applies the configured statements patterns to each XML resource. 
-						Only one <code>&lt;collection&gt;</code> tag is allowed per configuration. 
+						It is possible to use several <code>&lt;collection&gt;</code> tags per configuration. 
                     </p>
                     <h6>Reference</h6>
                     <table class="table table-bordered">
@@ -152,11 +152,14 @@
                     <p>
                     	There are three methods for crawling the resources of a collection: XPATH based, link based and literal.
 					</p>
+                	<p class="alert alert-info">
+                		<strong>Note:</strong> It is possible to mix the three methods within a <code>&lt;collection&gt;</code> tag.
+                	</p>
                     <h5>XPATH based resource crawling</h5>
                     <p>
 						XPATH based resource crawling is an automatic way of extracting XML resources. It is very handy if you want to crawl a collection with an unkown number of resources.
-						The XPATH constructs the path to the single XML resources of a collection. You specify it with curly braces in the <code>uri</code>
-                    	attribute of a single child <code>&lt;resource&gt;</code> of your &lt;collection&gt; tag.
+						The XPATH constructs the path to the XML resources of a collection. You specify it with curly braces in the <code>uri</code>
+                    	attribute of a child <code>&lt;resource&gt;</code> of your <code>&lt;collection&gt;</code> tag.
 					</p>
                     <h6>Code</h6>
                     <pre class="prettyprint linenums">
@@ -171,11 +174,10 @@
                     <p>
 						In this example, the <code>uri</code> attribute of the <code>&lt;collection&gt;</code> tag points to a XML file that contains 
                     	a list of IDs of XML resources to harvest. During extraction, this list provides the context for the expression 
-                    	in the <code>uri</code> attribute of the child <code>&lt;resource&gt;</code> tag. The attribute of the single <code>&lt;resource&gt;</code> 
-                    	tag contains a URL. At any position within the URL string you are allowed to use a XPATH expressions in curly braces that will be 
-                    	executed on the XML of the index document of the <code>&lt;collection&gt;</code>. In the above example, the service will walk through all ids 
-                    	found by the XPATH expression in the collection list and substitute the curly brackets, building the correct links to the single XML resources 
-                    	of the collection.
+                    	in the <code>uri</code> attribute of the child <code>&lt;resource&gt;</code> tag. The attribute of the <code>&lt;resource&gt;</code> 
+                    	tag contains a URL. At any position within the URL string you are allowed to use XPATH expressions in curly braces that will be 
+                    	executed on the XML of the <code>&lt;collection&gt;</code>. In the above example, the service will walk through all ids 
+                    	found by the XPATH expression in the <code>&lt;collection&gt;</code> and substitute the curly brackets, building correct links to XML resources.
 					</p>
                     <h6>Example 1: XPATH based resource crawling with resources all in one single file</h6>
                     <p class="btn-group">
@@ -193,7 +195,7 @@
                     </p>
                     <h5>Link based resource crawling</h5>
                     <p>
-						Link based resource crawling works by submitting a number of <code>&lt;resource&gt;</code> tags below the <code>&lt;collection&gt;</code> tag. 
+						Link based resource crawling works by submitting <code>&lt;resource&gt;</code> tags below the <code>&lt;collection&gt;</code> tag with complete URLs to the XML files.. 
 						This approach is handy if you know all URLs of a collection in advance or if you want to crawl a fixed number of resources.
 						Just add any number of resource tags below the <code>&lt;collection&gt;</code> tag with the link to the according resource in the 
 						<code>uri</code> attribute. Here is an example:
@@ -221,8 +223,8 @@
                     </p>
                     <h5>Literal resource crawling</h5>
                     <p>
-						Crawling of literal XML resources is the fastest way of extracting statements. In this approach all resources are submitted literally to the webservice
-						together with the configuration. Just submit any well formed XML below the <code>&lt;resource&gt;</code> tags of a  <code>&lt;collection&gt;</code>.
+						Crawling of literal XML resources is the fastest way of extracting statements. In this approach the XML resources are submitted literally to the webservice. 
+						Just submit any well formed XML below a <code>&lt;resource&gt;</code> tag.
 					</p>
                     <h6>Code</h6>
                     <pre class="prettyprint linenums">
@@ -239,7 +241,7 @@
         &lt;/resource&gt;
     &lt;/collection&gt;
 &lt;/xtriples&gt;</pre>
-                    <h6>Example 4: Literal resource crawling with XML resources sent together with the configuration</h6>
+                    <h6>Example 4: Literal resource crawling with XML resources</h6>
                     <p class="btn-group">
                         <a href="http://xtriples.spatialhumanities.de/examples/gods/conf-04.xml" class="btn btn-info btn-mini">Configuration</a>
                         <a href="http://xtriples.spatialhumanities.de/extract.xql?configuration=http://xtriples.spatialhumanities.de/examples/gods/conf-04.xml" class="btn btn-info btn-mini">Result</a>
