@@ -238,10 +238,12 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 	(: set the content of the current resource :)
 	let $currentResource := 
 		(: it can be a resource tag with an URI :)
-		if (xs:anyURI($currentResource/@uri)) then 
+		if (xs:anyURI($currentResource/@uri) and fn:doc-available($currentResource/@uri)) then 
 			fn:doc($currentResource/@uri)
 		(: or a resource tag with children :)
-		else $currentResource/*
+		else if ($currentResource/*) then 
+			$currentResource/*
+		else fn:doc("errors.xml")//error[@type='resource_no_content']
 
 	(: start statement pattern extraction :)
 	for $statement in $configuration//triples/*
