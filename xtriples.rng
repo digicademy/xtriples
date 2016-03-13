@@ -1,1 +1,109 @@
-<grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"><start><element name="xtriples"><element name="configuration"><element name="vocabularies"><oneOrMore><element name="vocabulary"><attribute name="name"><data type="NCName"/></attribute><attribute name="uri"><data type="anyURI"/></attribute></element></oneOrMore></element><element name="triples"><oneOrMore><element name="statement"><optional><element name="condition"><text/></element></optional><element name="subject"><optional><attribute name="prefix"><data type="NCName"/></attribute></optional><optional><attribute name="type"><choice><value type="string">bnode</value></choice></attribute></optional><optional><attribute name="resource"><data type="anyURI"/></attribute></optional><text/></element><element name="predicate"><attribute name="prefix"><data type="NCName"/></attribute><optional><attribute name="resource"><data type="anyURI"/></attribute></optional><data type="NCName"/></element><element name="object"><optional><attribute name="datatype"><data type="NCName"/></attribute></optional><optional><attribute name="lang"><data type="NCName"/></attribute></optional><optional><attribute name="prefix"><data type="NCName"/></attribute></optional><optional><attribute name="resource"><data type="anyURI"/></attribute></optional><attribute name="type"><choice><value type="string">bnode</value><value type="string">uri</value><value type="string">literal</value></choice></attribute><text/></element></element></oneOrMore></element></element><element name="collection"><optional><attribute name="uri"><data type="anyURI"/></attribute></optional><oneOrMore><element name="resource"><optional><attribute name="uri"><data type="anyURI"/></attribute></optional></element></oneOrMore></element></element></start></grammar>
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="xtriples">
+            <element name="configuration">
+                <element name="vocabularies">
+                    <oneOrMore>
+                        <element name="vocabulary">
+                            <attribute name="name">
+                                <data type="NCName"/>
+                            </attribute>
+                            <attribute name="uri">
+                                <data type="anyURI"/>
+                            </attribute>
+                        </element>
+                    </oneOrMore>
+                </element>
+                <element name="triples">
+                    <oneOrMore>
+                        <element name="statement">
+                            <optional>
+                                <element name="condition">
+                                    <text/>
+                                </element>
+                            </optional>
+                            <element name="subject">
+                                <optional>
+                                    <attribute name="prefix">
+                                        <data type="NCName"/>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="type">
+                                        <choice>
+                                            <value type="string">bnode</value>
+                                        </choice>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="resource">
+                                        <data type="anyURI"/>
+                                    </attribute>
+                                </optional>
+                                <text/>
+                            </element>
+                            <element name="predicate">
+                                <attribute name="prefix">
+                                    <data type="NCName"/>
+                                </attribute>
+                                <optional>
+                                    <attribute name="resource">
+                                        <data type="anyURI"/>
+                                    </attribute>
+                                </optional>
+                                <data type="NCName"/>
+                            </element>
+                            <element name="object">
+                                <optional>
+                                    <attribute name="datatype">
+                                        <data type="NCName"/>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="lang">
+                                        <data type="NCName"/>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="prefix">
+                                        <data type="NCName"/>
+                                    </attribute>
+                                </optional>
+                                <optional>
+                                    <attribute name="resource">
+                                        <data type="anyURI"/>
+                                    </attribute>
+                                </optional>
+                                <attribute name="type">
+                                    <choice>
+                                        <value type="string">bnode</value>
+                                        <value type="string">uri</value>
+                                        <value type="string">literal</value>
+                                    </choice>
+                                </attribute>
+                                <text/>
+                            </element>
+                        </element>
+                    </oneOrMore>
+                </element>
+            </element>
+            <element name="collection">
+                <optional>
+                    <attribute name="uri">
+                        <data type="anyURI"/>
+                    </attribute>
+                </optional>
+                <oneOrMore>
+                    <element name="resource">
+                        <optional>
+                            <attribute name="uri">
+                                <data type="anyURI"/>
+                            </attribute>
+                        </optional>
+                    </element>
+                </oneOrMore>
+            </element>
+        </element>
+    </start>
+</grammar>

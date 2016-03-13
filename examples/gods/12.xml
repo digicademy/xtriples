@@ -1,1 +1,23 @@
-<god id="12"><name><greek>Ἑστία</greek><roman>Vesta</roman><english>Hestia</english></name><gender>female</gender><olympian>0</olympian><relationships><relation type="sister" id="14"/></relationships><attributes><attribute>hearth</attribute><attribute>home</attribute><attribute>chastity</attribute></attributes><symbols><item>veil</item><item>hearth</item><item>kettle</item></symbols></god>
+<?xml version="1.0" encoding="UTF-8"?>
+<god id="12">
+    <name>
+        <greek>Ἑστία</greek>
+        <roman>Vesta</roman>
+        <english>Hestia</english>
+    </name>
+    <gender>female</gender>
+    <olympian>0</olympian>
+    <relationships>
+        <relation type="sister" id="14"/>
+    </relationships>
+    <attributes>
+        <attribute>hearth</attribute>
+        <attribute>home</attribute>
+        <attribute>chastity</attribute>
+    </attributes>
+    <symbols>
+        <item>veil</item>
+        <item>hearth</item>
+        <item>kettle</item>
+    </symbols>
+</god>

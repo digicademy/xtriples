@@ -1,0 +1,6021 @@
+{
+  "head" : {
+    "vars" : [ ],
+    "vars" : [
+      "subject",
+      "subjectLabel",
+      "object",
+      "objectLabel",
+      "predicate",
+      "sourceColor",
+      "targetColor"
+    ],
+    "link" : [
+      "info"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel Riwka Sara bat Jona ⚭ Salman Surinam"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2281#hha-2281-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-135#hha-135-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman Surinam ben Süskind"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel Riwka Sara bat Jona ⚭ Salman Surinam"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2281#hha-2281-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-135#hha-135-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman Surinam ben Süskind"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Lea Ester bat Salman H(alber)st(adt) #(ue) Jeschaja Bloch"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-52#hha-52-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-79#hha-79-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Eisek ben Meir Fredericia"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Lea Ester bat Salman H(alber)st(adt) #(ue) Jeschaja Bloch"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-52#hha-52-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-79#hha-79-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Eisek ben Meir Fredericia"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Ester bat Gumprich F(rank)f(urt)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-625#hha-625-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-80#hha-80-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Mela bat Mordechai Heckscher #(ue) Gumprich F(rank)f(urt)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Jaakow Schmuel Warburg ⚭ Michel Melhausen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2432#hha-2432-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1136#hha-1136-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Reize bat Schimschon ⚭ Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Jaakow Schmuel Warburg ⚭ Michel Melhausen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2478#hha-2478-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1136#hha-1136-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Schmuel ben Levi Josef"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Reuwen ben Löb Rothschild"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3275#hha-3275-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1138#hha-1138-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Jizchak Rotschild"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Reuwen ben Löb Rothschild"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3289#hha-3289-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1138#hha-1138-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Elkele bat Jokew Ree ⚭ Löb R(oth)sch(ild)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka bat Juda Löb ⚭ Schmuel SeGaL Bonn"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1462#hha-1462-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1190#hha-1190-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Natan ⚭ Löb Staden"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka bat Juda Löb ⚭ Schmuel SeGaL Bonn"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3332#hha-3332-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1190#hha-1190-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Jehuda ben Natan"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham Binjamin Wolf ben Josef Jehuda"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1462#hha-1462-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1189#hha-1189-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Natan ⚭ Löb Staden"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham Binjamin Wolf ben Josef Jehuda"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3332#hha-3332-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1189#hha-1189-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Jehuda ben Natan"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Seligman ben Jissachar Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1231#hha-1231-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Seligman ben Jissachar Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3186#hha-3186-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1231#hha-1231-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rösle bat David Tewle Schiff Hakohen ⚭ Ber Kohen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Jissachar Ber KaZ ⚭ Izek Wertheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1237#hha-1237-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Jissachar Ber KaZ ⚭ Izek Wertheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1240#hha-1240-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1237#hha-1237-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat David Tewle Schiff ⚭ Ber KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Juspa ben Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1242#hha-1242-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Juspa ben Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1240#hha-1240-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1242#hha-1242-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat David Tewle Schiff ⚭ Ber KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Chava bat Issachar Ber Kohen ⚭ Elijah Oppenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1599#hha-1599-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Chava bat Issachar Ber Kohen ⚭ Elijah Oppenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1240#hha-1240-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1599#hha-1599-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat David Tewle Schiff ⚭ Ber KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Natan ben Ber KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-792#hha-792-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Natan ben Ber KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1240#hha-1240-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-792#hha-792-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat David Tewle Schiff ⚭ Ber KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Rechel bat Löb Töplitz ⚭ Mosche ben Reuwen Renner"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-124#hha-124-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-766#hha-766-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Awraham genannt Löb ben Izek Töplitz"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Rechel bat Löb Töplitz ⚭ Mosche ben Reuwen Renner"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-146#hha-146-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-766#hha-766-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Golde bat Getschlik G(old)z(ieher) ⚭ Löb Töplitz"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Wolf ben Salman Warburg (Wolff Salomon Warburg)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-163#hha-163-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-748#hha-748-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Zippor bat Mosche ⚭ Salman F(rank)f(urter) ben I. L(eudes)d(orf)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Wolf ben Salman Warburg (Wolff Salomon Warburg)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-868#hha-868-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-748#hha-748-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Mosche Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Dina Reizche bat Schimschon Warburg ⚭ Bendit SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1333#hha-1333-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2749#hha-2749-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schimschon ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai KaZ ben Elijahu KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3264#hha-3264-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1337#hha-1337-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Olik bat Natan ⚭ Eli KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Löb Feiwels ⚭ Elijahu Wiener SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1462#hha-1462-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1408#hha-1408-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Natan ⚭ Löb Staden"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Löb Feiwels ⚭ Elijahu Wiener SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3332#hha-3332-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1408#hha-1408-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Jehuda ben Natan"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Natan ⚭ Löb Staden"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2532#hha-2532-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1462#hha-1462-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jaakow ⚭ Natan aus Ellrich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2432#hha-2432-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1488#hha-1488-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Reize bat Schimschon ⚭ Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2478#hha-2478-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1488#hha-1488-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Schmuel ben Levi Josef"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Reize bat Mosche Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1488#hha-1488-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1515#hha-1515-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Mosche Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1488#hha-1488-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-619#hha-619-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Mosche Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2578#hha-2578-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-868#hha-868-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechle Riwka bat Joel Schuh ⚭ Naftali Hirz Scheuer SeGal"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1890#hha-1890-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1671#hha-1671-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Channa Riwka bat Chajim Kleve ⚭ Joel Schuh"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara Hizle bat Joel Schuh ⚭ Anschel Oppenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1671#hha-1671-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1712#hha-1712-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rechle Riwka bat Joel Schuh ⚭ Naftali Hirz Scheuer SeGal"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara Hizle bat Joel Schuh ⚭ Anschel Oppenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1890#hha-1890-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1712#hha-1712-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Channa Riwka bat Chajim Kleve ⚭ Joel Schuh"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara bat Joel Schuh ⚭ Süskind Stern"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1671#hha-1671-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1765#hha-1765-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rechle Riwka bat Joel Schuh ⚭ Naftali Hirz Scheuer SeGal"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara bat Joel Schuh ⚭ Süskind Stern"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1890#hha-1890-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1765#hha-1765-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Channa Riwka bat Chajim Kleve ⚭ Joel Schuh"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Izek ben Ascher Jaakow Göttingen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5246#hha-5246-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1863#hha-1863-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Gerschon"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Izek ben Ascher Jaakow Göttingen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-772#hha-772-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1863#hha-1863-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Peier bat Sender Deschere ⚭ Hirsch Rofe"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-619#hha-619-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2578#hha-2578-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Mosche Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Olik bat Natan ⚭ Eli KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2532#hha-2532-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3264#hha-3264-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jaakow ⚭ Natan aus Ellrich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai Beit ben Salman Beit (Marcus Salomon Beit)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3086#hha-3086-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4760#hha-4760-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Izek Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai Beit ben Salman Beit (Marcus Salomon Beit)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3097#hha-3097-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4760#hha-4760-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Libe Sara ⚭ Salman Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel Lea bat Meir Kohen ⚭ Mordechai Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3086#hha-3086-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-673#hha-673-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Izek Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel Lea bat Meir Kohen ⚭ Mordechai Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3097#hha-3097-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-673#hha-673-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Libe Sara ⚭ Salman Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Gumprich F(rank)f(urt)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-625#hha-625-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-515#hha-515-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Mela bat Mordechai Heckscher #(ue) Gumprich F(rank)f(urt)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Gerschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-229#hha-229-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5246#hha-5246-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gerschon ben Tewle"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Gerschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-774#hha-774-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5246#hha-5246-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Merle bat Josef Fürst ⚭ Gerschon"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Lea Riwka bat Löb Töplitz ⚭ Löb Glückstadt"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-124#hha-124-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3863#hha-3863-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Awraham genannt Löb ben Izek Töplitz"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Lea Riwka bat Löb Töplitz ⚭ Löb Glückstadt"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-146#hha-146-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3863#hha-3863-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Golde bat Getschlik G(old)z(ieher) ⚭ Löb Töplitz"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon ben Israel Fürst"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1278#hha-1278-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2068#hha-2068-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Israel ben Mosche Fürst"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Israel Fürst"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1278#hha-1278-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3181#hha-3181-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Israel ben Mosche Fürst"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara bat Elijahu KaZ ⚭ Awraham Metz"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3264#hha-3264-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2031#hha-2031-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Olik bat Natan ⚭ Eli KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hindle bat Awraham Metz ⚭ Getschlik Elsass"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2031#hha-2031-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3121#hha-3121-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Sara bat Elijahu KaZ ⚭ Awraham Metz"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Selig ben Reuwen Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2128#hha-2128-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2242#hha-2242-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gittla bat Meir Heilbut ⚭ Reuwen Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Selig ben Reuwen Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2129#hha-2129-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2242#hha-2242-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Reuwen ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schlomo Salman ben Reuwen Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2128#hha-2128-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2635#hha-2635-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gittla bat Meir Heilbut ⚭ Reuwen Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schlomo Salman ben Reuwen Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2129#hha-2129-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2635#hha-2635-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Reuwen ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Geltche bat Reuwen Warburg ⚭ Feiwelman Dajan"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2128#hha-2128-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2866#hha-2866-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gittla bat Meir Heilbut ⚭ Reuwen Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Geltche bat Reuwen Warburg ⚭ Feiwelman Dajan"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2129#hha-2129-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2866#hha-2866-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Reuwen ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hizel bat Reuwen Warburg ⚭ Chajim Harburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2128#hha-2128-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3115#hha-3115-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gittla bat Meir Heilbut ⚭ Reuwen Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hizel bat Reuwen Warburg ⚭ Chajim Harburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2129#hha-2129-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3115#hha-3115-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Reuwen ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel bat Jaakow Altona ⚭ Mosche Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2437#hha-2437-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2327#hha-2327-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow ben Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel bat Jaakow Altona ⚭ Mosche Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3342#hha-3342-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2327#hha-2327-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Pesschen bat Menachem ⚭ Jaakow ben Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Selig ben Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2432#hha-2432-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3143#hha-3143-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Reize bat Schimschon ⚭ Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Selig ben Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2478#hha-2478-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3143#hha-3143-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Schmuel ben Levi Josef"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow ben Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3360#hha-3360-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2437#hha-2437-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gütchen bat Jehonatan SeGaL ⚭ Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow ben Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3361#hha-3361-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2437#hha-2437-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Jehuda"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Juda Löb ben Jaakow ben Schmuel Altona"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2437#hha-2437-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2439#hha-2439-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow ben Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Juda Löb ben Jaakow ben Schmuel Altona"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3342#hha-3342-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2439#hha-2439-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Pesschen bat Menachem ⚭ Jaakow ben Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Channa bat Jeschajah"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2532#hha-2532-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2542#hha-2542-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jaakow ⚭ Natan aus Ellrich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai ben Natan"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2532#hha-2532-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2542#hha-2542-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jaakow ⚭ Natan aus Ellrich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Glücklen bat Natan ⚭ Jokew Ree"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2532#hha-2532-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3316#hha-3316-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jaakow ⚭ Natan aus Ellrich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "[---] ben ... Gugenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2553#hha-2553-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4145#hha-4145-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham ben Josef Gugenheim"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "[---] ben ... Gugenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2880#hha-2880-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4145#hha-4145-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Glukche Mirjam bat Man Kleve ⚭ Awraham Gugenheim"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fromet bat Awraham Gugenheim #(ue) Mosche Mendelssohn (Frau Fromet geb G[...])"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2553#hha-2553-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5040#hha-5040-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham ben Josef Gugenheim"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fromet bat Awraham Gugenheim #(ue) Mosche Mendelssohn (Frau Fromet geb G[...])"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2880#hha-2880-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5040#hha-5040-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Glukche Mirjam bat Man Kleve ⚭ Awraham Gugenheim"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Reizche bat Selig Warburg ⚭ Awraham F(rank)f(urt)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3143#hha-3143-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2764#hha-2764-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Selig ben Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel Rachel bat Selig Warburg ⚭ Salman Meseritz"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3143#hha-3143-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3447#hha-3447-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Selig ben Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Levi Rothschild Bacharach ⚭ Ascher Anschel SeGaL Wimpfen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3275#hha-3275-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3166#hha-3166-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Jizchak Rotschild"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Levi Rothschild Bacharach ⚭ Ascher Anschel SeGaL Wimpfen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3289#hha-3289-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3166#hha-3166-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Elkele bat Jokew Ree ⚭ Löb R(oth)sch(ild)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Elijahu Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4717#hha-4717-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3536#hha-3536-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schönche bat Michel Delbanco SeGal ⚭ Elijahu Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Elijahu Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4718#hha-4718-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3536#hha-3536-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Elijahu ben ..."
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Simle ben Awraham Metz"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2031#hha-2031-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4109#hha-4109-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Sara bat Elijahu KaZ ⚭ Awraham Metz"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Josef ben Gerschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-229#hha-229-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4855#hha-4855-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gerschon ben Tewle"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Josef ben Gerschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-774#hha-774-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4855#hha-4855-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Merle bat Josef Fürst ⚭ Gerschon"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rösche bat Eli Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4717#hha-4717-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4127#hha-4127-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schönche bat Michel Delbanco SeGal ⚭ Elijahu Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rösche bat Eli Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4718#hha-4718-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4127#hha-4127-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Elijahu ben ..."
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Simle ben Schmuel F(rank)f(urter)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-619#hha-619-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/parentOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4806#hha-4806-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Mosche Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Priwche bat Jokew Heilbut ⚭ Meir SeGaL Goldschmidt Emden"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2818#hha-2818-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-108#hha-108-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Awraham SeGaL Goldschmidt"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Izek SeGaL ⚭ Falk Knorr"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2222#hha-2222-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-44#hha-44-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Falk ben Löb Knorr"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel bat Awraham ben Reuwen ⚭ Meir Berlin"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-28#hha-28-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-24#hha-24-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Bendit Berlin"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Awraham SeGaL Goldschmidt"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-108#hha-108-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2818#hha-2818-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Priwche bat Jokew Heilbut ⚭ Meir SeGaL Goldschmidt Emden"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Edel bat Man ⚭ Meir ben Levi Fredericia"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-51#hha-51-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-43#hha-43-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Jehuda Josef"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Reuwen ben Löb Rothschild"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2810#hha-2810-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1138#hha-1138-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel bat Michel Mehlhausen ⚭ Reuwen Rothschild"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Jehuda Löb Bonn SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1190#hha-1190-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1182#hha-1182-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka bat Juda Löb ⚭ Schmuel SeGaL Bonn"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka bat Juda Löb ⚭ Schmuel SeGaL Bonn"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1182#hha-1182-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1190#hha-1190-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Jehuda Löb Bonn SeGaL"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham Binjamin Wolf ben Josef Jehuda"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1272#hha-1272-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1189#hha-1189-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Edel bat Jokew Lichtenstadt ⚭ Wolf Feifels"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Edel bat Jokew Lichtenstadt ⚭ Wolf Feifels"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1189#hha-1189-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1272#hha-1272-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham Binjamin Wolf ben Josef Jehuda"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat David Tewle Schiff ⚭ Ber KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1240#hha-1240-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hindle bat Jehuda Löb SeGaL ⚭ Schimschon Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1333#hha-1333-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1523#hha-1523-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schimschon ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Ester bat Aharon Jehuda Löb ⚭ Schimschon Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1333#hha-1333-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1535#hha-1535-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schimschon ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Löb Feiwels ⚭ Elijahu Wiener SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1358#hha-1358-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1408#hha-1408-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Elijahu ben Model SeGaL"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Elchanan Henle ben Mosche ben Lebusch"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1408#hha-1408-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1359#hha-1359-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Löb Feiwels ⚭ Elijahu Wiener SeGaL"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Natan ⚭ Löb Staden"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3332#hha-3332-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1462#hha-1462-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Jehuda ben Natan"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Röschen bat Mosche Gumprich ⚭ Mosche Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1488#hha-1488-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1489#hha-1489-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Röschen bat Mosche Gumprich ⚭ Mosche Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3161#hha-3161-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1489#hha-1489-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hizle bat Meir Heilbut ⚭ Mosche ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sprinz Rachel bat Gerschon SeGaL ⚭ Michel Delbanco"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1977#hha-1977-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1595#hha-1595-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Michel Delbanco SeGaL ben Elia Wiener SeGaL"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Michel Delbanco SeGaL ben Elia Wiener SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1595#hha-1595-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1977#hha-1977-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Sprinz Rachel bat Gerschon SeGaL ⚭ Michel Delbanco"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Zippor bat Mosche ⚭ Salman F(rank)f(urter) ben I. L(eudes)d(orf)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-868#hha-868-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-163#hha-163-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Mosche Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Mosche Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-163#hha-163-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-868#hha-868-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Zippor bat Mosche ⚭ Salman F(rank)f(urter) ben I. L(eudes)d(orf)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jette bat Sundel ⚭ Löb Popert"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1649#hha-1649-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1633#hha-1633-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Schimschon Popert"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Schimschon Popert"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1633#hha-1633-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1649#hha-1649-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jette bat Sundel ⚭ Löb Popert"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jonatan Mosche ben Meir SeGaL [(Jonathan Meyer Oldenburg)]"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1638#hha-1638-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1637#hha-1637-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Buna Mirjam bat Meir Popert ⚭ Jehonatan O(lden)b(urg)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Buna Mirjam bat Meir Popert ⚭ Jehonatan O(lden)b(urg)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1637#hha-1637-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1638#hha-1638-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jonatan Mosche ben Meir SeGaL [(Jonathan Meyer Oldenburg)]"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hanna Sara ben Abraham F(rank)f(urt) bat Bonfit ⚭ Ber"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-168#hha-168-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-398#hha-398-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Ber ben Awraham F(rank)f(urt) Schapira"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "R. S. Ester bat Sch(lomo) Salman ⚭ Jecheskel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1721#hha-1721-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1722#hha-1722-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jecheskel ben Awraham (Jecheskel Katzenellenbogen)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel #(ue) Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5479#hha-5479-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1732#hha-1732-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mendel ben Schmuel Bonn SeGaL"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Aharon ⚭ Zadok Wittmund"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1773#hha-1773-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1772#hha-1772-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Zadok ben Aharon Wittmund"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Zadok ben Aharon Wittmund"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1772#hha-1772-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1773#hha-1773-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Fradche bat Aharon ⚭ Zadok Wittmund"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schönle bat Mosche Hahn ⚭ Löb ben H(irsch)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1775#hha-1775-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1774#hha-1774-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Zwi Hirsch ben Joel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Zwi Hirsch ben Joel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1774#hha-1774-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1775#hha-1775-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schönle bat Mosche Hahn ⚭ Löb ben H(irsch)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jochewed Lea bat David Hildesheim ⚭ Jokkel Hausen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1838#hha-1838-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1839#hha-1839-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jokkel Hausen ben Meir"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Gumpel Plaut ⚭ Juspa Göttingen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1861#hha-1861-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1840#hha-1840-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Juspa Mosche ben Jizchak Izek Göttingen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Juspa Mosche ben Jizchak Izek Göttingen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1840#hha-1840-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1861#hha-1861-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Gumpel Plaut ⚭ Juspa Göttingen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Koppel KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-29#hha-29-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-189#hha-189-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Sara Serle bat Jaakow ⚭ Mosche KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Joel ben Schlomo Schuh"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1890#hha-1890-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1892#hha-1892-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Channa Riwka bat Chajim Kleve ⚭ Joel Schuh"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Gerschon ben Tewle"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-774#hha-774-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-229#hha-229-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Merle bat Josef Fürst ⚭ Gerschon"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Merle bat Josef Fürst ⚭ Gerschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-229#hha-229-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-774#hha-774-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gerschon ben Tewle"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Menachem ⚭ Hirsch Halle"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-23#hha-23-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-238#hha-238-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hirsch ben Awraham Halle"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jeschajahu ben Izek Gowe"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-826#hha-826-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-231#hha-231-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Kendelche Lea bat Josef Renner ⚭ Jeschaja ben Izek Gowe"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Reize bat Schimschon ⚭ Jaakow Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2478#hha-2478-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2432#hha-2432-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Schmuel ben Levi Josef"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Schmuel ben Levi Josef"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2432#hha-2432-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2478#hha-2478-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Reize bat Schimschon ⚭ Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Juspa Jizchak ben Eli KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-25#hha-25-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-817#hha-817-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Pessche bat Michel Wagner ⚭ Juspa Mainzer"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel bat Michel Mehlhausen ⚭ Reuwen Rothschild"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1138#hha-1138-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2810#hha-2810-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Reuwen ben Löb Rothschild"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Elasar Halevi"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-441#hha-441-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3022#hha-3022-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella Riwka bat Model SeGaL ⚭ Hirsch SeGaL Breslau"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Bella Riwka bat Model SeGaL ⚭ Hirsch SeGaL Breslau"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3022#hha-3022-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-441#hha-441-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Elasar Halevi"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jette bat Meir Popert ⚭ Bendit Schiff KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3078#hha-3078-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-733#hha-733-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Baruch Aharon ben Hirz Schiff Kohen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Golda ⚭ Jechiel Wallich"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3131#hha-3131-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3130#hha-3130-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat David ⚭ Jechiel Wallich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hizle bat Meir Heilbut ⚭ Mosche ben Jaakow Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1488#hha-1488-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3161#hha-3161-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche ben Jaakow Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rösle bat David Tewle Schiff Hakohen ⚭ Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3186#hha-3186-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rösle bat David Tewle Schiff Hakohen ⚭ Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3190#hha-3190-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3186#hha-3186-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Jokew Ree ⚭ Ber Kohen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Jokew Ree ⚭ Ber Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1238#hha-1238-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3190#hha-3190-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Issachar Ber ben Jehuda Seligman KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Jizchak Rotschild"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3289#hha-3289-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3275#hha-3275-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Elkele bat Jokew Ree ⚭ Löb R(oth)sch(ild)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Elkele bat Jokew Ree ⚭ Löb R(oth)sch(ild)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3275#hha-3275-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3289#hha-3289-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jehuda Löb ben Jizchak Rotschild"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Josef Jehuda ben Natan"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1462#hha-1462-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3332#hha-3332-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Bella bat Natan ⚭ Löb Staden"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Mosche ben Feiwesch ben Jeschajaju Hekscher"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-461#hha-461-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-493#hha-493-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Halche bat Eli Rotterdam ⚭ Mosche ben F(eiwesch) Hekscher"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel Lea bat Meir Kohen ⚭ Mordechai Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4760#hha-4760-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-673#hha-673-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai Beit ben Salman Beit (Marcus Salomon Beit)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara Pessche ⚭ Lipman Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-634#hha-634-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5035#hha-5035-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mirjam bat Mordechai Knorr ⚭ Lipman Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Sara Pessche ⚭ Lipman Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-806#hha-806-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5035#hha-5035-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Lipman ben Salman Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Gerschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-772#hha-772-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5246#hha-5246-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Peier bat Sender Deschere ⚭ Hirsch Rofe"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel Peier bat Sender Deschere ⚭ Hirsch Rofe"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5246#hha-5246-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-772#hha-772-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Zwi Hirsch ben Gerschon"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai ben Schmuel Schammes"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-556#hha-556-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-531#hha-531-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "[Schönche] bat Salman ... ⚭ Mordechai ben Schmuel Schammes"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "[Schönche] bat Salman ... ⚭ Mordechai ben Schmuel Schammes"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-531#hha-531-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-556#hha-556-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai ben Schmuel Schammes"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mendel ben Schmuel Bonn SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-1732#hha-1732-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5479#hha-5479-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rechel #(ue) Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jette Machle bat Kalman Haag ⚭ Josef ben Sch(imon) Wansbek"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-624#hha-624-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-623#hha-623-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Josef ben Schimon Wansbek"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mirjam bat Mordechai Knorr ⚭ Lipman Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-806#hha-806-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-634#hha-634-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Lipman ben Salman Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Gittla bat Meir Heilbut ⚭ Reuwen Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2129#hha-2129-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2128#hha-2128-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Reuwen ben Jaakow Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Reuwen ben Jaakow Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2128#hha-2128-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2129#hha-2129-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gittla bat Meir Heilbut ⚭ Reuwen Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon Bamikwe? ben Mordechai"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2260#hha-2260-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2255#hha-2255-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Reizche bat Kalman ⚭ Aharon Bamikwe"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Reizche bat Kalman ⚭ Aharon Bamikwe"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2255#hha-2255-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2260#hha-2260-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon Bamikwe? ben Mordechai"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel bat Jaakow Altona ⚭ Mosche Kohen"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2541#hha-2541-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2327#hha-2327-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mosche KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Juspa Hekscher"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2405#hha-2405-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2404#hha-2404-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Deiche bat Efraim Hameln ⚭ Meir ben Juspa"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Deiche bat Efraim Hameln ⚭ Meir ben Juspa"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2404#hha-2404-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2405#hha-2405-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Juspa Hekscher"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Golde bat Löb ⚭ Mosche G(old)z(ieher)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2451#hha-2451-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2415#hha-2415-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon Awraham Mosche ben Schimschon"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon Awraham Mosche ben Schimschon"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2415#hha-2415-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2451#hha-2451-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Golde bat Löb ⚭ Mosche G(old)z(ieher)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow ben Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3342#hha-3342-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2437#hha-2437-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Pesschen bat Menachem ⚭ Jaakow ben Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Pesschen bat Menachem ⚭ Jaakow ben Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2437#hha-2437-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3342#hha-3342-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow ben Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham ben Josef Mordechai"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2449#hha-2449-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2461#hha-2461-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Rachel bat Elieser ⚭ Awraham"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Awraham ben Josef Gugenheim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2880#hha-2880-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2553#hha-2553-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Glukche Mirjam bat Man Kleve ⚭ Awraham Gugenheim"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jizchak Awraham ben Awraham Jaakow"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2728#hha-2728-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2729#hha-2729-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Sara Breine bat Schmuel Elb ⚭ Awraham Halle"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Reuwen ben Bendit Goldschmidt SeGaL"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2899#hha-2899-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2798#hha-2798-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hanna bat Aharon Fürst ⚭ Reuwen Goldschmidt"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hanna bat Aharon Fürst ⚭ Reuwen Goldschmidt"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2798#hha-2798-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2899#hha-2899-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Reuwen ben Bendit Goldschmidt SeGaL"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Eljakum Getschlik ben Jokew Elsass"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3121#hha-3121-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2859#hha-2859-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hindle bat Awraham Metz ⚭ Getschlik Elsass"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Ester bat A(braham) ⚭ Chajim Hekscher"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3121#hha-3121-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-2861#hha-2861-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hindle bat Awraham Metz ⚭ Getschlik Elsass"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hindche bat Mosche Schiff KaZ ⚭ Meir"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3051#hha-3051-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3049#hha-3049-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Meir ben Chajim Awraham"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Izek Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3097#hha-3097-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3086#hha-3086-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Libe Sara ⚭ Salman Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Libe Sara ⚭ Salman Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3086#hha-3086-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3097#hha-3097-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Salman ben Izek Beit"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Hizel bat Mosche Spanier ⚭ Aharon [Gumpertz] Emmerich"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4022#hha-4022-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3129#hha-3129-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon [Gumpertz] Emmerich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Ascher Anschel ben Elieser SeGaL Winfe"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3166#hha-3166-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3167#hha-3167-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mate bat Jehuda Levi Rothschild Bacharach ⚭ Ascher Anschel SeGaL Wimpfen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Brendle bat Jokew Ree ⚭ Schimon Hekscher"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3188#hha-3188-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3313#hha-3313-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schimon ben Efraim Hekscher"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Elijahu ben David KaZ"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3264#hha-3264-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3338#hha-3338-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Olik bat Natan ⚭ Eli KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Gütchen bat Jehonatan SeGaL ⚭ Schmuel"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3361#hha-3361-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3360#hha-3360-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Jehuda"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Jehuda"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3360#hha-3360-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3361#hha-3361-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gütchen bat Jehonatan SeGaL ⚭ Schmuel"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mirjam Sara bat Awraham Rofe ⚭ Schmuel Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3536#hha-3536-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3535#hha-3535-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Elijahu Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Schmuel ben Elijahu Warburg"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3535#hha-3535-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3536#hha-3536-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mirjam Sara bat Awraham Rofe ⚭ Schmuel Warburg"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Meir Heine ben Chajim"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5036#hha-5036-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3538#hha-3538-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Betze bat Mosche Schwerin ⚭ Meir Heine"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Aharon [Gumpertz] Emmerich"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3129#hha-3129-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4022#hha-4022-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hizel bat Mosche Spanier ⚭ Aharon [Gumpertz] Emmerich"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate Chava bat Meir Popert ⚭ Bendit Schiff"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3078#hha-3078-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4655#hha-4655-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Baruch Aharon ben Hirz Schiff Kohen"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Mate Chava bat Meir Popert ⚭ Bendit Schiff"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-733#hha-733-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4655#hha-4655-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jette bat Meir Popert ⚭ Bendit Schiff KaZ"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Riwka Betze bat Mosche Schwerin ⚭ Meir Heine"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-3538#hha-3538-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5036#hha-5036-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Meir Heine ben Chajim"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat Kaufman Turlach ⚭ Jokew Ettlingen (Nannette Wormser)"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4210#hha-4210-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4205#hha-4205-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Jokew ben Aharon Ettlinger"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Jaakow Jokew ben Aharon Ettlinger"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4205#hha-4205-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4210#hha-4210-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Gnendel bat Kaufman Turlach ⚭ Jokew Ettlingen (Nannette Wormser)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Leitzche bat Michel Levi ⚭ Mordechai ben S. Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-4760#hha-4760-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "gold"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5120#hha-5120-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Mordechai Beit ben Salman Beit (Marcus Salomon Beit)"
+        }
+      },
+      {
+        "targetColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "objectLabel" : {
+          "type" : "literal",
+          "value" : "Leitzche bat Michel Levi ⚭ Mordechai ben S. Beit"
+        },
+        "subject" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-673#hha-673-1"
+        },
+        "predicate" : {
+          "type" : "uri",
+          "value" : "http://purl.org/vocab/relationship/spouseOf"
+        },
+        "sourceColor" : {
+          "type" : "literal",
+          "value" : "yellowgreen"
+        },
+        "object" : {
+          "type" : "uri",
+          "value" : "http://www.steinheim-institut.de/cgi-bin/epidat?id=hha-5120#hha-5120-1"
+        },
+        "subjectLabel" : {
+          "type" : "literal",
+          "value" : "Hendel Lea bat Meir Kohen ⚭ Mordechai Beit"
+        }
+      }
+    ]
+  }
+}

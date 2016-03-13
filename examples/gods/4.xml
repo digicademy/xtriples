@@ -1,1 +1,31 @@
-<god id="4"><name><greek>Ἄρτεμις</greek><roman>Diana</roman><english>Artemis</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="brother" id="2"/><relation type="child" id="14"/></relationships><attributes><attribute>hunt</attribute><attribute>wilderness</attribute><attribute>animals</attribute><attribute>young girls</attribute><attribute>childbirth</attribute><attribute>plague</attribute></attributes><symbols><item>bow</item><item>arrow</item></symbols><animals><animal>deer</animal><animal>bears</animal><animal>wild boars</animal></animals></god>
+<?xml version="1.0" encoding="UTF-8"?>
+<god id="4">
+    <name>
+        <greek>Ἄρτεμις</greek>
+        <roman>Diana</roman>
+        <english>Artemis</english>
+    </name>
+    <gender>female</gender>
+    <olympian>1</olympian>
+    <relationships>
+        <relation type="brother" id="2"/>
+        <relation type="child" id="14"/>
+    </relationships>
+    <attributes>
+        <attribute>hunt</attribute>
+        <attribute>wilderness</attribute>
+        <attribute>animals</attribute>
+        <attribute>young girls</attribute>
+        <attribute>childbirth</attribute>
+        <attribute>plague</attribute>
+    </attributes>
+    <symbols>
+        <item>bow</item>
+        <item>arrow</item>
+    </symbols>
+    <animals>
+        <animal>deer</animal>
+        <animal>bears</animal>
+        <animal>wild boars</animal>
+    </animals>
+</god>

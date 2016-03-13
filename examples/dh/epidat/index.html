@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Epidat: Family relations in the Hamburg-Altona Epidat gravestone corpus</title>
+        <meta charset="UTF-8"/>
+		<!-- skeleton css -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/normalize.css"/>
+        <link rel="stylesheet" href="css/skeleton.css"/>
+		<!-- codemirror for sparql -->
+        <link rel="stylesheet" href="css/codemirror.css"/>
+        <link rel="stylesheet" href="css/sparqlcolors.css"/>
+        <script src="js/codemirror.js"/>
+        <script src="js/matchbrackets.js"/>
+        <script src="js/sparql.js"/>
+		<!-- sgvizler stuff -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"/>
+        <script type="text/javascript" src="https://www.google.com/jsapi"/>
+        <script type="text/javascript" id="sgvzlr_script" src="js/sgvizler.js"/>
+        <script type="text/javascript">
+			sgvizler
+			.prefix('foaf', 'http://xmlns.com/foaf/0.1/')
+			.prefix('rel', 'http://purl.org/vocab/relationship/')
+			.prefix('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+			.prefix('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
+		//// Leave this as is. Ready, steady, go! 
+		$(document).ready(function() { sgvizler.containerDrawAll(); });
+	</script>
+    </head>
+    <body class="code-snippets-visible">
+        <div class="container" style="width: auto; margin: 1em 3em; max-width: auto; ">
+            <h5>
+                <a href="http://xtriples.spatialhumanities.de">XTriples example</a>
+            </h5>
+            <h1>Family relations in the Hamburg-Altona Epidat gravestone corpus</h1>
+            <p>
+                <a href="http://www.steinheim-institut.de/cgi-bin/epidat?sel=hha">Gravestone Corpus</a> |&#160;<a href="persons.xml">XTriples configuration</a> |&#160;<a href="persons.rdf">RDF data</a>
+            </p>
+            <p>
+        		Inspiration for this example drawn from a <a href="https://listserv.brown.edu/archives/cgi-bin/wa?A2=ind1507&amp;L=TEI-L&amp;F=&amp;S=&amp;P=47580">discussion</a> about visualizing XML based relationships on the TEI mailinglist. Credits and thanks to <a href="http://www.steinheim-institut.de/wiki/index.php/Mitarbeiter:Thomas_Kollatz">Thomas Kollatz</a> for the idea.
+        		The RDF extraction is modelled on <a href="http://xmlns.com/foaf/0.1/">FOAF</a> to represent persons, <a href="http://purl.org/vocab/bio/0.1/">BIO</a> to represent 
+        		dates of death and <a href="http://purl.org/vocab/relationship/">REL</a> to build family relations between persons.
+        		Visualization is done using the <a href="http://dev.data2000.no/sgvizler/">Sgvizler library</a> and it's <a href="http://www.graphdracula.net/">Dracula Graph</a> implementation.
+        	</p>
+            <p>All stuff <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> | <a href="http://www.adwmainz.de/mitarbeiter/profil/torsten-schrade.html">Torsten Schrade</a> and <a href="https://twitter.com/digicademy">@digicademy</a>
+            </p>
+            <div id="sgvzl_example5" data-sgvizler-chart="sgvizler.visualization.DraculaGraph" data-sgvizler-log="2" style="margin: 2em 0 3em 0; border: 1px solid #999; width:2000px; height:3000px;" data-sgvizler-chart-options="noderadius=0.8|nodecornerradius=5|nodefontsize=12|nodepadding=7|edgefill=royalblue|edgestroke=royalblue|edgestrokewidth=3|edgefontsize=8|directed=1" data-sgvizler-endpoint="query.srj" data-sgvizler-query=""/>
+            <h3>SPARQL Query</h3>
+            <p>
+            	Once put into a triple store the following SPARQL query pulls all family relations out of the extracted RDF data; 
+            	BIND statements are used to assign yellow and green colors to female and male RDF nodes respectively.
+            </p>
+            <form>
+                <textarea class="code" id="code" name="code">
+PREFIX rel: &lt;http://purl.org/vocab/relationship/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+
+SELECT DISTINCT ?subject ?subjectLabel ?object ?objectLabel ?predicate
+WHERE {
+	?subject ?predicate ?object .
+	?subject (rel:parentOf|^rel:parentOf|rel:spouseOf) ?object .
+	?subject rdfs:label ?subjectLabel .
+	?object rdfs:label ?objectLabel .
+	?subject foaf:gender ?subjectGender .
+	?object foaf:gender ?objectGender .
+	BIND (IF(?subjectGender = "male"@en, "gold", "yellowgreen") AS ?sourceColor)
+	BIND (IF(?objectGender = "male"@en, "gold", "yellowgreen") AS ?targetColor)
+}
+				</textarea>
+            </form>
+            <h3>Result</h3>
+            <p>Result of the query visualized as a simple data table</p>
+            <div id="sgvzl_example6" data-sgvizler-chart="sgvizler.visualization.Table" data-sgvizler-log="2" data-sgvizler-endpoint="query.srj" data-sgvizler-query=""/>
+            <p>
+                <a href="http://xtriples.spatialhumanities.de/imprint.html">Imprint</a>
+            </p>
+        </div>
+        <script>
+			var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+				mode: "application/sparql-query",
+				matchBrackets: true
+			});
+		</script>
+        <script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.adwmainz.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 22]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+        <noscript>
+            <p>
+                <img src="//stats.adwmainz.net/piwik.php?idsite=22" style="border:0;" alt=""/>
+            </p>
+        </noscript>
+    </body>
+</html>

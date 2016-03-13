@@ -1,1 +1,23 @@
-<xtriples><configuration><vocabularies><vocabulary name="xtriples" uri="http://xtriples.spatialhumanities.de/"/><vocabulary name="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/></vocabularies><triples><statement><subject prefix="xtriples">/string("configuration.xml")</subject><predicate prefix="xtriples">message</predicate><object type="literal">//text</object></statement></triples></configuration><collection><resource><message><text>No configuration submitted</text></message></resource></collection></xtriples>
+<?xml version="1.0" encoding="UTF-8"?>
+<xtriples>
+    <configuration>
+        <vocabularies>
+            <vocabulary name="xtriples" uri="http://xtriples.spatialhumanities.de/"/>
+            <vocabulary name="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+        </vocabularies>
+        <triples>
+            <statement>
+                <subject prefix="xtriples">/string("configuration.xml")</subject>
+                <predicate prefix="xtriples">message</predicate>
+                <object type="literal">//text</object>
+            </statement>
+        </triples>
+    </configuration>
+    <collection>
+        <resource>
+            <message>
+                <text>No configuration submitted</text>
+            </message>
+        </resource>
+    </collection>
+</xtriples>

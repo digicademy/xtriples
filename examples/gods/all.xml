@@ -1,1 +1,426 @@
-<!-- http://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses --><gods><god id="1"><name><greek>Ἀφροδίτη</greek><roman>Venus</roman><english>Aphrodite</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="spouse" id="9"/></relationships><attributes><attribute>love</attribute><attribute>beauty</attribute><attribute>desire</attribute><attribute>pleasure</attribute><attribute>sex</attribute></attributes><symbols><item>roses</item></symbols><animals><animal>dove</animal><animal>sparrow</animal></animals></god><god id="2"><name><greek>Ἀπόλλων</greek><roman>Apollon</roman><english>Apollo</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="child" id="14"/><relation type="sister" id="4"/></relationships><attributes><attribute>music</attribute><attribute>arts</attribute><attribute>knowledge</attribute><attribute>healing</attribute><attribute>plague</attribute><attribute>prophecy</attribute><attribute>poetry</attribute><attribute>beauty</attribute><attribute>archery</attribute></attributes><symbols><item>laurel wreath</item><item>lyre</item></symbols><animals><animal>roe deer</animal><animal>swans</animal><animal>cicadas</animal><animal>hawks</animal><animal>ravens</animal><animal>crows</animal><animal>foxes</animal><animal>mice</animal><animal>snakes</animal></animals></god><god id="3"><name><greek>Ἄρης</greek><roman>Mars</roman><english>Ares</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="child" id="10"/><relation type="child" id="14"/></relationships><attributes><attribute>war</attribute><attribute>bloodshed</attribute><attribute>violence</attribute></attributes><symbols><item>helmet</item><item>spear</item><item>sword</item></symbols><animals><animal>vulture</animal><animal>snakes</animal><animal>dogs</animal><animal>boars</animal></animals></god><god id="4"><name><greek>Ἄρτεμις</greek><roman>Diana</roman><english>Artemis</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="brother" id="2"/><relation type="child" id="14"/></relationships><attributes><attribute>hunt</attribute><attribute>wilderness</attribute><attribute>animals</attribute><attribute>young girls</attribute><attribute>childbirth</attribute><attribute>plague</attribute></attributes><symbols><item>bow</item><item>arrow</item></symbols><animals><animal>deer</animal><animal>bears</animal><animal>wild boars</animal></animals></god><god id="5"><name><greek>Ἀθηνᾶ</greek><roman>Minerva</roman><english>Athena</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="child" id="14"/></relationships><attributes><attribute>intelligence</attribute><attribute>skill</attribute><attribute>peace</attribute><attribute>warfare</attribute><attribute>battle strategy</attribute><attribute>handicrafts</attribute><attribute>wisdom</attribute></attributes><symbols><item>helm</item><item>shield</item><item>spear</item><item>aegis</item><item>olive tree</item></symbols><animals><animal>owl</animal></animals><places><place>Athens</place></places></god><god id="6"><name><greek>Δημήτηρ</greek><roman>Ceres</roman><english>Demeter</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="sister" id="14"/></relationships><attributes><attribute>grain</attribute><attribute>agriculture</attribute><attribute>growth</attribute><attribute>harvest</attribute><attribute>nourishment</attribute></attributes><symbols><item>crown</item><item>cornucopia</item><item>wheat-ears</item><item>winged serpent</item><item>lotus staff</item></symbols><animals><animal>pigs</animal><animal>snakes</animal></animals></god><god id="7"><name><greek>Διόνυσος</greek><roman>Bacchus</roman><english>Dionysus</english></name><gender>male</gender><olympian>1</olympian><attributes><attribute>wine</attribute><attribute>parties</attribute><attribute>festivals</attribute><attribute>madness</attribute><attribute>chaos</attribute><attribute>drunkenness</attribute><attribute>drugs</attribute><attribute>ecstasy</attribute></attributes><symbols><item>thyrsus</item><item>drinking cup</item><item>grape vine</item><item>crown of ivy</item></symbols><animals><animal>dolphins</animal><animal>serpents</animal><animal>tigers</animal><animal>donkeys</animal></animals><places><place>Chios</place></places></god><god id="8"><name><greek>ᾍδης</greek><roman>Pluto</roman><english>Hades</english></name><gender>male</gender><olympian>0</olympian><attributes><attribute>underworld</attribute><attribute>death</attribute><attribute>regret</attribute></attributes><symbols><item>drinking horn</item><item>cornucopia</item><item>sceptre</item><item>three-headed dog</item></symbols><animals><animal>screech owl</animal><animal>swans</animal><animal>cicadas</animal><animal>hawks</animal><animal>ravens</animal><animal>crows</animal><animal>foxes</animal><animal>mice</animal><animal>snakes</animal></animals></god><god id="9"><name><greek>Ἥφαιστος</greek><roman>Vulcan</roman><english>Hephaestus</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="spouse" id="1"/><relation type="child" id="10"/></relationships><attributes><attribute>fire</attribute><attribute>metalworking</attribute><attribute>crafts</attribute></attributes><symbols><item>hammer</item><item>tong</item><item>anvil</item></symbols><animals><animal>donkey</animal><animal>dog</animal><animal>crane</animal></animals></god><god id="10"><name><greek>Ἥρα</greek><roman>Juno</roman><english>Hera</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="spouse" id="14"/></relationships><attributes><attribute>marriage</attribute><attribute>women</attribute><attribute>childbirth</attribute><attribute>heirs</attribute><attribute>kings</attribute><attribute>empires</attribute></attributes><symbols><item>diadem</item><item>veil</item><item>lotus-tipped staff</item></symbols><animals><animal>heifer</animal><animal>peacock</animal><animal>cuckoo</animal></animals></god><god id="11"><name><greek>Ἑρμῆς</greek><roman>Mercury</roman><english>Hermes</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="child" id="14"/></relationships><attributes><attribute>boundaries</attribute><attribute>travel</attribute><attribute>communication</attribute><attribute>trade</attribute><attribute>language</attribute><attribute>writing</attribute></attributes><symbols><item>caduceus</item><item>winged sandals</item><item>traveler's cap</item></symbols><animals><animal>tortoise</animal><animal>ram</animal><animal>hawk</animal></animals></god><god id="12"><name><greek>Ἑστία</greek><roman>Vesta</roman><english>Hestia</english></name><gender>female</gender><olympian>0</olympian><relationships><relation type="sister" id="14"/></relationships><attributes><attribute>hearth</attribute><attribute>home</attribute><attribute>chastity</attribute></attributes><symbols><item>veil</item><item>hearth</item><item>kettle</item></symbols></god><god id="13"><name><greek>Ποσειδῶν</greek><roman>Neptune</roman><english>Poseidon</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="brother" id="14"/></relationships><attributes><attribute>sea</attribute><attribute>rivers</attribute><attribute>floods</attribute><attribute>droughts</attribute><attribute>earthquakes</attribute></attributes><symbols><item>trident</item></symbols><animals><animal>horse</animal><animal>dolphin</animal><animal>fish</animal><animal>bull</animal></animals></god><god id="14"><name><greek>Ζεύς</greek><roman>Jupiter</roman><english>Zeus</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="spouse" id="10"/><relation type="brother" id="13"/><relation type="brother" id="8"/><relation type="brother" id="6"/></relationships><attributes><attribute>sky</attribute><attribute>weather</attribute><attribute>lightning</attribute><attribute>law</attribute><attribute>order</attribute><attribute>justice</attribute></attributes><symbols><item>scepter</item><item>lightning bolt</item></symbols><animals><animal>eagle</animal><animal>bull</animal></animals></god></gods>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://en.wikipedia.org/wiki/List_of_Greek_mythological_figures#Major_gods_and_goddesses -->
+<gods>
+    <god id="1">
+        <name>
+            <greek>Ἀφροδίτη</greek>
+            <roman>Venus</roman>
+            <english>Aphrodite</english>
+        </name>
+        <gender>female</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="spouse" id="9"/>
+        </relationships>
+        <attributes>
+            <attribute>love</attribute>
+            <attribute>beauty</attribute>
+            <attribute>desire</attribute>
+            <attribute>pleasure</attribute>
+            <attribute>sex</attribute>
+        </attributes>
+        <symbols>
+            <item>roses</item>
+        </symbols>
+        <animals>
+            <animal>dove</animal>
+            <animal>sparrow</animal>
+        </animals>
+    </god>
+    <god id="2">
+        <name>
+            <greek>Ἀπόλλων</greek>
+            <roman>Apollon</roman>
+            <english>Apollo</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="child" id="14"/>
+            <relation type="sister" id="4"/>
+        </relationships>
+        <attributes>
+            <attribute>music</attribute>
+            <attribute>arts</attribute>
+            <attribute>knowledge</attribute>
+            <attribute>healing</attribute>
+            <attribute>plague</attribute>
+            <attribute>prophecy</attribute>
+            <attribute>poetry</attribute>
+            <attribute>beauty</attribute>
+            <attribute>archery</attribute>
+        </attributes>
+        <symbols>
+            <item>laurel wreath</item>
+            <item>lyre</item>
+        </symbols>
+        <animals>
+            <animal>roe deer</animal>
+            <animal>swans</animal>
+            <animal>cicadas</animal>
+            <animal>hawks</animal>
+            <animal>ravens</animal>
+            <animal>crows</animal>
+            <animal>foxes</animal>
+            <animal>mice</animal>
+            <animal>snakes</animal>
+        </animals>
+    </god>
+    <god id="3">
+        <name>
+            <greek>Ἄρης</greek>
+            <roman>Mars</roman>
+            <english>Ares</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="child" id="10"/>
+            <relation type="child" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>war</attribute>
+            <attribute>bloodshed</attribute>
+            <attribute>violence</attribute>
+        </attributes>
+        <symbols>
+            <item>helmet</item>
+            <item>spear</item>
+            <item>sword</item>
+        </symbols>
+        <animals>
+            <animal>vulture</animal>
+            <animal>snakes</animal>
+            <animal>dogs</animal>
+            <animal>boars</animal>
+        </animals>
+    </god>
+    <god id="4">
+        <name>
+            <greek>Ἄρτεμις</greek>
+            <roman>Diana</roman>
+            <english>Artemis</english>
+        </name>
+        <gender>female</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="brother" id="2"/>
+            <relation type="child" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>hunt</attribute>
+            <attribute>wilderness</attribute>
+            <attribute>animals</attribute>
+            <attribute>young girls</attribute>
+            <attribute>childbirth</attribute>
+            <attribute>plague</attribute>
+        </attributes>
+        <symbols>
+            <item>bow</item>
+            <item>arrow</item>
+        </symbols>
+        <animals>
+            <animal>deer</animal>
+            <animal>bears</animal>
+            <animal>wild boars</animal>
+        </animals>
+    </god>
+    <god id="5">
+        <name>
+            <greek>Ἀθηνᾶ</greek>
+            <roman>Minerva</roman>
+            <english>Athena</english>
+        </name>
+        <gender>female</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="child" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>intelligence</attribute>
+            <attribute>skill</attribute>
+            <attribute>peace</attribute>
+            <attribute>warfare</attribute>
+            <attribute>battle strategy</attribute>
+            <attribute>handicrafts</attribute>
+            <attribute>wisdom</attribute>
+        </attributes>
+        <symbols>
+            <item>helm</item>
+            <item>shield</item>
+            <item>spear</item>
+            <item>aegis</item>
+            <item>olive tree</item>
+        </symbols>
+        <animals>
+            <animal>owl</animal>
+        </animals>
+        <places>
+            <place>Athens</place>
+        </places>
+    </god>
+    <god id="6">
+        <name>
+            <greek>Δημήτηρ</greek>
+            <roman>Ceres</roman>
+            <english>Demeter</english>
+        </name>
+        <gender>female</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="sister" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>grain</attribute>
+            <attribute>agriculture</attribute>
+            <attribute>growth</attribute>
+            <attribute>harvest</attribute>
+            <attribute>nourishment</attribute>
+        </attributes>
+        <symbols>
+            <item>crown</item>
+            <item>cornucopia</item>
+            <item>wheat-ears</item>
+            <item>winged serpent</item>
+            <item>lotus staff</item>
+        </symbols>
+        <animals>
+            <animal>pigs</animal>
+            <animal>snakes</animal>
+        </animals>
+    </god>
+    <god id="7">
+        <name>
+            <greek>Διόνυσος</greek>
+            <roman>Bacchus</roman>
+            <english>Dionysus</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <attributes>
+            <attribute>wine</attribute>
+            <attribute>parties</attribute>
+            <attribute>festivals</attribute>
+            <attribute>madness</attribute>
+            <attribute>chaos</attribute>
+            <attribute>drunkenness</attribute>
+            <attribute>drugs</attribute>
+            <attribute>ecstasy</attribute>
+        </attributes>
+        <symbols>
+            <item>thyrsus</item>
+            <item>drinking cup</item>
+            <item>grape vine</item>
+            <item>crown of ivy</item>
+        </symbols>
+        <animals>
+            <animal>dolphins</animal>
+            <animal>serpents</animal>
+            <animal>tigers</animal>
+            <animal>donkeys</animal>
+        </animals>
+        <places>
+            <place>Chios</place>
+        </places>
+    </god>
+    <god id="8">
+        <name>
+            <greek>ᾍδης</greek>
+            <roman>Pluto</roman>
+            <english>Hades</english>
+        </name>
+        <gender>male</gender>
+        <olympian>0</olympian>
+        <attributes>
+            <attribute>underworld</attribute>
+            <attribute>death</attribute>
+            <attribute>regret</attribute>
+        </attributes>
+        <symbols>
+            <item>drinking horn</item>
+            <item>cornucopia</item>
+            <item>sceptre</item>
+            <item>three-headed dog</item>
+        </symbols>
+        <animals>
+            <animal>screech owl</animal>
+            <animal>swans</animal>
+            <animal>cicadas</animal>
+            <animal>hawks</animal>
+            <animal>ravens</animal>
+            <animal>crows</animal>
+            <animal>foxes</animal>
+            <animal>mice</animal>
+            <animal>snakes</animal>
+        </animals>
+    </god>
+    <god id="9">
+        <name>
+            <greek>Ἥφαιστος</greek>
+            <roman>Vulcan</roman>
+            <english>Hephaestus</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="spouse" id="1"/>
+            <relation type="child" id="10"/>
+        </relationships>
+        <attributes>
+            <attribute>fire</attribute>
+            <attribute>metalworking</attribute>
+            <attribute>crafts</attribute>
+        </attributes>
+        <symbols>
+            <item>hammer</item>
+            <item>tong</item>
+            <item>anvil</item>
+        </symbols>
+        <animals>
+            <animal>donkey</animal>
+            <animal>dog</animal>
+            <animal>crane</animal>
+        </animals>
+    </god>
+    <god id="10">
+        <name>
+            <greek>Ἥρα</greek>
+            <roman>Juno</roman>
+            <english>Hera</english>
+        </name>
+        <gender>female</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="spouse" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>marriage</attribute>
+            <attribute>women</attribute>
+            <attribute>childbirth</attribute>
+            <attribute>heirs</attribute>
+            <attribute>kings</attribute>
+            <attribute>empires</attribute>
+        </attributes>
+        <symbols>
+            <item>diadem</item>
+            <item>veil</item>
+            <item>lotus-tipped staff</item>
+        </symbols>
+        <animals>
+            <animal>heifer</animal>
+            <animal>peacock</animal>
+            <animal>cuckoo</animal>
+        </animals>
+    </god>
+    <god id="11">
+        <name>
+            <greek>Ἑρμῆς</greek>
+            <roman>Mercury</roman>
+            <english>Hermes</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="child" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>boundaries</attribute>
+            <attribute>travel</attribute>
+            <attribute>communication</attribute>
+            <attribute>trade</attribute>
+            <attribute>language</attribute>
+            <attribute>writing</attribute>
+        </attributes>
+        <symbols>
+            <item>caduceus</item>
+            <item>winged sandals</item>
+            <item>traveler's cap</item>
+        </symbols>
+        <animals>
+            <animal>tortoise</animal>
+            <animal>ram</animal>
+            <animal>hawk</animal>
+        </animals>
+    </god>
+    <god id="12">
+        <name>
+            <greek>Ἑστία</greek>
+            <roman>Vesta</roman>
+            <english>Hestia</english>
+        </name>
+        <gender>female</gender>
+        <olympian>0</olympian>
+        <relationships>
+            <relation type="sister" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>hearth</attribute>
+            <attribute>home</attribute>
+            <attribute>chastity</attribute>
+        </attributes>
+        <symbols>
+            <item>veil</item>
+            <item>hearth</item>
+            <item>kettle</item>
+        </symbols>
+    </god>
+    <god id="13">
+        <name>
+            <greek>Ποσειδῶν</greek>
+            <roman>Neptune</roman>
+            <english>Poseidon</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="brother" id="14"/>
+        </relationships>
+        <attributes>
+            <attribute>sea</attribute>
+            <attribute>rivers</attribute>
+            <attribute>floods</attribute>
+            <attribute>droughts</attribute>
+            <attribute>earthquakes</attribute>
+        </attributes>
+        <symbols>
+            <item>trident</item>
+        </symbols>
+        <animals>
+            <animal>horse</animal>
+            <animal>dolphin</animal>
+            <animal>fish</animal>
+            <animal>bull</animal>
+        </animals>
+    </god>
+    <god id="14">
+        <name>
+            <greek>Ζεύς</greek>
+            <roman>Jupiter</roman>
+            <english>Zeus</english>
+        </name>
+        <gender>male</gender>
+        <olympian>1</olympian>
+        <relationships>
+            <relation type="spouse" id="10"/>
+            <relation type="brother" id="13"/>
+            <relation type="brother" id="8"/>
+            <relation type="brother" id="6"/>
+        </relationships>
+        <attributes>
+            <attribute>sky</attribute>
+            <attribute>weather</attribute>
+            <attribute>lightning</attribute>
+            <attribute>law</attribute>
+            <attribute>order</attribute>
+            <attribute>justice</attribute>
+        </attributes>
+        <symbols>
+            <item>scepter</item>
+            <item>lightning bolt</item>
+        </symbols>
+        <animals>
+            <animal>eagle</animal>
+            <animal>bull</animal>
+        </animals>
+    </god>
+</gods>

@@ -4,12 +4,16 @@ xquery version "3.0";
  : A set of helper functions to access the application context from
  : within a module.
  :)
-module namespace config="http://xtriples.spatialhumanities.de//config";
+module namespace config = "http://xtriples.spatialhumanities.de/config";
 
-declare namespace templates="http://exist-db.org/xquery/templates";
+declare namespace templates = "http://exist-db.org/xquery/templates";
+declare namespace repo = "http://exist-db.org/xquery/repo";
+declare namespace expath = "http://expath.org/ns/pkg";
 
-declare namespace repo="http://exist-db.org/xquery/repo";
-declare namespace expath="http://expath.org/ns/pkg";
+declare variable $config:xtriplesWebserviceURL := "http://xtriples.spatialhumanities.de/";
+declare variable $config:any23WebserviceURL := "http://any23-vm.apache.org/";
+declare variable $config:redeferWebserviceURL := "http://rhizomik.net/redefer-services/";
+declare variable $config:redeferWebserviceRulesURL := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
 
 (: 
     Determine the application root collection from the current module load path.
@@ -30,9 +34,7 @@ declare variable $config:app-root :=
 ;
 
 declare variable $config:data-root := $config:app-root || "/data";
-
 declare variable $config:repo-descriptor := doc(concat($config:app-root, "/repo.xml"))/repo:meta;
-
 declare variable $config:expath-descriptor := doc(concat($config:app-root, "/expath-pkg.xml"))/expath:package;
 
 (:~

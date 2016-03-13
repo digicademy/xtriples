@@ -1,1 +1,14 @@
-<meta xmlns="http://exist-db.org/xquery/repo"><description>A generic webservice to extract RDF statements from XML resources</description><author>Torsten Schrade</author><website>https://github.com/spatialhumanities/xtriples</website><status>stable</status><license>MIT</license><copyright>true</copyright><type>application</type><target>xtriples</target><prepare>pre-install.xql</prepare><finish/><deployed>2014-05-15T09:43:18.272+02:00</deployed></meta>
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>A generic webservice to extract RDF statements from XML resources</description>
+    <author>Torsten Schrade</author>
+    <website>https://github.com/spatialhumanities/xtriples</website>
+    <status>stable</status>
+    <license>MIT</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>xtriples</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <deployed>2015-07-21T23:34:16.748+02:00</deployed>
+</meta>

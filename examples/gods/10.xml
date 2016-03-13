@@ -1,1 +1,31 @@
-<god id="10"><name><greek>Ἥρα</greek><roman>Juno</roman><english>Hera</english></name><gender>female</gender><olympian>1</olympian><relationships><relation type="spouse" id="14"/></relationships><attributes><attribute>marriage</attribute><attribute>women</attribute><attribute>childbirth</attribute><attribute>heirs</attribute><attribute>kings</attribute><attribute>empires</attribute></attributes><symbols><item>diadem</item><item>veil</item><item>lotus-tipped staff</item></symbols><animals><animal>heifer</animal><animal>peacock</animal><animal>cuckoo</animal></animals></god>
+<?xml version="1.0" encoding="UTF-8"?>
+<god id="10">
+    <name>
+        <greek>Ἥρα</greek>
+        <roman>Juno</roman>
+        <english>Hera</english>
+    </name>
+    <gender>female</gender>
+    <olympian>1</olympian>
+    <relationships>
+        <relation type="spouse" id="14"/>
+    </relationships>
+    <attributes>
+        <attribute>marriage</attribute>
+        <attribute>women</attribute>
+        <attribute>childbirth</attribute>
+        <attribute>heirs</attribute>
+        <attribute>kings</attribute>
+        <attribute>empires</attribute>
+    </attributes>
+    <symbols>
+        <item>diadem</item>
+        <item>veil</item>
+        <item>lotus-tipped staff</item>
+    </symbols>
+    <animals>
+        <animal>heifer</animal>
+        <animal>peacock</animal>
+        <animal>cuckoo</animal>
+    </animals>
+</god>

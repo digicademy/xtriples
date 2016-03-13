@@ -1,1 +1,30 @@
-<god id="3"><name><greek>Ἄρης</greek><roman>Mars</roman><english>Ares</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="child" id="10"/><relation type="child" id="14"/></relationships><attributes><attribute>war</attribute><attribute>bloodshed</attribute><attribute>violence</attribute></attributes><symbols><item>helmet</item><item>spear</item><item>sword</item></symbols><animals><animal>vulture</animal><animal>venomouns snakes</animal><animal>dogs</animal><animal>boars</animal></animals></god>
+<?xml version="1.0" encoding="UTF-8"?>
+<god id="3">
+    <name>
+        <greek>Ἄρης</greek>
+        <roman>Mars</roman>
+        <english>Ares</english>
+    </name>
+    <gender>male</gender>
+    <olympian>1</olympian>
+    <relationships>
+        <relation type="child" id="10"/>
+        <relation type="child" id="14"/>
+    </relationships>
+    <attributes>
+        <attribute>war</attribute>
+        <attribute>bloodshed</attribute>
+        <attribute>violence</attribute>
+    </attributes>
+    <symbols>
+        <item>helmet</item>
+        <item>spear</item>
+        <item>sword</item>
+    </symbols>
+    <animals>
+        <animal>vulture</animal>
+        <animal>venomouns snakes</animal>
+        <animal>dogs</animal>
+        <animal>boars</animal>
+    </animals>
+</god>

@@ -1,1 +1,55 @@
-<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><xtriples><configuration><vocabularies><vocabulary prefix="gods" uri="http://xtriples.spatialhumanities.de/examples/gods/"/><vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><vocabulary prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/><vocabulary prefix="foaf" uri="http://xmlns.com/foaf/0.1/"/><vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/></vocabularies><triples><statement><subject prefix="gods">/@id</subject><predicate prefix="rdfs">label</predicate><object type="literal" datatype="integer">/count(.//attributes/*)</object></statement></triples></configuration><collection><resource><god id="14"><name><greek>Ζεύς</greek><roman>Jupiter</roman><english>Zeus</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="spouse" id="10"/><relation type="brother" id="13"/><relation type="brother" id="8"/><relation type="brother" id="6"/></relationships><attributes><attribute>sky</attribute><attribute>weather</attribute><attribute>lightning</attribute><attribute>law</attribute><attribute>order</attribute><attribute>justice</attribute></attributes><symbols><item>scepter</item><item>lightning bolt</item></symbols><animals><animal>eagle</animal><animal>bull</animal></animals></god></resource></collection></xtriples>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<xtriples>
+    <configuration>
+        <vocabularies>
+            <vocabulary prefix="gods" uri="http://xtriples.spatialhumanities.de/examples/gods/"/>
+            <vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+            <vocabulary prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+            <vocabulary prefix="foaf" uri="http://xmlns.com/foaf/0.1/"/>
+            <vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/>
+        </vocabularies>
+        <triples>
+            <statement>
+                <subject prefix="gods">/@id</subject>
+                <predicate prefix="rdfs">label</predicate>
+                <object type="literal" datatype="integer">/count(.//attributes/*)</object>
+            </statement>
+        </triples>
+    </configuration>
+    <collection>
+        <resource>
+            <god id="14">
+                <name>
+                    <greek>Ζεύς</greek>
+                    <roman>Jupiter</roman>
+                    <english>Zeus</english>
+                </name>
+                <gender>male</gender>
+                <olympian>1</olympian>
+                <relationships>
+                    <relation type="spouse" id="10"/>
+                    <relation type="brother" id="13"/>
+                    <relation type="brother" id="8"/>
+                    <relation type="brother" id="6"/>
+                </relationships>
+                <attributes>
+                    <attribute>sky</attribute>
+                    <attribute>weather</attribute>
+                    <attribute>lightning</attribute>
+                    <attribute>law</attribute>
+                    <attribute>order</attribute>
+                    <attribute>justice</attribute>
+                </attributes>
+                <symbols>
+                    <item>scepter</item>
+                    <item>lightning bolt</item>
+                </symbols>
+                <animals>
+                    <animal>eagle</animal>
+                    <animal>bull</animal>
+                </animals>
+            </god>
+        </resource>
+    </collection>
+</xtriples>

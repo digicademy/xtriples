@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<xtriples>
+    <configuration>
+        <vocabularies>
+            <vocabulary prefix="epidat" uri="http://www.steinheim-institut.de/cgi-bin/epidat?id="/>
+            <vocabulary prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+            <vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+            <vocabulary prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+            <vocabulary prefix="dc" uri="http://purl.org/dc/elements/1.1/"/>
+            <vocabulary prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
+            <vocabulary prefix="owltime" uri="http://www.w3.org/2006/time#"/>
+            <vocabulary prefix="foaf" uri="http://xmlns.com/foaf/0.1/"/>
+            <vocabulary prefix="bio" uri="http://purl.org/vocab/bio/0.1/"/>
+            <vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/>
+        </vocabularies>
+        <triples>
+
+        	<!-- a person -->
+            <statement>
+                <condition>/exists(.//tei:person)</condition>
+                <subject prefix="epidat">//tei:person/replace(@xml:id, '(hha-)([0-9]{1,4})(-[0-9])', '$1$2#$1$2$3')</subject>
+                <predicate prefix="rdf">type</predicate>
+                <object type="uri" prefix="foaf">Person</object>
+            </statement>
+
+			<!-- name of person -->
+            <statement>
+                <condition>/exists(.//tei:person)</condition>
+                <subject prefix="epidat">//tei:person/replace(@xml:id, '(hha-)([0-9]{1,4})(-[0-9])', '$1$2#$1$2$3')</subject>
+                <predicate prefix="rdfs">label</predicate>
+                <object type="literal">//tei:person/tei:persName</object>
+            </statement>
+            <statement>
+                <condition>/exists(.//tei:person)</condition>
+                <subject prefix="epidat">//tei:person/replace(@xml:id, '(hha-)([0-9]{1,4})(-[0-9])', '$1$2#$1$2$3')</subject>
+                <predicate prefix="foaf">name</predicate>
+                <object type="literal">//tei:person/tei:persName</object>
+            </statement>
+
+        	<!-- gender of person -->
+            <statement>
+                <condition>/exists(.//tei:person[@sex = 1])</condition>
+                <subject prefix="epidat">//tei:person[@sex = 1]/replace(@xml:id, '(hha-)([0-9]{1,4})(-[0-9])', '$1$2#$1$2$3')</subject>
+                <predicate prefix="foaf">gender</predicate>
+                <object type="literal" lang="en">male</object>
+            </statement>
+            <statement>
+                <condition>/exists(.//tei:person[@sex = 2])</condition>
+                <subject prefix="epidat">//tei:person[@sex = 2]/replace(@xml:id, '(hha-)([0-9]{1,4})(-[0-9])', '$1$2#$1$2$3')</subject>
+                <predicate prefix="foaf">gender</predicate>
+                <object type="literal" lang="en">female</object>
+            </statement>
+
+			<!-- date of death -->
+            <statement>
+                <condition>/exists(.//tei:event[@type="dateofdeath"])</condition>
+                <subject prefix="epidat">//tei:person/replace(@xml:id, '(hha-)([0-9]{1,4})(-[0-9])', '$1$2#$1$2$3')</subject>
+                <predicate prefix="bio">agent</predicate>
+                <object type="bnode">//tei:person/@xml:id/concat(., "-event-", position())</object>
+            </statement>
+            <statement>
+                <condition>/exists(.//tei:event[@type="dateofdeath"])</condition>
+                <subject type="bnode">//tei:person/@xml:id/concat(., "-event-", position())</subject>
+                <predicate prefix="rdf">type</predicate>
+                <object prefix="bio" type="uri">Death</object>
+            </statement>
+            <statement>
+                <condition>/exists(.//tei:event[@type="dateofdeath"])</condition>
+                <subject type="bnode">//tei:person/@xml:id/concat(., "-event-", position())</subject>
+                <predicate prefix="dc">date</predicate>
+                <object type="literal">//tei:person/tei:event[@type="dateofdeath"]/@when</object>
+            </statement>--&gt;
+			
+			<!-- familial relations -->
+        	<!-- all relations are persons -->
+            <statement>
+                <condition>/exists(.//tei:relation)</condition>
+                <subject prefix="epidat">/(.//tei:relation/tokenize(replace(@active, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' '), .//tei:relation/tokenize(replace(@passive, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' '), .//tei:relation/tokenize(replace(@mutual, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' '))</subject>
+                <predicate prefix="rdf">type</predicate>
+                <object prefix="foaf" type="uri">Person</object>
+            </statement>
+        	<!-- one value in @active, multiple values in @passive -->
+            <statement repeat="5">
+                <condition>//tei:relation[@name = 'parent'][$repeatIndex]/matches(@passive, ' ')</condition>
+                <subject prefix="epidat">//tei:relation[@name = 'parent'][$repeatIndex]/replace(@active, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4')</subject>
+                <predicate prefix="rel">parentOf</predicate>
+                <object type="uri" prefix="epidat">//tei:relation[@name = 'parent'][$repeatIndex]/tokenize(replace(@passive, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' ')</object>
+            </statement>
+        	<!-- multiple values in @active, one value in @passive -->
+            <statement repeat="5">
+                <condition>//tei:relation[@name = 'parent'][$repeatIndex]/matches(@active, ' ')</condition>
+                <subject prefix="epidat">//tei:relation[@name = 'parent'][$repeatIndex]/tokenize(replace(@active, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' ')</subject>
+                <predicate prefix="rel">parentOf</predicate>
+                <object type="uri" prefix="epidat">//tei:relation[@name = 'parent'][$repeatIndex]/replace(@passive, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4')</object>
+            </statement>
+        	<!-- one value in @active, one value in @passive -->
+            <statement repeat="5">
+                <condition>/(not(.//tei:relation[@name = 'parent'][$repeatIndex]/matches(@passive, ' ')) and not(.//tei:relation[@name = 'parent'][$repeatIndex]/matches(@active, ' ')))</condition>
+                <subject prefix="epidat">//tei:relation[@name = 'parent'][$repeatIndex]/replace(@active, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4')</subject>
+                <predicate prefix="rel">parentOf</predicate>
+                <object type="uri" prefix="epidat">//tei:relation[@name = 'parent'][$repeatIndex]/replace(@passive, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4')</object>
+            </statement>
+        	<!-- two values in @mutual -->
+            <statement repeat="5">
+                <condition>/exists(.//tei:relation[@name = 'spouse'][$repeatIndex])</condition>
+                <subject prefix="epidat">//tei:relation[@name = 'spouse'][$repeatIndex]/tokenize(replace(@mutual, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' ')[1]</subject>
+                <predicate prefix="rel">spouseOf</predicate>
+                <object type="uri" prefix="epidat">//tei:relation[@name = 'spouse'][$repeatIndex]/tokenize(replace(@mutual, '(#)(hha-)([0-9]{1,4})(-[0-9])', '$2$3#$2$3$4'), ' ')[2]</object>
+            </statement>
+        </triples>
+    </configuration>
+    <collection uri="http://www.steinheim-institut.de/cgi-bin/epidat?sel=hha&amp;format=x&amp;function=changelog&amp;changesSince=0000" max="10">
+        <resource uri="http://www.steinheim-institut.de/cgi-bin/epidat?id={//id/text()}-t"/>
+    	<!--<resource uri="http://www.steinheim-institut.de/cgi-bin/epidat?id={//id[xs:integer(substring-after(., 'hha-')) < 2001]/text()}-t"/>-->
+    	<!--<resource uri="http://www.steinheim-institut.de/cgi-bin/epidat?id={//id[xs:integer(substring-after(., 'hha-')) > 2000 and xs:integer(substring-after(., 'hha-')) < 4001]/text()}-t"/>-->
+    	<!--<resource uri="http://www.steinheim-institut.de/cgi-bin/epidat?id={//id[xs:integer(substring-after(., 'hha-')) > 4000 and xs:integer(substring-after(., 'hha-')) < 6001]/text()}-t"/>-->
+    	<!--<resource uri="http://www.steinheim-institut.de/cgi-bin/epidat?id={//id[xs:integer(substring-after(., 'hha-')) > 6000]/text()}-t"/>-->
+    </collection>
+</xtriples>

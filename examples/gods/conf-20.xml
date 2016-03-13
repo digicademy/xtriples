@@ -1,2 +1,24 @@
-<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><xtriples><configuration><vocabularies><vocabulary prefix="gods" uri="http://xtriples.spatialhumanities.de/examples/gods/"/><vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><vocabulary prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/><vocabulary prefix="foaf" uri="http://xmlns.com/foaf/0.1/"/><vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/></vocabularies><triples><statement>
-				<!-- errors in statement --><subject prefix="gods">/concat(/god/@id)</subject><predicate prefix="rdfs">/xs:integer('STRING')</predicate><object type="literal">/god/name/english[@]</object></statement></triples></configuration><collection><resource uri="http://xtriples.spatialhumanities.de/examples/gods/1.xml"/></collection></xtriples>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<xtriples>
+    <configuration>
+        <vocabularies>
+            <vocabulary prefix="gods" uri="http://xtriples.spatialhumanities.de/examples/gods/"/>
+            <vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+            <vocabulary prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+            <vocabulary prefix="foaf" uri="http://xmlns.com/foaf/0.1/"/>
+            <vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/>
+        </vocabularies>
+        <triples>
+            <statement>
+				<!-- errors in statement -->
+                <subject prefix="gods">/concat(/god/@id)</subject>
+                <predicate prefix="rdfs">/xs:integer('STRING')</predicate>
+                <object type="literal">/god/name/english[@]</object>
+            </statement>
+        </triples>
+    </configuration>
+    <collection>
+        <resource uri="http://xtriples.spatialhumanities.de/examples/gods/1.xml"/>
+    </collection>
+</xtriples>

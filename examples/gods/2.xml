@@ -1,1 +1,40 @@
-<god id="2"><name><greek>Ἀπόλλων</greek><roman>Apollon</roman><english>Apollo</english></name><gender>male</gender><olympian>1</olympian><relationships><relation type="child" id="14"/><relation type="sister" id="4"/></relationships><attributes><attribute>music</attribute><attribute>arts</attribute><attribute>knowledge</attribute><attribute>healing</attribute><attribute>plague</attribute><attribute>prophecy</attribute><attribute>poetry</attribute><attribute>beauty</attribute><attribute>archery</attribute></attributes><symbols><item>laurel wreath</item><item>lyre</item></symbols><animals><animal>roe deer</animal><animal>swans</animal><animal>cicadas</animal><animal>hawks</animal><animal>ravens</animal><animal>crows</animal><animal>foxes</animal><animal>mice</animal><animal>snakes</animal></animals></god>
+<?xml version="1.0" encoding="UTF-8"?>
+<god id="2">
+    <name>
+        <greek>Ἀπόλλων</greek>
+        <roman>Apollon</roman>
+        <english>Apollo</english>
+    </name>
+    <gender>male</gender>
+    <olympian>1</olympian>
+    <relationships>
+        <relation type="child" id="14"/>
+        <relation type="sister" id="4"/>
+    </relationships>
+    <attributes>
+        <attribute>music</attribute>
+        <attribute>arts</attribute>
+        <attribute>knowledge</attribute>
+        <attribute>healing</attribute>
+        <attribute>plague</attribute>
+        <attribute>prophecy</attribute>
+        <attribute>poetry</attribute>
+        <attribute>beauty</attribute>
+        <attribute>archery</attribute>
+    </attributes>
+    <symbols>
+        <item>laurel wreath</item>
+        <item>lyre</item>
+    </symbols>
+    <animals>
+        <animal>roe deer</animal>
+        <animal>swans</animal>
+        <animal>cicadas</animal>
+        <animal>hawks</animal>
+        <animal>ravens</animal>
+        <animal>crows</animal>
+        <animal>foxes</animal>
+        <animal>mice</animal>
+        <animal>snakes</animal>
+    </animals>
+</god>
