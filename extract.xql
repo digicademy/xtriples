@@ -17,11 +17,17 @@ xquery version "3.0";
 
 (: ########## PROLOGUE ############################################################################# :)
 
+import module namespace console     = "http://exist-db.org/xquery/console";
+import module namespace httpclient  = "http://exist-db.org/xquery/httpclient";
+import module namespace request     = "http://exist-db.org/xquery/request";
+import module namespace response    = "http://exist-db.org/xquery/response";
+import module namespace transform   = "http://exist-db.org/xquery/transform";
+import module namespace util        = "http://exist-db.org/xquery/util";
+import module namespace xmldb       = "http://exist-db.org/xquery/xmldb";
 
+import module namespace functx      = "http://www.functx.com";
 
-import module namespace functx  = "http://www.functx.com";
-import module namespace console = "http://exist-db.org/xquery/console";
-import module namespace config  = "http://xtriples.spatialhumanities.de/config" at "modules/config.xqm";
+import module namespace config      = "http://xtriples.spatialhumanities.de/config" at "modules/config.xqm";
 
 declare namespace xtriples = "http://xtriples.spatialhumanities.de/";
 
@@ -198,7 +204,7 @@ declare function xtriples:extractSubjects($currentResource as node(), $statement
 			else ""
 		else ""
 
-let $debug1 :=  if ($statement/subject/@resource) then 
+    let $debug1 :=  if ($statement/subject/@resource) then 
 					local:log (
 								"extract.xql" ||
 								(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
@@ -321,15 +327,14 @@ declare function xtriples:extractPredicate($currentResource as node(), $statemen
 declare function xtriples:extractObjects($currentResource as node(), $statement as node()*, $repeatIndex as xs:integer, $resourceIndex as xs:integer) as item()* {
 
 	let $externalResource := 
-		if ($statement/object/@resource) then
-			if ($statement/object/@resource)) then
-			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource, $repeatIndex))) then 
-				fn:doc(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource, $repeatIndex)) 
-			else ()
-		else ()
+        if ($statement/object/@resource) then
+	       if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource, $repeatIndex))) then 
+		      fn:doc(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource, $repeatIndex)) 
+           else ()
+	    else ()
 
     let $debug1 :=  if ($statement/object/@resource) then 
-					local:log (
+					       local:log (
 								"extract.xql" ||
 								(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
 								": xtriples:extractObjects: external resource: '" ||
