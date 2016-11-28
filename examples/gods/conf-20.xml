@@ -11,28 +11,25 @@
         </vocabularies>
         <triples>
             <statement n="1">
-                <subject prefix="gods">/@id</subject>
+                <subject prefix="gods">/god/@id</subject>
                 <predicate prefix="rdfs">seeAlso</predicate>
-                <object type="uri" resource="http://dbpedia.org/data/{/name/english}.rdf">//foaf:isPrimaryTopicOf/@rdf:resource</object>
+                <object type="uri" resource="{/concat('http://dbpedia.org/data/', $currentResource/god/name/english/text())}.rdf">//foaf:isPrimaryTopicOf/@rdf:resource</object>
             </statement>
-            <statement n="2">
-                <subject prefix="gods">/@id</subject>
-                <predicate prefix="rdf">type</predicate>
-                <object prefix="foaf" type="uri">Person</object>
-            </statement>
-            <statement n="3" debug="debug_me" repeat="{/count(//symbols)}">
-                <subject prefix="gods">/@id</subject>
+            <statement n="2" debug="debug_me" repeat="{/count($currentResource//animal)}">
+                <subject prefix="gods">/god/@id</subject>
                 <predicate prefix="rdfs">seeAlso</predicate>
-                <object type="uri" prepend="http://en.wikipedia.org/wiki/">//symbols/*[$repeatIndex]</object>
+                <object type="uri" prepend="http://en.wikipedia.org/wiki/">//animal[$repeatIndex]</object>
             </statement>
-            <statement n="4" debug="debug_me" repeat="{/count(//attributes)}">
-                <subject prefix="gods">/@id</subject>
+            <statement n="3" repeat="{/count($currentResource//symbols/*)}">
+                <subject prefix="gods">/god/@id</subject>
                 <predicate prefix="rdfs">seeAlso</predicate>
-                <object debug="debug_me_even_more" type="uri" prepend="http://en.wikipedia.org/wiki/">//attributes/*[$repeatIndex]</object>
+                <object type="uri" debug="debug_me_even_more" prepend="http://en.wikipedia.org/wiki/">//symbols/*[$repeatIndex]</object>
             </statement>
         </triples>
     </configuration>
-    <collection uri="http://xtriples.spatialhumanities.de/examples/gods/all.xml">
-        <resource uri="{//god}"/>
+    <collection>
+        <resource uri="http://xtriples.spatialhumanities.de/examples/gods/3.xml"/>
+        <resource uri="http://xtriples.spatialhumanities.de/examples/gods/5.xml"/>
+        <resource uri="http://xtriples.spatialhumanities.de/examples/gods/14.xml"/>
     </collection>
 </xtriples>
