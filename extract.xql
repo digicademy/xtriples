@@ -619,7 +619,7 @@ declare function xtriples:getNTRIPLES($rdf as node()*) as item()* {
 (: gets turtle format from any23 by sending in extracted RDF :)
 declare function xtriples:getTURTLE($rdf as node()*) as item()* {
 
-	(: Since at least 3.0rc2, eXist does return text instead of base64Binary :)
+	(: eXist (2.2) does return text instead of base64Binary :)
 	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
 	let $POST_request := httpclient:post(xs:anyURI(concat($config:any23WebserviceURL, "turtle")), $rdf, false(), $headers)
 (:	let $turtle := util:binary-to-string(xs:base64Binary($POST_request//httpclient:body), "UTF-8"):)
