@@ -620,11 +620,11 @@ declare function xtriples:getNTRIPLES($rdf as node()*) as item()* {
 (: gets turtle format from any23 by sending in extracted RDF :)
 declare function xtriples:getTURTLE($rdf as node()*) as item()* {
 
-	(: eXist returns base64Binary turtle :)
+	(: Since at least 3.0rc2, eXist does return text instead of base64Binary :)
 	let $headers := <headers><header name="Content-Type" value="application/rdf+xml; charset=UTF-8"/></headers>
 	let $POST_request := httpclient:post(xs:anyURI(concat($config:any23WebserviceURL, "turtle")), $rdf, false(), $headers)
-	let $turtle := util:binary-to-string(xs:base64Binary($POST_request//httpclient:body), "UTF-8")
-
+(:	let $turtle := util:binary-to-string(xs:base64Binary($POST_request//httpclient:body), "UTF-8"):)
+    let $turtle := xmldb:decode($POST_request//httpclient:body)
 	return $turtle
 };
 
@@ -676,7 +676,7 @@ declare function xtriples:getSVG($rdf as node()*) as item()* {
 	
 	let $GET_request := httpclient:get(xs:anyURI(concat($config:redeferWebserviceURL, "render?rdf=", $config:xtriplesWebserviceURL, "temp/", $filename, "&amp;format=RDF/XML&amp;mode=svg&amp;rules=", $config:redeferWebserviceRulesURL)), false(), $svgHeaders)
 	let $svg := $GET_request//httpclient:body/*
-	let $delete := xmldb:remove("/db/apps/xtriples/temp/", $filename)
+	let $delete := xmldb:remove($config:app-root || "/temp/", $filename)
 
 	return $svg
 };
