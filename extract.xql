@@ -36,6 +36,37 @@ declare variable $setFormat         := xtriples:getFormat();
 
 
 
+(: ########## DEBUGGING FUNCTIONS ################################################################# :)
+
+
+
+declare function local:log($message as xs:string, $priority as xs:string?) {
+	let $prio := if ($priority) then $priority else "trace"
+	return try  {
+					let $consoleOutput  := if ($config:debug = "trace" or $prio = ("info", "warn", "error")) then
+												console:log($message)
+											  else ()
+					let $fileOutput	  := local:logToFile($prio, $message)
+					return true()
+				}
+			catch *
+				{
+					($err:code, $err:description)
+				}
+};
+
+declare function local:logToFile($priority as xs:string, $message as xs:string) {
+	let $file	:= $config:logfile
+	return  (
+				let $log := util:log-app($priority, $file, $message)
+				return if ($config:debug = "trace" or $priority = ('error', 'warn')) then
+					util:log-system-out($message)
+				else ()
+			)
+};
+
+
+
 (: ########## CONFIGURATION FUNCTIONS ############################################################## :)
 
 
@@ -417,7 +448,7 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 							": xtriples:extractTriples $repeat=" ||
 							$repeat ||
 							".",
-							(if ($statement/@debug) then "info" else "trace")
+							(if ($statement//@debug) then "info" else "trace")
 						  )
 
 		for $repeatIndex in (1 to $repeat)
@@ -458,7 +489,7 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 							" and " ||
 							count($objects) ||
 							" objects.",
-							(if ($statement/@debug) then "info" else "trace")
+							(if ($statement//@debug) then "info" else "trace")
 						  )
 
 
@@ -655,6 +686,7 @@ declare function xtriples:getSVG($rdf as node()*) as item()* {
 (: ########## MAIN QUERY BODY ############################################################################################### :)
 
 
+let $debug1 :=  local:log ("extract.xql: Beginning processing...", "info")
 
 (: set basic vars :)
 let $collections := $setConfiguration/xtriples/collection
