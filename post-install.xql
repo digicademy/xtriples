@@ -7,5 +7,6 @@ import module namespace sm         = "http://exist-db.org/xquery/securitymanager
 (: the target collection into which the app is deployed :)
 declare variable $target external;
 
-let $create := xmldb:create-collection($target, "temp")
-let $chmod  := sm:chmod($target || "/temp", "777")
+let $create := if (not(xmldb:collection-available(xs:anyURI($target || "/temp")))) then xmldb:create-collection($target, "temp") else ()
+let $chmod  := sm:chmod(xs:anyURI($target || "/temp"), "rwxrwxrwx")
+return true()
