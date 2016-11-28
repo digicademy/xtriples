@@ -20,7 +20,7 @@ declare variable $config:xtriplesWebserviceURL      := "http://xtriples.spatialh
 declare variable $config:any23WebserviceURL         := "http://any23-vm.apache.org/";
 (: declare variable $config:any23WebserviceURL      := "http://localhost:8880/any23/";:) (: It may happen that the any23 webservice at apache.org is unavailable... :)
 declare variable $config:redeferWebserviceURL       := "http://rhizomik.net/redefer-services/";
-declare variable $config:redeferWebserviceRulesURL  := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
+declare variable $config:redeferWebserviceRulesURL  := "http://rhizomik.net/html/redefer/rdf2svg/showgraph.jrule";
 (: end service locations :)
 
 (: 
