@@ -6,7 +6,7 @@ xquery version "3.0";
  : A generic webservice to extract rdf statements from XML resources
  :
  : @author Torsten Schrade
- : @email <Torsten.Schrade@adwmainz.de>
+ : @email Torsten.Schrade@adwmainz.de
  : @version 1.3.0 
  : @licence MIT
  :
@@ -19,13 +19,14 @@ xquery version "3.0";
 
 
 
-import module namespace functx = "http://www.functx.com";
-import module namespace config = "http://xtriples.spatialhumanities.de/config" at "modules/config.xqm";
+import module namespace functx  = "http://www.functx.com";
+import module namespace console = "http://exist-db.org/xquery/console";
+import module namespace config  = "http://xtriples.spatialhumanities.de/config" at "modules/config.xqm";
 
 declare namespace xtriples = "http://xtriples.spatialhumanities.de/";
 
-declare variable $setConfiguration := xtriples:getConfiguration();
-declare variable $setFormat := xtriples:getFormat();
+declare variable $setConfiguration  := xtriples:getConfiguration();
+declare variable $setFormat         := xtriples:getFormat();
 
 
 
@@ -82,7 +83,7 @@ declare function xtriples:expressionSanityCheck($expression as xs:string) as xs:
 	let $pattern := "((fn:.*\(.*\))|(doc*\(.*\))|(collection*\(.*\))|(v:.*\(.*\))|(backups:.*\(.*\))|(compression:.*\(.*\))|(contentextraction:.*\(.*\))|(counter:.*\(.*\))|(cqlparser:.*\(.*\))|(datetime:.*\(.*\))|(examples:.*\(.*\))|(exi:.*\(.*\))|(file:.*\(.*\))|(httpclient:.*\(.*\))|(image:.*\(.*\))|(inspection:.*\(.*\))|(jindi:.*\(.*\))|(kwic:.*\(.*\))|(lucene:.*\(.*\))|(mail:.*\(.*\))|(math:.*\(.*\))|(ngram:.*\(.*\))|(repo:.*\(.*\))|(request:.*\(.*\))|(response:.*\(.*\))|(scheduler:.*\(.*\))|(securitymanager:.*\(.*\))|(sequences:.*\(.*\))|(session:.*\(.*\))|(sort:.*\(.*\))|(sql:.*\(.*\))|(system:.*\(.*\))|(testing:.*\(.*\))|(text:.*\(.*\))|(transform:.*\(.*\))|(util:.*\(.*\))|(validation:.*\(.*\))|(xmldb:.*\(.*\))|(xmldiff:.*\(.*\))|(xqdoc:.*\(.*\))|(xslfo:.*\(.*\))|(config:.*\(.*\))|(docbook:.*\(.*\))|(app:.*\(.*\))|(dash:.*\(.*\))|(service:.*\(.*\))|(login-helper:.*\(.*\))|(packages:.*\(.*\))|(service:.*\(.*\))|(usermanager:.*\(.*\))|(demo:.*\(.*\))|(cex:.*\(.*\))|(ex:.*\(.*\))|(apputil:.*\(.*\))|(site:.*\(.*\))|(pretty:.*\(.*\))|(date:.*\(.*\))|(tei2:.*\(.*\))|(dbutil:.*\(.*\))|(docs:.*\(.*\))|(dq:.*\(.*\))|(review:.*\(.*\))|(epub:.*\(.*\))|(l18n:.*\(.*\))|(intl:.*\(.*\))|(restxq:.*\(.*\))|(tmpl:.*\(.*\))|(templates:.*\(.*\))|(trigger:.*\(.*\))|(jsjson:.*\(.*\))|(xqdoc:.*\(.*\)))"
 	let $check := matches($expression, $pattern)
 
-	return if ($check = true()) then false() else true()
+	return (not($check))
 };
 
 
@@ -123,7 +124,7 @@ declare function xtriples:expressionBasedAttributeResolver($currentResource as n
 		else $expressionSubstitution
 
 	let $result := 
-		if ($finalExpression and xtriples:expressionSanityCheck($finalExpression) = true()) then 
+		if ($finalExpression and xtriples:expressionSanityCheck($finalExpression)) then 
 			try {
 				replace($attributeValue, "\{.*\}", util:eval(concat("$currentResource", $finalExpression))) 
 			} catch * { $err:description }
@@ -137,9 +138,9 @@ declare function xtriples:expressionBasedResourceResolver($collection as node()*
 
 	let $collectionContent := if (fn:doc-available($collection/@uri)) then fn:doc($collection/@uri) else ""
 
-	let $resourcesURI := string($resource/@uri)
-	let $resourcesExpression := concat('$collectionContent', substring-after(substring-before($resourcesURI, "}"), "{"))
-	let $resourcesNodes := if (xtriples:expressionSanityCheck($resourcesExpression) = true()) then 
+	let $resourcesURI          := string($resource/@uri)
+	let $resourcesExpression   := concat('$collectionContent', substring-after(substring-before($resourcesURI, "}"), "{"))
+	let $resourcesNodes        := if (xtriples:expressionSanityCheck($resourcesExpression) = true()) then 
 		try { util:eval($resourcesExpression) } catch * { $err:description } 
 		else $resourcesExpression
 
@@ -167,7 +168,7 @@ declare function xtriples:getResources($collection as node()*) as item()* {
 	let $resources := 
 		for $resource in $collection/resource
 		return
-			if (matches($resource/@uri, "\{") and matches($resource/@uri, "\}")) then 
+			if (matches($resource/@uri, "\{.*\}")) then 
 				xtriples:expressionBasedResourceResolver($collection, $resource)
 			else $resource
 
@@ -197,17 +198,55 @@ declare function xtriples:extractSubjects($currentResource as node(), $statement
 			else ""
 		else ""
 
+let $debug1 :=  if ($statement/subject/@resource) then 
+					local:log (
+								"extract.xql" ||
+								(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+								": xtriples:extractSubjects: external resource: '" ||
+								$statement/subject/@resource/string() ||
+								"' gives " ||
+								count($externalResource) ||
+								" node(s): " ||
+								substring(serialize($externalResource), 1, 100) ||
+								"...",
+								(if ($statement/subject/@debug) then "info" else "trace")
+							  )
+				else ()
+
 	let $subjectExpressionConcatenation := 
 		if ($externalResource) then concat("$externalResource", string($statement/subject))
 		else concat('$currentResource', string($statement/subject))
 
 	let $subjectExpression := 
-		if (matches($subjectExpressionConcatenation, "\$repeatIndex")) then replace($subjectExpressionConcatenation, "$repeatIndex", $repeatIndex)
-		else $subjectExpressionConcatenation
+		if (matches($subjectExpressionConcatenation, "\$repeatIndex")) then
+			replace($subjectExpressionConcatenation, "\$repeatIndex", $repeatIndex)
+		else
+			$subjectExpressionConcatenation
 
-	let $subjectNodes := if (xtriples:expressionSanityCheck($subjectExpression) = true()) then 
-		try { util:eval($subjectExpression) } catch * { $err:description } 
-		else $subjectExpression
+           let $debug2 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractSubjects: before util:eval('" ||
+							$subjectExpression ||
+							"') ...",
+							(if ($statement/subject/@debug) then "info" else "trace")
+						  )
+
+	let $subjectNodes :=	if (xtriples:expressionSanityCheck($subjectExpression)) then 
+								try {
+										util:eval($subjectExpression)
+									}
+								catch * { $err:description } 
+							else $subjectExpression
+
+    let $debug3 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractSubjects: ... evaluated to " ||
+							count($subjectNodes) ||
+							" subjects.",
+							(if ($statement/subject/@debug) then "info" else "trace")
+						  )
 
 	let $subjects := 
 		for $subjectValue in $subjectNodes
@@ -226,17 +265,52 @@ declare function xtriples:extractPredicate($currentResource as node(), $statemen
 			else ""
 		else ""
 
+    let $debug1 :=  if ($statement/predicate/@resource) then 
+					local:log (
+								"extract.xql" ||
+								(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+								": xtriples:extractPredicate: external resource: '" ||
+								$statement/predicate/@resource/string() ||
+								"' gives " ||
+								count($externalResource) ||
+								" node(s): " ||
+								substring(serialize($externalResource), 1, 100) ||
+								"...",
+								(if ($statement/predicate/@debug) then "info" else "trace")
+							  )
+				else ()
+
 	let $predicateExpressionConcatenation := 
 		if ($externalResource) then concat("$externalResource", string($statement/predicate))
 		else concat('$currentResource', string($statement/predicate))
 
 	let $predicateExpression := 
-		if (matches($predicateExpressionConcatenation, "\$repeatIndex")) then replace($predicateExpressionConcatenation, "$repeatIndex", $repeatIndex)
-		else $predicateExpressionConcatenation
+		if (matches($predicateExpressionConcatenation, "\$repeatIndex")) then
+			replace($predicateExpressionConcatenation, "\$repeatIndex", $repeatIndex)
+		else
+			$predicateExpressionConcatenation
 
-	let $predicateValue := if (xtriples:expressionSanityCheck($predicateExpression) = true()) then 
-		try { string(util:eval($predicateExpression)) } catch * { $err:description } 
-		else $predicateExpression
+    let $debug2 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractPredicate: before util:eval('" ||
+							$predicateExpression ||
+							"') ...",
+							(if ($statement/predicate/@debug) then "info" else "trace")
+						  )
+
+	let $predicateValue := if (xtriples:expressionSanityCheck($predicateExpression)) then 
+		                      try { string(util:eval($predicateExpression)) } catch * { $err:description } 
+    		                else $predicateExpression
+
+    let $debug3 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractPredicate: ... evaluated to '" ||
+							$predicateValue ||
+							"'.",
+							(if ($statement/predicate/@debug) then "info" else "trace")
+						  )
 
 	let $predicate := <predicate prefix="{$statement/predicate/@prefix}">{string($predicateValue)}</predicate>
 
@@ -247,27 +321,66 @@ declare function xtriples:extractPredicate($currentResource as node(), $statemen
 declare function xtriples:extractObjects($currentResource as node(), $statement as node()*, $repeatIndex as xs:integer, $resourceIndex as xs:integer) as item()* {
 
 	let $externalResource := 
-		if (exists($statement/object/@resource)) then
+		if ($statement/object/@resource) then
+			if ($statement/object/@resource)) then
 			if (fn:doc-available(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource, $repeatIndex))) then 
 				fn:doc(xtriples:expressionBasedUriResolver($statement/object/@resource, $currentResource, $repeatIndex)) 
-			else ""
-		else ""
+			else ()
+		else ()
+
+    let $debug1 :=  if ($statement/object/@resource) then 
+					local:log (
+								"extract.xql" ||
+								(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+								": xtriples:extractObjects: external resource: '" ||
+								$statement/object/@resource/string() ||
+								"' gives " ||
+								count($externalResource) ||
+								" node(s): " ||
+								substring(serialize($externalResource), 1, 100) ||
+								"...",
+								(if ($statement/object/@debug) then "info" else "trace")
+							  )
+				else ()
 
 	let $objectExpressionConcatenation := 
-		if ($externalResource) then concat("$externalResource", string($statement/object))
-		else concat("$currentResource", string($statement/object))
+	   if (starts-with(string($statement/object), '/') and $externalResource) then
+			concat("$externalResource", string($statement/object))
+	   else if (starts-with(string($statement/object), '/')) then
+			concat("$currentResource", string($statement/object))
+	   else
+		   string($statement/object)
 
-	let $objectExpression := 
-		if (matches($objectExpressionConcatenation, "\$repeatIndex")) then replace($objectExpressionConcatenation, "$repeatIndex", $repeatIndex)
-		else $objectExpressionConcatenation
+	let $objectExpression := replace($objectExpressionConcatenation, "\$repeatIndex", $repeatIndex)
 
-	let $objectNodes := if (xtriples:expressionSanityCheck($objectExpression) = true()) then 
-		try { util:eval($objectExpression) } catch * { $err:description }
-		else $objectExpression
+    let $debug2 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractObjects: before util:eval('" ||
+							$objectExpression ||
+							"') ...",
+							(if ($statement/object/@debug) then "info" else "trace")
+						  )
+
+	let $objectNodes := if (xtriples:expressionSanityCheck($objectExpression)) then 
+							try { 
+									util:eval($objectExpression)
+								}
+							catch * { $err:description }
+						else $objectExpression
+
+    let $debug3 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractObjects: ... evaluated to " ||
+							count($objectNodes) ||
+							" objects.",
+							(if ($statement/object/@debug) then "info" else "trace")
+						  )
 
 	let $objects :=
 		for $objectValue in $objectNodes
-		return functx:copy-attributes(<object>{string($objectValue)}</object>, $statement/object)
+		  return functx:copy-attributes(<object>{string($objectValue)}</object>, $statement/object)
 
 	return $objects
 };
@@ -289,9 +402,18 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 	for $statement in $configuration//triples/*
 
 		let $repeat := 
-			if ($statement/@repeat) then 
+			if ($statement/@repeat) then
 				xs:integer(xtriples:expressionBasedAttributeResolver($currentResource, $statement/@repeat, 1, $resourceIndex))
 			else 1
+
+    let $debug1 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, ')') else ()) ||
+							": xtriples:extractTriples $repeat=" ||
+							$repeat ||
+							".",
+							(if ($statement/@debug) then "info" else "trace")
+						  )
 
 		for $repeatIndex in (1 to $repeat)
 
@@ -321,22 +443,36 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 					xtriples:extractObjects($currentResource, $statement, $repeatIndex, $resourceIndex) 
 				else $statement/object
 
+            let $debug2 :=  local:log (
+							"extract.xql" ||
+							(if ($statement/@n) then concat(' (', $statement/@n, '/', $repeatIndex, ')') else ()) ||
+							": xtriples:extractTriples has " ||
+							count($subjects) ||
+							" subjects, predicate " ||
+							string($predicate) ||
+							" and " ||
+							count($objects) ||
+							" objects.",
+							(if ($statement/@debug) then "info" else "trace")
+						  )
+
+
 			(: build statements - but only if the condition expression returned any value - boolean, string, node set etc. :)
 			let $statements := 
-				if ($condition != false()) then 
+				if ($condition) then 
 					for $subject in $subjects
 						let $subjectReturn :=
 							if ($subject = "") then "" else
 							for $object in $objects
 
 								let $subjectPrepend := xtriples:expressionBasedAttributeResolver($currentResource, $subject/@prepend, $repeatIndex, $resourceIndex)
-								let $subjectAppend := xtriples:expressionBasedAttributeResolver($currentResource, $subject/@append, $repeatIndex, $resourceIndex)
+								let $subjectAppend  := xtriples:expressionBasedAttributeResolver($currentResource, $subject/@append, $repeatIndex, $resourceIndex)
 
 								let $predicatePrepend := xtriples:expressionBasedAttributeResolver($currentResource, $predicate/@prepend, $repeatIndex, $resourceIndex)
-								let $predicateAppend := xtriples:expressionBasedAttributeResolver($currentResource, $predicate/@append, $repeatIndex, $resourceIndex)
+								let $predicateAppend  := xtriples:expressionBasedAttributeResolver($currentResource, $predicate/@append, $repeatIndex, $resourceIndex)
 
 								let $objectPrepend := xtriples:expressionBasedAttributeResolver($currentResource, $object/@prepend, $repeatIndex, $resourceIndex)
-								let $objectAppend := xtriples:expressionBasedAttributeResolver($currentResource, $object/@append, $repeatIndex, $resourceIndex)
+								let $objectAppend  := xtriples:expressionBasedAttributeResolver($currentResource, $object/@append, $repeatIndex, $resourceIndex)
 
 								let $objectReturn := 
 									if ($object = "") then "" 
@@ -494,7 +630,7 @@ declare function xtriples:getSVG($rdf as node()*) as item()* {
 
 	(: svg format with temporary file :)
 	let $filename := concat(util:uuid(), ".xml")
-	let $store := xmldb:store("/db/apps/xtriples/temp/", $filename, $rdf)
+	let $store := xmldb:store($config:app-root || "/temp/", $filename, $rdf)
 	let $svgHeaders := 
 		<headers>
 			<header name="format" value="RDF/XML"/>
@@ -571,31 +707,78 @@ return (
 	if ($setFormat = "xtriples") then
 		$xtriples
 	else if ($setFormat = "rdftriples") then
-		xtriples:getRDFTriples($xtriples, $vocabularies)
+
+       let $debug1 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return xtriples:getRDFTriples($xtriples, $vocabularies)
 	else if ($setFormat = "ntriples") then (
-		response:set-header("Content-Type", "text/plain; charset=UTF-8"),
-		response:stream(xtriples:getNTRIPLES(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+
+       let $debug2 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return    response:set-header("Content-Type", "text/plain; charset=UTF-8"),
+		          response:stream(xtriples:getNTRIPLES(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
 		)
 	else if ($setFormat = "turtle") then (
-		response:set-header("Content-Type", "text/turtle; charset=UTF-8"),
-		response:stream(xtriples:getTURTLE(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+
+       let $debug3 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return    response:set-header("Content-Type", "text/turtle; charset=UTF-8"),
+		          response:stream(xtriples:getTURTLE(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
 		)
 	else if ($setFormat = "nquads") then (
-		response:set-header("Content-Type", "text/x-nquads; charset=UTF-8"),
-		response:stream(xtriples:getNQUADS(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+
+       let $debug4 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return    response:set-header("Content-Type", "text/x-nquads; charset=UTF-8"),
+                 response:stream(xtriples:getNQUADS(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
 		)
 	else if ($setFormat = "json") then (
-		response:set-header("Content-Type", "text/json; charset=UTF-8"),
-		response:stream(xtriples:getJSON(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
+
+       let $debug5 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return    response:set-header("Content-Type", "text/json; charset=UTF-8"),
+		          response:stream(xtriples:getJSON(xtriples:getRDF($xtriples, $vocabularies)), "method=text")
 		)
 	else if ($setFormat = "trix") then (
-		response:set-header("Content-Type", "application/trix; charset=UTF-8"),
-		xtriples:getTRIX(xtriples:getRDF($xtriples, $vocabularies))
+
+       let $debug6 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return    response:set-header("Content-Type", "application/trix; charset=UTF-8"),
+		          xtriples:getTRIX(xtriples:getRDF($xtriples, $vocabularies))
 		)
 	else if ($setFormat = "svg") then
 		(: response:set-header("Content-Type", "image/svg+xml; charset=UTF-8"), :)
-		xtriples:getSVG(xtriples:getRDF($xtriples, $vocabularies))
+
+       let $debug7 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+		return    xtriples:getSVG(xtriples:getRDF($xtriples, $vocabularies))
 	else 
-		(: response:set-header("Content-Type", "application/rdf+xml; charset=UTF-8"), :)
-		xtriples:getRDF($xtriples, $vocabularies)
+       let $debug8 :=  local:log (
+							"extract.xql: output in " || $setFormat  || ".",
+							"trace"
+						  )
+
+
+		return    xtriples:getRDF($xtriples, $vocabularies)
 )

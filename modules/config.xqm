@@ -6,14 +6,21 @@ xquery version "3.0";
  :)
 module namespace config = "http://xtriples.spatialhumanities.de/config";
 
-declare namespace templates = "http://exist-db.org/xquery/templates";
-declare namespace repo = "http://exist-db.org/xquery/repo";
-declare namespace expath = "http://expath.org/ns/pkg";
+declare namespace request       = "http://exist-db.org/xquery/request";
+declare namespace system        = "http://exist-db.org/xquery/system";
+declare namespace templates     = "http://exist-db.org/xquery/templates";
+declare namespace repo          = "http://exist-db.org/xquery/repo";
+declare namespace expath        = "http://expath.org/ns/pkg";
 
-declare variable $config:xtriplesWebserviceURL := "http://xtriples.spatialhumanities.de/";
-declare variable $config:any23WebserviceURL := "http://any23-vm.apache.org/";
-declare variable $config:redeferWebserviceURL := "http://rhizomik.net/redefer-services/";
-declare variable $config:redeferWebserviceRulesURL := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
+declare variable $config:debug                      := "info"; (: significant values: trace, info (all other values are ignored) :)
+declare variable $config:logfile                    := "xTriples.log";
+
+(: default service locations :)
+declare variable $config:xtriplesWebserviceURL      := "http://xtriples.spatialhumanities.de/";
+declare variable $config:any23WebserviceURL         := "http://any23-vm.apache.org/";
+declare variable $config:redeferWebserviceURL       := "http://rhizomik.net/redefer-services/";
+declare variable $config:redeferWebserviceRulesURL  := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
+(: end service locations :)
 
 (: 
     Determine the application root collection from the current module load path.
@@ -33,9 +40,9 @@ declare variable $config:app-root :=
         substring-before($modulePath, "/modules")
 ;
 
-declare variable $config:data-root := $config:app-root || "/data";
-declare variable $config:repo-descriptor := doc(concat($config:app-root, "/repo.xml"))/repo:meta;
-declare variable $config:expath-descriptor := doc(concat($config:app-root, "/expath-pkg.xml"))/expath:package;
+declare variable $config:data-root          := $config:app-root || "/data";
+declare variable $config:repo-descriptor    := doc(concat($config:app-root, "/repo.xml"))/repo:meta;
+declare variable $config:expath-descriptor  := doc(concat($config:app-root, "/expath-pkg.xml"))/expath:package;
 
 (:~
  : Resolve the given path using the current application context.
