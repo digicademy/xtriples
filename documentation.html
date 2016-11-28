@@ -11,7 +11,7 @@
                     <h3 id="background">Background</h3>
                     <p>
 						The extraction of RDF statements from XML data can be a complicated process involving a lot of XSLT magic.
-						Transformations are always specific to the XML data in question and cannot easily be applied to other XML repositories. 
+						Transformations are always specific to the XML data in question and cannot easily be applied to other XML repositories.
 						It gets even more difficult if the markup of the XML data in question cannot be influenced.
 					</p>
                     <p>
@@ -23,7 +23,7 @@
                         <li>This "something else" is our <strong>object</strong>, consisting either of the XML resource itself, some value in it or some other resource on the semantic web.</li>
                     </ul>
                     <p>
-						The XTriples webservice makes it possible to create such statements out of any XML data based on a simple XML configuration. 
+						The XTriples webservice makes it possible to create such statements out of any XML data based on a simple XML configuration.
 						The configuration defines the XML resources to crawl, the vocabularies to use
 						and a number of <strong>XPATH/XQuery based statement patterns</strong> to apply on the data.
 					</p>
@@ -114,11 +114,11 @@
 					</p>
                     <h4 id="collection">The &lt;collection&gt; tag</h4>
                     <p>
-						A collection consists of XML data. It can be a single XML file 
-						with repeating nodes that represent the "resources". It can also be a XML based list of URLs pointing to single XML resources. 
-						During extraction the webservice 
-						crawls over all resources of a collection and applies the configured statements patterns to each XML resource. 
-						It is possible to use several <code>&lt;collection&gt;</code> tags per configuration. 
+						A collection consists of XML data. It can be a single XML file
+						with repeating nodes that represent the "resources". It can also be a XML based list of URLs pointing to single XML resources.
+						During extraction the webservice
+						crawls over all resources of a collection and applies the configured statements patterns to each XML resource.
+						It is possible to use several <code>&lt;collection&gt;</code> tags per configuration.
                     </p>
                     <h6>Reference</h6>
                     <table class="table table-bordered">
@@ -172,11 +172,11 @@
     &lt;/collection&gt;
 &lt;/xtriples&gt;</pre>
                     <p>
-						In this example, the <code>uri</code> attribute of the <code>&lt;collection&gt;</code> tag points to a XML file that contains 
-                    	a list of IDs of XML resources to harvest. During extraction, this list provides the context for the expression 
-                    	in the <code>uri</code> attribute of the child <code>&lt;resource&gt;</code> tag. The attribute of the <code>&lt;resource&gt;</code> 
-                    	tag contains a URL. At any position within the URL string you are allowed to use XPATH expressions in curly braces that will be 
-                    	executed on the XML of the <code>&lt;collection&gt;</code>. In the above example, the service will walk through all ids 
+						In this example, the <code>uri</code> attribute of the <code>&lt;collection&gt;</code> tag points to a XML file that contains
+                    	a list of IDs of XML resources to harvest. During extraction, this list provides the context for the expression
+                    	in the <code>uri</code> attribute of the child <code>&lt;resource&gt;</code> tag. The attribute of the <code>&lt;resource&gt;</code>
+                    	tag contains a URL. At any position within the URL string you are allowed to use XPATH expressions in curly braces that will be
+                    	executed on the XML of the <code>&lt;collection&gt;</code>. In the above example, the service will walk through all ids
                     	found by the XPATH expression in the <code>&lt;collection&gt;</code> and substitute the curly brackets, building correct links to XML resources.
 					</p>
                     <h6>Example 1: XPATH based resource crawling with resources all in one single file</h6>
@@ -193,9 +193,9 @@
                     </p>
                     <h5>Link based resource crawling</h5>
                     <p>
-						Link based resource crawling works by submitting <code>&lt;resource&gt;</code> tags below the <code>&lt;collection&gt;</code> tag with complete URLs to the XML files.. 
+						Link based resource crawling works by submitting <code>&lt;resource&gt;</code> tags below the <code>&lt;collection&gt;</code> tag with complete URLs to the XML files..
 						This approach is handy if you know all URLs of a collection in advance or if you want to crawl a fixed number of resources.
-						Just add any number of resource tags below the <code>&lt;collection&gt;</code> tag with the link to the according resource in the 
+						Just add any number of resource tags below the <code>&lt;collection&gt;</code> tag with the link to the according resource in the
 						<code>uri</code> attribute. Here is an example:
 					</p>
                     <h6>Code</h6>
@@ -220,7 +220,7 @@
                     </p>
                     <h5>Literal resource crawling</h5>
                     <p>
-						Crawling of literal XML resources is the fastest way of extracting statements. In this approach the XML resources are submitted literally to the webservice. 
+						Crawling of literal XML resources is the fastest way of extracting statements. In this approach the XML resources are submitted literally to the webservice.
 						Just submit any well formed XML below a <code>&lt;resource&gt;</code> tag.
 					</p>
                     <h6>Code</h6>
@@ -246,7 +246,7 @@
                     <h4 id="vocabularies">The &lt;vocabularies&gt; tag</h4>
                     <p>
 						Below the <code>&lt;vocabularies&gt;</code> tag you can configure any number of RDF vocabularies you would like to use for your statements.
-						Its comparable to the header of a SPARQL query where you declare your vocabularies. Each <code>&lt;vocabulary&gt;</code> tag can have the 
+						Its comparable to the header of a SPARQL query where you declare your vocabularies. Each <code>&lt;vocabulary&gt;</code> tag can have the
 						following attributes.
 					</p>
                     <h6>Reference</h6>
@@ -265,7 +265,7 @@
                                 <td>yes</td>
                                 <td>string</td>
                                 <td>
-									Sets the prefix for the vocabulary. This prefix can then be used in the <code>prefix</code> attribute 
+									Sets the prefix for the vocabulary. This prefix can then be used in the <code>prefix</code> attribute
 									of a <code>&lt;subject&gt;</code>, <code>&lt;predicate&gt;</code> or <code>&lt;object&gt;</code> tag
 									(see below).
 								</td>
@@ -306,8 +306,8 @@
 &lt;/triples&gt;</pre>
                     <h4 id="statement">The &lt;statement&gt; tag</h4>
                     <p>
-						Each <code>&lt;statement&gt;</code> consists of exactly one <code>&lt;subject&gt;</code>, <code>&lt;predicate&gt;</code> and 
-                    	<code>&lt;object&gt;</code> tag. An optional <code>&lt;condition&gt;</code> tag is allowed. Together they form a statement pattern that 
+						Each <code>&lt;statement&gt;</code> consists of exactly one <code>&lt;subject&gt;</code>, <code>&lt;predicate&gt;</code> and
+                    	<code>&lt;object&gt;</code> tag. An optional <code>&lt;condition&gt;</code> tag is allowed. Together they form a statement pattern that
                     	will be applied to each XML resource that is crawled by the webservice.
 					</p>
                     <h6>Reference</h6>
@@ -327,8 +327,25 @@
                                 <td>integer and/or {XPATH/XQuery}</td>
                                 <td>
                                     This will repeat the extraction of the statement pattern as many times as the number set in the attribute. The value of the current
-                                    iteration is written to the <code>$repeatIndex</code> variable. The attribute can contain a valid XPATH/XQuery expression in curly braces that 
+                                    iteration is written to the <code>$repeatIndex</code> variable. The attribute can contain a valid XPATH/XQuery expression in curly braces that
                                 	must result in an integer (no node sets allowed).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>debug</td>
+                                <td>no</td>
+                                <td>string</td>
+                                <td>
+                                    If set (to anything), raises the log level for this statement to "trace". This means that
+                                    information on how many times the statement is iterated and a summary of subject, predicate and object nodes/strings is logged to monex console.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>n</td>
+                                <td>no</td>
+                                <td>string</td>
+                                <td>
+                                    If set, this will be prepended to all debugging output generated during the processing of this statement and its children. This allows to associate debugging messages with their respective part of the configuration.
                                 </td>
                             </tr>
                         </tbody>
@@ -380,9 +397,9 @@
                                 <td>no</td>
                                 <td>string</td>
                                 <td>
-									The <code>prefix</code> attribute can contain a value 
-                                	defined in one of the vocabularies' <code>prefix</code> attributes. This binds the <code>&lt;subject&gt;</code> to a <code>&lt;vocabulary&gt;</code> 
-                                	namespace. During exraction the value of the <code>prefix</code> attribute is substituted with the URI that has been defined 
+									The <code>prefix</code> attribute can contain a value
+                                	defined in one of the vocabularies' <code>prefix</code> attributes. This binds the <code>&lt;subject&gt;</code> to a <code>&lt;vocabulary&gt;</code>
+                                	namespace. During exraction the value of the <code>prefix</code> attribute is substituted with the URI that has been defined
 									for the vocabulary's <code>uri</code> attribute. Similar to the prefix concept known from SPARQL.
 								</td>
                             </tr>
@@ -395,7 +412,7 @@
                                     </ul>
                                 </td>
                                 <td>
-                                	Only needed for connecting blank nodes. When you set the type of a <code>&lt;subject&gt;</code> tag to <em>bnode</em>, then you should 
+                                	Only needed for connecting blank nodes. When you set the type of a <code>&lt;subject&gt;</code> tag to <em>bnode</em>, then you should
                                 	apply the same identifier that has already been created by an earlier <code>&lt;object&gt;</code> tag expression. This will make the former
                                 	object (blank node) the subject of a new statement.
 								</td>
@@ -405,7 +422,7 @@
                                 <td>no</td>
                                 <td>xsAnyURI</td>
                                 <td>
-									If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code> 
+									If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code>
                                 	XPATH/Xquery will be executed on the external XML rather than the XML of the current resource.
 								</td>
                             </tr>
@@ -415,7 +432,7 @@
                                 <td>string + {XPATH/XQuery}</td>
                                 <td>
 									The <code>prepend</code> attribute is handy if you need to prepend a value to the current patterns XPATH/XQuery result. The attribute value should contain
-									a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;subject&gt;</code> 
+									a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;subject&gt;</code>
                                 	expression and it's result will be <em>prepended</em> to the overall result.
 								</td>
                             </tr>
@@ -426,6 +443,14 @@
                                 <td>
                                 	The <code>append</code> attribute works the same as the <code>prepend</code> attribute only that the result will be <em>appended</em> to the overall result.
 								</td>
+                            </tr>
+                            <tr>
+                                <td>debug</td>
+                                <td>no</td>
+                                <td>string</td>
+                                <td>
+                                    If set (to anything), raises the log level for the subject extraction to "trace". This means that information on the number of nodes delivered by an eventual external resource (see above), on the subject expression, and on how many nodes it resolves to is logged to monex console.
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -454,7 +479,7 @@
                     <p>
                 		The <code>&lt;predicate&gt;</code> tag of a statement pattern contains the property URIs of the vocabularies defined in the <code>&lt;vocabularies&gt;</code>
 						section of the configuration. The final result of a predicate expression must always be an URI.
-						The predicate tag mostly contains simple property strings. But it is also possible to execute an XPATH/XQuery in the tag or 
+						The predicate tag mostly contains simple property strings. But it is also possible to execute an XPATH/XQuery in the tag or
 						retrieve a value from an external XML resource by using the <code>&lt;resource&gt;</code> attribute.
                 	</p>
                     <h6>Code</h6>
@@ -480,7 +505,7 @@
                                 <td>yes</td>
                                 <td>string</td>
                                 <td>
-                                	The required <code>prefix</code> attribute of the <code>&lt;predicate&gt;</code> must contain a value defined in a vocabulary's <code>prefix</code> attribute. 
+                                	The required <code>prefix</code> attribute of the <code>&lt;predicate&gt;</code> must contain a value defined in a vocabulary's <code>prefix</code> attribute.
                                 	This binds the <code>&lt;predicate&gt;</code> to a <code>&lt;vocabulary&gt;</code> namespace.
 									The value of the <code>prefix</code> attribute is substituted with the URI that has been defined in the vocabulary's <code>uri</code> attribute.
 								</td>
@@ -490,7 +515,7 @@
                                 <td>no</td>
                                 <td>xsAnyURI</td>
                                 <td>
-                                	If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code> 
+                                	If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code>
                                 	XPATH/Xquery will be executed on the external XML rather than the XML of the current resource.
                                 </td>
                             </tr>
@@ -500,7 +525,7 @@
                                 <td>string + {XPATH/XQuery}</td>
                                 <td>
                                 	The <code>prepend</code> attribute is handy if you need to prepend a value to the current patterns XPATH/XQuery result. The attribute value should contain
-                                	a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;predicate&gt;</code> 
+                                	a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;predicate&gt;</code>
                                 	expression and it's result will be <em>prepended</em> to the overall result.
                         		</td>
                             </tr>
@@ -512,12 +537,20 @@
                         			The <code>append</code> attribute works the same as the <code>prepend</code> attribute only that the result will be <em>appended</em> to the overall result.
                         		</td>
                             </tr>
+                            <tr>
+                                <td>debug</td>
+                                <td>no</td>
+                                <td>string</td>
+                                <td>
+                                    If set (to anything), raises the log level for the predicate extraction to "trace". This means that information on the number of nodes delivered by an eventual external resource (see above), on the predicate expression, and on the string it resolves to is logged to monex console.
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <h4 id="object">The &lt;object&gt; tag</h4>
                     <p>
                 		The <code>&lt;object&gt;</code> tag of a statement pattern can either result in an URI, a literal value or a blank node. Literal values
-                    	can be typed or tagged with a language code. In case of a blank node, the object expression should lead to a 
+                    	can be typed or tagged with a language code. In case of a blank node, the object expression should lead to a
                     	unique identifier for the node.
                 	</p>
                     <h6>Code</h6>
@@ -549,8 +582,8 @@
                                 <td>string</td>
                                 <td>
 									If the result of the <code>&lt;object&gt;</code> tag is a URI, the <code>prefix</code> attribute can be used to bind
-                                	the <code>&lt;object&gt;</code> to a defined <code>&lt;vocabulary&gt;</code> namespace. The value of the <code>prefix</code> 
-                                	attribute is substituted with the URI that has been defined in the according vocabulary's <code>uri</code> attribute. Similar 
+                                	the <code>&lt;object&gt;</code> to a defined <code>&lt;vocabulary&gt;</code> namespace. The value of the <code>prefix</code>
+                                	attribute is substituted with the URI that has been defined in the according vocabulary's <code>uri</code> attribute. Similar
                                 	to the prefix concept known from SPARQL.
 								</td>
                             </tr>
@@ -566,7 +599,7 @@
                                 </td>
                                 <td>
                                 	If the value is set to <em>uri</em>, the final result of the object expression should be a xsAnyURI. The <code>&lt;prefix&gt;</code>
-                                	attribute can be used to bind a vocabulary namespace to the object value. Alternatively, you can of course construct or extract full 
+                                	attribute can be used to bind a vocabulary namespace to the object value. Alternatively, you can of course construct or extract full
                                 	URIs out of values in the current resource's XML without using a prefix. If the value is set to <em>literal</em>, a plain string value
                                 	is expected as the result of the object expression. This value can then be typed using the <code>&lt;datatype&gt;</code> attribute
                                 	or tagged with a language attribute by using the <code>&lt;lang&gt;</code> attribute. If the value is set to <em>bnode</em> the result
@@ -578,7 +611,7 @@
                                 <td>no</td>
                                 <td>xsAnyURI</td>
                                 <td>
-                                	If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code> 
+                                	If you set the <code>resource</code> attribute to a valid URL for an external XML document, this URL will be fetched during extraction and the <code>&lt;subject&gt;</code>
                                 	XPATH/Xquery will be executed on the external XML rather than the XML of the current resource.
 								</td>
                             </tr>
@@ -605,7 +638,7 @@
                                 <td>string + {XPATH/XQuery}</td>
                                 <td>
                                 	The <code>prepend</code> attribute is handy if you need to prepend a value to the current patterns XPATH/XQuery result. The attribute value should contain
-                                	a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;object&gt;</code> 
+                                	a valid XPATH/XQuery expression in curly braces that results in a string (no node sets allowed). This expression will be executed <em>after</em> the <code>&lt;object&gt;</code>
                                 	expression and it's result will be <em>prepended</em> to the overall result.
                         		</td>
                             </tr>
@@ -616,6 +649,14 @@
                                 <td>
                         			The <code>append</code> attribute works the same as the <code>prepend</code> attribute only that the result will be <em>appended</em> to the overall result.
                         		</td>
+                            </tr>
+                            <tr>
+                                <td>debug</td>
+                                <td>no</td>
+                                <td>string</td>
+                                <td>
+                                    If set (to anything), raises the log level for the object extraction to "trace". This means that information on the number of nodes delivered by an eventual external resource (see above), on the object expression, and on how many nodes it resolves to is logged to monex console.
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -666,8 +707,8 @@
                     <h4 id="variables">Context variables</h4>
                     <p>
                 		The context node for each subject/predicate/object expression is always the resource that is currently crawled.
-                		You can reference it with "." in your expressions or by using the <code>$currentResource</code> variable. When crawling 
-                    	single file repositories where resources consist of repeating nodes in one XML, it is also possible to walk 
+                		You can reference it with "." in your expressions or by using the <code>$currentResource</code> variable. When crawling
+                    	single file repositories where resources consist of repeating nodes in one XML, it is also possible to walk
                     	above the resource node by using "..".
                 	</p>
                     <h6>Reference</h6>
@@ -702,7 +743,7 @@
                             <tr>
                                 <td>$repeatIndex</td>
                                 <td>
-                                	The <code>$repeatIndex</code> variable contains the number of the extraction iteration triggered by the <code>repeat</code> attribute 
+                                	The <code>$repeatIndex</code> variable contains the number of the extraction iteration triggered by the <code>repeat</code> attribute
                                 	of a statement pattern.
                             	</td>
                             </tr>
@@ -721,7 +762,7 @@
                     <h4 id="oneton">1:n statements</h4>
                     <p>
                 		It is possible to create 1:n statements with a single statement pattern. This happens automatically when an XPATH/XQuery
-                		in the <code>object</code> part of a statement pattern yields a node set. The subject and predicate are then repeated for each node of the result set, creating n statements in total, each with 
+                		in the <code>object</code> part of a statement pattern yields a node set. The subject and predicate are then repeated for each node of the result set, creating n statements in total, each with
                 		the same subject and predicate but with different object values.
                 	</p>
                     <h6>Example 17: Creating a 1:n statement with an object node set</h6>
@@ -757,20 +798,37 @@
                     <h3 id="errors">Error handling and debugging</h3>
                     <p>
                 		Quite naturally when writing XPATH/XQuery expressions on a given XML, there will be some errors (like typecast errors etc.) or unexpected results (like empty node sets etc.).
-                		XTriples tries to handle such errors transparently. The strategy is not to terminate query execution due to a fatal error but to catch it and then pass a
-                		meaningful error description back to the user.
+                		XTriples tries to handle such errors transparently. The strategy is not to terminate query execution due to a fatal error but to catch it and then pass a meaningful error description back to the user.
                     </p>
-                    <p>The easiest way to debug unexpected outcomes is to use the internal XTriples result format.
+                    <p>
+                        To help you in writing your expressions, there is a debugging facility which pipes output to the console aspect of eXist's Monitoring and Profiling ("monex") application. While this is only available when you run your own instance of xtriples/monex, it allows to get detailed information on the interpretation of your XPATH/XQuery expressions:
+                    </p>
+                    <ul>
+                        <li>
+                            You can add a <code>debug</code> attribute to single statement, subject, predicate and object elements, thereby generating debugging information on the processing of the respective element. Debugging a statement element in this way will yield information on how many iterations it gets; whereas debugging the other elements yields information on external resources (if such are specified), on the strings that are finally evaluated and on the results of this evaluation. The actual value of this attribute is irrelevant, xTriples merely checks for the presence of the attribute.</li>
+                        <li>
+                            You can add a <code>n</code> attribute to statement elements in order to find out where in your configuration the processing currently is. The string is prepended to all debugging output generated by the attributes described in the previous paragraph. One suggestion is to use this attribute to number your statements, but you can use any string you like.</li>
+                        <li>
+                            This is the default behaviour, enabled by the value "info" of the variable <code>$config:debug</code> in <code>modules/config.xqm</code>. If you set this variable to "trace" you get detailed information for statement and their children. This may easily flood monex's console, pushing relevant information out of view, but there should be a copy of all debugging messages in the file <code>xTriples.log</code> on your file system. If you set the variable to any value other than "info" or "trace", you are disabling this debug logging altogether.</li>
+                    </ul>
+                    <p>
+                        Other than using the debugging facility described above, the easiest way to debug unexpected outcomes is to use the internal XTriples result format.
                 		This format is generated right before the transformation to RDF and contains all results of all statement expressions in a structure similar to the original configuration.
                 	</p>
                     <p>
                 		In this format it is easy to identify XPATH expressions for subjects, predicates or objects that came out empty or see the error messages thrown by XQuery functions.
                 		All that needs to be done to get the internal format for debugging is to append the call to the webservice with a <code>&amp;format=xtriples</code> parameter.
                 	</p>
-                    <h6>Example 20: Using the internal xtriples result format for debugging purposes</h6>
+                    <h6>Example 20: Using the debugging facility format for debugging purposes</h6>
+                    <p>(Watch Monex Console when calling results...)</p>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-20.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-20.xml&amp;format=xtriples" data-template-class="btn btn-info btn-mini">Result</a>
+                    </p>
+                    <h6>Example 21: Using the internal xtriples result format for debugging purposes</h6>
+                    <p class="btn-group">
+                        <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-21.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-21.xml&amp;format=xtriples" data-template-class="btn btn-info btn-mini">Result</a>
                     </p>
                     <h3 id="components">Webservice components</h3>
                     <p>
@@ -790,9 +848,9 @@
                     <p>
                 		First of all install an instance of eXist on your local computer or a server of your choice. You can find the eXist packages and the installation
                 		instructions on the eXist webpage: <a href="http://exist-db.org/exist/apps/homepage/index.html">http://exist-db.org/exist/apps/homepage/index.html</a>. Once eXist is installed and
-                		running, grab the latest XTriples XAR file from here: <a href="http://download.spatialhumanities.de/ibr/">http://download.spatialhumanities.de/ibr/</a>. Alternatively you can 
+                		running, grab the latest XTriples XAR file from here: <a href="http://download.spatialhumanities.de/ibr/">http://download.spatialhumanities.de/ibr/</a>. Alternatively you can
                 		build the XAR file yourself from the latest sources on <a href="https://github.com/spatialhumanities/xtriples">GitHub</a>. Once you have the XAR, simply install it via the
-                		eXist dashboard. Finally adapt the value of the <code>$xtriplesWebserviceURL</code> variable in <code>extract.xql</code> to the URL of your instance of XTriples. 
+                		eXist dashboard. Finally adapt the value of the <code>$xtriplesWebserviceURL</code> variable in <code>extract.xql</code> to the URL of your instance of XTriples.
                 	</p>
                     <p>
                 		Depending on how independent you want to run your instance of XTriples, you can optionally install local instances of the <em>any23</em> and <em>redefer</em> webservices. If you do this
@@ -889,7 +947,7 @@
                 <div class="span4">
                     <h3>Schema</h3>
                     <p>
-						Check out the RelaxNG <a href="xtriples.rng">schema</a> for an exact documentation of all configuration options. 
+						Check out the RelaxNG <a href="xtriples.rng">schema</a> for an exact documentation of all configuration options.
 					</p>
                 </div>
             </div>

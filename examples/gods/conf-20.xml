@@ -9,11 +9,25 @@
             <vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/>
         </vocabularies>
         <triples>
-            <statement>
-				<!-- errors in statement -->
-                <subject prefix="gods">/concat(/god/@id)</subject>
-                <predicate prefix="rdfs">/xs:integer('STRING')</predicate>
-                <object type="literal">/god/name/english[@]</object>
+            <statement n="1">
+                <subject prefix="gods">/@id</subject>
+                <predicate prefix="rdfs">seeAlso</predicate>
+                <object type="uri" resource="http://dbpedia.org/data/{/name/english}.rdf">//foaf:isPrimaryTopicOf/@rdf:resource</object>
+            </statement>
+            <statement n="2">
+                <subject prefix="gods">/@id</subject>
+                <predicate prefix="rdf">type</predicate>
+                <object prefix="foaf" type="uri">Person</object>
+            </statement>
+            <statement n="3" debug="debug_me" repeat="{/count(//symbols)}">
+                <subject prefix="gods">/@id</subject>
+                <predicate prefix="rdfs">seeAlso</predicate>
+                <object type="uri" prepend="http://en.wikipedia.org/wiki/">//symbols/*[$repeatIndex]</object>
+            </statement>
+            <statement n="4" debug="debug_me" repeat="{/count(//attributes)}">
+                <subject prefix="gods">/@id</subject>
+                <predicate prefix="rdfs">seeAlso</predicate>
+                <object debug="debug_me_even_more" type="uri" prepend="http://en.wikipedia.org/wiki/">//attributes/*[$repeatIndex]</object>
             </statement>
         </triples>
     </configuration>

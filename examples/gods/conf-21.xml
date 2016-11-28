@@ -9,45 +9,15 @@
             <vocabulary prefix="rel" uri="http://purl.org/vocab/relationship/"/>
         </vocabularies>
         <triples>
-            <statement repeat="{/count(//attributes)}">
-                <subject type="uri" prepend="http://en.wikipedia.org/wiki/">//attributes/*[$repeatIndex]</subject>
-                <predicate prefix="rdfs">seeAlso</predicate>
-                <object type="uri" prepend="http://en.wikipedia.org/wiki/">//symbols/*[$repeatIndex]</object>
+            <statement>
+				<!-- errors in statement -->
+                <subject prefix="gods">/concat(/god/@id)</subject>
+                <predicate prefix="rdfs">/xs:integer('STRING')</predicate>
+                <object type="literal">/god/name/english[@]</object>
             </statement>
         </triples>
     </configuration>
     <collection>
-        <resource>
-            <god id="6">
-                <name>
-                    <greek>Δημήτηρ</greek>
-                    <roman>Ceres</roman>
-                    <english>Demeter</english>
-                </name>
-                <gender>female</gender>
-                <olympian>1</olympian>
-                <relationships>
-                    <relation type="sister" id="14"/>
-                </relationships>
-                <attributes>
-                    <attribute>grain</attribute>
-                    <attribute>agriculture</attribute>
-                    <attribute>growth</attribute>
-                    <attribute>harvest</attribute>
-                    <attribute>nourishment</attribute>
-                </attributes>
-                <symbols>
-                    <item>crown</item>
-                    <item>cornucopia</item>
-                    <item>wheat-ears</item>
-                    <item>winged serpent</item>
-                    <item>lotus staff</item>
-                </symbols>
-                <animals>
-                    <animal>pigs</animal>
-                    <animal>snakes</animal>
-                </animals>
-            </god>
-        </resource>
+        <resource uri="http://xtriples.spatialhumanities.de/examples/gods/1.xml"/>
     </collection>
 </xtriples>
