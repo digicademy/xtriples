@@ -8,6 +8,6 @@
     <type>application</type>
     <target>xtriples</target>
     <prepare>pre-install.xql</prepare>
-    <finish/>
+    <finish>post-install.xql</finish>
     <deployed>2019-03-24T22:17:28.721+01:00</deployed>
 </meta>
