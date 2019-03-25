@@ -1,6 +1,6 @@
 # XTriples
 
-DOI: <a href="https://doi.org/10.5281/zenodo.2604391">10.5281/zenodo.2604391</a>
+[![DOI](https://zenodo.org/badge/24633761.svg)](https://zenodo.org/badge/latestdoi/24633761)
 
 ## A generic webservice to extract RDF statements from XML resources.
 
