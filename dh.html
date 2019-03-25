@@ -1,0 +1,130 @@
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    <div class="row-fluid">
+        <div class="span16">
+            <div class="page-header">
+                <h1 data-template="config:app-title">Generated page</h1>
+                <p>A generic webservice to extract RDF statements from XML resources.</p>
+            </div>
+            <div class="row-fluid">
+                <div class="span8">
+                    <h2>Digital Humanities</h2>
+                    <p>
+                        XTriples has been a topic in the following papers, workshops and conference presentations:
+                    </p>
+                    <h4>2019</h4>
+                    <ul>
+                        <li>
+                            <strong>Julian Jarosch, Andreas Kuczera, Torsten Schrade and Tariq Youssef</strong>, Graphentechnologien in den Digital Humanities:
+                            Methoden und Instrumente zur Modellierung, Transformation, Annotation und Analyse. Workshop and conference paper for the 6th DHd conference, 26.03.2019, 
+                            Mainz/Frankfurt, DOI <a href="https://doi.org/10.5281/zenodo.2596095">10.5281/zenodo.2596095</a>, p.33-36.
+                        </li>
+                    </ul>
+                    <h4>2018</h4>
+                    <ul>
+                        <li>
+                            <strong>Max Grüntgens and Thomas Kollatz</strong>, Two become one. Lifting TEI EpiDoc encoded corpora to RDF. The case of DIO and EPIDAT.
+                            Poster presentation at the Linked Pasts IV conference, 12.12.2018, Mainz. (<a href="https://digicademy.github.io/Two_become_one/">Poster</a>)
+                        </li>
+                        <li>
+                            <strong>Max Grüntgens and Thomas Kollatz</strong>, Repositorien mergen, analysieren und visualisieren. Presentation at the DARIAH Grand Tour,
+                            20.09.2018, Darmstadt. (<a href="https://digicademy.github.io/DARIAH-GT/">Slides</a>)
+                        </li>
+                    </ul>
+                    <h4>2017</h4>
+                    <ul>
+                        <li>
+                            <strong>Torsten Schrade</strong>, Semantische Technologien und Fragen des Raums. Presentation at the workshop on 'Digitale Raumdarstellungen. 
+                            Barocke Kunst im Kontext aktueller Zugriffe der Spatial Humanities' at the Phillips-Universität Marburg, 04.04.2017. 
+                            (<a href="https://metacontext.github.io/2017-ws-deckenmalerei">Slides</a>)
+                        </li>
+                    </ul>
+                    <h4>2016</h4>
+                    <ul>
+                        <li>
+                            <strong>Torsten Schrade</strong>, Grundlagen von Linked Open Data (LOD) für die Nachnutzung von Forschungsdaten. Workshop at the conference of the working group 
+                            on eHumanities of the Union of the German Academies of Sciences, 11.11.2016, Düsseldorf.
+                            (<a href="https://digicademy.github.io/2016-agehum-lodworkshop/">Slides</a>)
+                        </li>
+                        <li>
+                            <strong>Torsten Schrade</strong>, CIDOC-CRM Modellierung epigraphischer Fachdaten mit dem XTriples Webservice. Presentation at the DARIAH-DE workshop on
+                            'Research infrastructures for the Humanities and CIDOC-CRM', 25.07.2016, Darmstadt. (<a href="https://digicademy.github.io/dariah-workshop2016-xtriples-cidoc/">Slides</a>)
+                        </li>
+                        <li>
+                            <strong>Max Grüntgens and Torsten Schrade</strong>: Data Repositories in the Humanities and the Semantic Web. Modelling, Linking, Visualising. Conference
+                            paper and presentation at the 1st WHiSe Workshop / ESWC 2016, 29.05.2016, Anissaras - Crete, URN <a href="http://ceur-ws.org/Vol-1608/paper-07.pdf">urn:nbn:de:0074-1608-8</a>, p. 53-63. 
+                            (<a href="http://digicademy.github.io/whise2016-xtriples/">Slides</a>)
+                        </li>
+                        <li>
+                            <strong>Torsten Schrade</strong>, Geisteswissenschaftliche Fachdatenrepositorien im Semantic Web. Modellierung, Vernetzung, Visualisierung. Conference
+                            paper and presentation at the 3rd DHd conference in Leipzig, 07.-12.03.2016, ISBN <a href="http://www.worldcat.org/isbn/9783941379053">978-3-941379-05-3</a>, 
+                            p. 215-218. (<a href="http://dhd2016.digitale-akademie.de/presentation/index.html">Slides</a>)
+                        </li>
+                    </ul>
+                    <h4>2015</h4>
+                    <ul>
+                        <li>
+                            <strong>Torsten Schrade</strong>, Digitale Briefeditionen im Semantic Web. Der XTriples Webservice – Semantische Aussagen aus XML.
+                            Presentation at the conference of the working group on eHumanities of the Union of the German Academies of Sciences,
+                            Heidelberg, 15.09.2015. (<a href="http://metacontext.github.io/presentation-correspsearch-xtriples/">Slides</a>)
+                        </li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h3>Project examples</h3>
+                    <p>XTriples is used in many <a href="http://en.wikipedia.org/wiki/Digital_humanities">Digital Humanities</a> projects:</p>
+                    <hr/>
+                    <h4>correspSearch</h4>
+                    <p>
+                        <a href="http://correspsearch.bbaw.de/index.xql">correspSearch</a>, an inventory and search service for scholarly letter editions by the Berlin-Brandenburg Academy of Sciences and Humanities
+                    </p>
+                    <p>
+                        <strong>Example 1:</strong> Extract the correspondence of Johann Wolfgang von Goethe with several others as a network of letters. TEI XML basis.</p>
+                    <p class="btn-group">
+                        <a href="http://correspSearch.bbaw.de/api/v1/tei-xml.xql?correspondent=http://d-nb.info/gnd/118540238&amp;startdate=1793-01-01&amp;enddate=1808-02-02" class="btn btn-info btn-mini">XML</a>
+                        <a href="examples/dh/correspSearchLetters.xml" class="btn btn-info btn-mini">Configuration</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/correspSearchLetters.xml" data-template-class="btn btn-info btn-mini">Result</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/correspSearchLetters.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
+                    </p>
+                    <p>
+                        <strong>Example 2:</strong> Correspondence of Johann Wolfgang von Goethe: Who wrote to whom. TEI XML basis.</p>
+                    <p class="btn-group">
+                        <a href="http://correspSearch.bbaw.de/api/v1/tei-xml.xql?correspondent=http://d-nb.info/gnd/118540238&amp;startdate=1793-01-01&amp;enddate=1808-02-02" class="btn btn-info btn-mini">XML</a>
+                        <a href="examples/dh/correspSearchPersons.xml" class="btn btn-info btn-mini">Configuration</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/correspSearchPersons.xml" data-template-class="btn btn-info btn-mini">Result</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/correspSearchPersons.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
+                    </p>
+                    <hr/>
+                    <h4>Epidat</h4>
+                    <p>
+                        <a href="http://steinheim-institut.de/cgi-bin/epidat">Epidat</a>, the database of Jewish epigraphy by the Steinheim-Institute of German-Jewish history
+                    </p>
+                    <p>
+                        <strong>Example 1:</strong> Extraction of a database record for a gravestone and combination with external XML resources. TEI/Epidoc XML and custom XML basis. RDF modelled with CIDOC-CRM.</p>
+                    <p class="btn-group">
+                        <a href="http://www.steinheim-institut.de/cgi-bin/epidat?id=mz2-2208-t" class="btn btn-info btn-mini">XML</a>
+                        <a href="examples/dh/epidat.xml" class="btn btn-info btn-mini">Configuration</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/epidat.xml" data-template-class="btn btn-info btn-mini">Result</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/epidat.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
+                    </p>
+                    <p>Extraction and visualization of family relations from the Hamburg Altona gravestone corpus using FOAF, BIO and REL.</p>
+                    <p class="btn-group">
+                        <a class="btn btn-info btn-mini" href="examples/dh/epidat/index.html">View</a>
+                    </p>
+                    <hr/>
+                    <h4>German Inscriptions Online</h4>
+                    <p>
+                        <a href="http://www.inschriften.net">German Inscriptions Online</a>, an epigraphic research project of six German Academies of Sciences
+                    </p>
+                    <p>
+                        <strong>Example 1:</strong> Extraction of some catalogue numbers. TEI/Epidoc XML basis.</p>
+                    <p class="btn-group">
+                        <a href="http://www.inschriften.net/rest/di060/articles/di060-0157" class="btn btn-info btn-mini">XML</a>
+                        <a href="examples/dh/dio.xml" class="btn btn-info btn-mini">Configuration</a>
+                        <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/dh/dio.xml" data-template-class="btn btn-info btn-mini">Result</a>
+                        <a data-template-href="extract.xql?configuration=$baseUrl/examples/dh/dio.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

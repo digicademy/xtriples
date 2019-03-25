@@ -7,7 +7,7 @@ xquery version "3.0";
  :
  : @author Torsten Schrade
  : @email <Torsten.Schrade@adwmainz.de>
- : @version 1.3.0 
+ : @version 1.4.0 
  : @licence MIT
  :
  : Main module containing the webservice
@@ -20,9 +20,9 @@ xquery version "3.0";
 
 
 import module namespace functx = "http://www.functx.com";
-import module namespace config = "http://xtriples.spatialhumanities.de/config" at "modules/config.xqm";
+import module namespace config = "https://xtriples.lod.academy/config" at "modules/config.xqm";
 
-declare namespace xtriples = "http://xtriples.spatialhumanities.de/";
+declare namespace xtriples = "https://xtriples.lod.academy/";
 
 declare variable $setConfiguration := xtriples:getConfiguration();
 declare variable $setFormat := xtriples:getFormat();
@@ -299,7 +299,7 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 			let $condition := 
 				if (exists($statement/condition)) then 
 					if (xtriples:expressionSanityCheck(string($statement/condition)) = true()) then
-						try { util:eval(concat('$currentResource', string($statement/condition))) } catch * { $err:description }
+						try { boolean(util:eval(concat('$currentResource', string($statement/condition)))) } catch * { $err:description }
 					else true()
 				else true()
 
@@ -323,7 +323,7 @@ declare function xtriples:extractTriples($currentResource as node(), $resourceIn
 
 			(: build statements - but only if the condition expression returned any value - boolean, string, node set etc. :)
 			let $statements := 
-				if ($condition != false()) then 
+				if ($condition) then 
 					for $subject in $subjects
 						let $subjectReturn :=
 							if ($subject = "") then "" else

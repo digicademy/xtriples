@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <xtriples>
     <configuration>
         <vocabularies>
-            <vocabulary name="xtriples" uri="http://xtriples.spatialhumanities.de/"/>
+            <vocabulary name="xtriples" uri="https://xtriples.lod.academy/"/>
             <vocabulary name="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
         </vocabularies>
         <triples>

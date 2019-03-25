@@ -3786,7 +3786,7 @@
 
                 this.fireListener('ready');
             },
-            { Dracula: 'http://www.data2000.no/sgvizler/lib/raphael-dracula.min.js' }
+            { Dracula: 'https://xtriples.lod.academy/examples/dh/epidat/js/raphael-dracula.min.js' }
             );
 
         /**

@@ -4,21 +4,21 @@ xquery version "3.0";
  : A set of helper functions to access the application context from
  : within a module.
  :)
-module namespace config = "http://xtriples.spatialhumanities.de/config";
+module namespace config = "https://xtriples.lod.academy/config";
 
 declare namespace templates = "http://exist-db.org/xquery/templates";
 declare namespace repo = "http://exist-db.org/xquery/repo";
 declare namespace expath = "http://expath.org/ns/pkg";
 
-declare variable $config:xtriplesWebserviceURL := "http://xtriples.spatialhumanities.de/";
-declare variable $config:any23WebserviceURL := "http://any23-vm.apache.org/";
+declare variable $config:xtriplesWebserviceURL := "https://xtriples.lod.academy/";
+declare variable $config:any23WebserviceURL := "http://any23-vm2.apache.org/any23/";
 declare variable $config:redeferWebserviceURL := "http://rhizomik.net/redefer-services/";
 declare variable $config:redeferWebserviceRulesURL := "http://rhizomik.net:8080/html/redefer/rdf2svg/showgraph.jrule";
 
-(: 
+(:
     Determine the application root collection from the current module load path.
 :)
-declare variable $config:app-root := 
+declare variable $config:app-root :=
     let $rawPath := system:get-module-load-path()
     let $modulePath :=
         (: strip the xmldb: part :)

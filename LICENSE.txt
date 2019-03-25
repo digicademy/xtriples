@@ -1,7 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 Akademie der Wissenschaften und der Literatur | Mainz - Digitale Akademie
-Copyright (c) 2015 Torsten Schrade
+Copyright (c) 2015-2019 Academy of Sciences and Literature | Mainz
+Copyright (c) 2015-2019 Torsten Schrade
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

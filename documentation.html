@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
     <div class="row-fluid">
         <div class="span16">
@@ -29,11 +28,11 @@
 						and a number of <strong>XPATH/XQuery based statement patterns</strong> to apply on the data.
 					</p>
                     <p>
-						The webservice accepts POST or GET request to <code>http://xtriples.spatialhumanities.de/extract.xql</code>.
+						The webservice accepts POST or GET request to <code>https://xtriples.lod.academy/extract.xql</code>.
 					</p>
                     <h3 id="Request">Requests</h3>
                     <h4>POST requests</h4>
-                    <p>You can submit POST requests to <code>http://xtriples.spatialhumanities.de/extract.xql</code>
+                    <p>You can submit POST requests to <code>https://xtriples.lod.academy/extract.xql</code>
                     </p>
                     <p>The request body should contain your XTriples configuration. Additionally, you need to send the <code>Content-Type</code> HTTP header with a value of <code>application/xml</code> and the <code>format</code> HTTP header with one of the following values:</p>
                     <h6>Reference</h6>
@@ -83,7 +82,7 @@
                     <h4>GET requests</h4>
                     <p>The most compact way to use the webservice is via HTTP GET requests. This is the URL scheme:</p>
                     <p>
-                        <code>http://xtriples.spatialhumanities.de/extract.xql?configuration=###YOUR_URI###&amp;format=###FORMAT_KEYWORD###</code>
+                        <code>https://xtriples.lod.academy/extract.xql?configuration=###YOUR_URI###&amp;format=###FORMAT_KEYWORD###</code>
                     </p>
                     <p>The keywords for the format parameter are the same as for direct POST requests (see above).</p>
                     <h3 id="basic-configuration">Basic configuration</h3>
@@ -185,14 +184,12 @@
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/all.xml" data-template-class="btn btn-info btn-mini">XML</a>
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-01.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-01.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-01.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 2: XPATH based resource crawling with resources spread over multiple files</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/index.xml" data-template-class="btn btn-info btn-mini">XML</a>
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-02.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-02.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-02.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h5>Link based resource crawling</h5>
                     <p>
@@ -220,7 +217,6 @@
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-03.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-03.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-03.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h5>Literal resource crawling</h5>
                     <p>
@@ -246,7 +242,6 @@
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-04.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-04.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-04.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="vocabularies">The &lt;vocabularies&gt; tag</h4>
                     <p>
@@ -353,7 +348,6 @@
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/1.xml" data-template-class="btn btn-info btn-mini">XML</a>
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-05.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-05.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-05.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="subject">The &lt;subject&gt; tag</h4>
                     <p>
@@ -440,25 +434,21 @@
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-06.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-06.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-06.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 7: Creating a subject blank node</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-07.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-07.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-07.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 8: Including a value from an external XML resource in the subject</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-08.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-08.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-08.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 9: Prepend and append values to the subject result</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-09.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-09.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-09.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="predicate">The &lt;predicate&gt; tag</h4>
                     <p>
@@ -633,25 +623,21 @@
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-10.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-10.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-10.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 11: Creating a typed object literal</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-11.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-11.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-11.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 12: Creating a language tagged literal</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-12.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-12.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-12.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 13: Including a value from an external resource in the object</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-13.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-13.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-13.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="condition">The &lt;condition&gt; tag</h4>
                     <p>
@@ -675,7 +661,6 @@
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-14.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-14.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-14.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h3 id="advanced-configuration">Advanced configuration</h3>
                     <h4 id="variables">Context variables</h4>
@@ -727,13 +712,11 @@
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-15.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-15.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-15.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h6>Example 16: Using the $repeatIndex variable in statement patterns</h6>
                     <p class="btn-group">
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-16.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-16.xml" data-template-class="btn btn-info btn-mini">Result</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-16.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="oneton">1:n statements</h4>
                     <p>
@@ -746,7 +729,6 @@
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-17.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-17.xml" data-template-class="btn btn-info btn-mini">Result</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-17.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-17.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="ntoone">n:1 statements</h4>
                     <h6>Example 18: Creating a n:1 statement with a subject node sets</h6>
@@ -759,7 +741,6 @@
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-18.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-18.xml" data-template-class="btn btn-info btn-mini">Result</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-18.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-18.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h4 id="ntom">n:m statements</h4>
                     <p>
@@ -772,7 +753,6 @@
                         <a data-template="app:link" data-template-href="$baseUrl/examples/gods/conf-19.xml" data-template-class="btn btn-info btn-mini">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-19.xml" data-template-class="btn btn-info btn-mini">Result</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/conf-19.xml&amp;format=svg" data-template-class="btn btn-info btn-mini">SVG</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconf-19.xml" class="btn btn-info btn-mini">Graph</a>
                     </p>
                     <h3 id="errors">Error handling and debugging</h3>
                     <p>

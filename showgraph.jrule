@@ -1,0 +1,45 @@
+@prefix gv: <http://rhizomik.net/ontologies/2008/05/gv.rdfs#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+[init:
+   -> (gv:graph rdf:type gv:Graph), (gv:graph gv:rankdir "LR"), (gv:graph gv:nodesep "0.3"),
+      (gv:graph gv:ranksep "0.3"), (gv:graph gv:center "true"),
+      (gv:graph gv:overlap "false"), (gv:graph gv:splines "true")
+]
+
+[nodesAndEdges:
+  (?s ?p ?o), strConcat(?p, ?puri),
+  strNotContains(?puri, "http://rhizomik.net/ontologies/2008/05/gv.rdfs"),
+  strNotContains(?puri, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+  strNotContains(?puri, "http://www.w3.org/2000/01/rdf-schema#label")
+-> 
+  (gv:graph gv:hasEdgeProperty ?p), (gv:graph gv:hasNode ?s), (gv:graph gv:hasNode ?o), 
+  (?p rdf:type gv:EdgeProperty), (?p gv:color "blue"), (?p gv:label ?puri), (?p gv:fontsize "10px")
+]
+
+[idResource:
+  (gv:graph gv:hasNode ?node), notBNode(?node), strConcat(?node, ?uri)
+->
+  (?node gv:shape "box"), (?node gv:fontsize "10px"), (?node gv:fontcolor "blue"), 
+  (?node gv:height ".1"), (?node gv:width ".1"), (?node gv:URL ?uri)
+]
+
+[labelledResource:
+  (gv:graph gv:hasNode ?node), notBNode(?node), (?node rdfs:label ?label)
+->
+  (?node gv:label ?label)
+]
+
+[anonResource:
+  (gv:graph gv:hasNode ?node), isBNode(?node)
+->
+  (?node gv:shape "box"), (?node gv:fontsize "10px"), (?node gv:height "0"), (?node gv:width "0")
+]
+
+[typedResource:
+  (gv:graph gv:hasNode ?node), (?node rdf:type ?class), strConcat(?class, ?curi)
+->
+  (?node gv:classLabel ?curi)
+]

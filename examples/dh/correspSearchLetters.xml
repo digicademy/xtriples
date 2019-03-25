@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model uri="https://xtriples.lod.academy/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <xtriples>
     <configuration>
         <vocabularies>
@@ -163,7 +162,7 @@
             </statement>
         </triples>
     </configuration>
-    <collection uri="http://correspSearch.bbaw.de/api/v1/tei-xml.xql?correspondent=http://d-nb.info/gnd/118540238&amp;startdate=1793-01-01&amp;enddate=1808-02-02">
+    <collection uri="https://correspSearch.bbaw.de/api/v1.1/tei-xml.xql?correspondent=http://d-nb.info/gnd/118540238&amp;startdate=1793-01-01&amp;enddate=1808-02-02" max="10">
         <resource uri="{//tei:correspDesc}"/>
     </collection>
 </xtriples>

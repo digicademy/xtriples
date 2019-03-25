@@ -1,8 +1,10 @@
 # XTriples
 
+DOI: <a href="https://doi.org/10.5281/zenodo.2604391">10.5281/zenodo.2604391</a>
+
 ## A generic webservice to extract RDF statements from XML resources.
 
-Check out the demo and documentation at http://xtriples.spatialhumanities.de
+Check out the demo and documentation at https://xtriples.lod.academy
 
 With this webservice you can crawl XML repositories and extract RDF statements 
 using a simple configuration based on XPATH expressions.
@@ -13,9 +15,9 @@ This repository contains the source code of the XTriples webservice.
 
 The webservice is distributed as a single .xar file, which can be installed into an eXist-db instance via the package manager.
 
-You can download the latest version right here: http://download.spatialhumanities.de/ibr/xtriples-1.3.0.xar
+You can download the latest version from GitHub: https://github.com/digicademy/xtriples/releases/latest
 
-Read the documentation on how to setup your own instance of XTriples: http://xtriples.spatialhumanities.de/documentation.html#setup
+Read the documentation on how to setup your own instance of XTriples: http://xtriples.lod.academy/documentation.html#setup
 
 ## Building
 
@@ -24,7 +26,7 @@ To build the .xar yourself, you need to have Apache Ant installed. Alternatively
 
 Clone this repository to a local directory:
 
-	git clone https://github.com/spatialhumanities/xtriples.git xtriples
+	git clone https://github.com/digicademy/xtriples.git xtriples
 
 Change into the created directory and call
 
@@ -32,7 +34,17 @@ Change into the created directory and call
 
 This should create a .xar file in the build directory.
 
-## Credits
+## License
 
-Released under MIT license.
-@author: <a href="http://www.adwmainz.de/mitarbeiter/profil/torsten-schrade.html">Torsten Schrade</a> (<a href="https://github.com/metacontext">@metacontext</a>)
+This software is published under the terms of the MIT license.
+
+## Research Software Engineering and Development
+
+Copyright 2015-2019, <a href="https://orcid.org/0000-0002-0953-2818">Torsten Schrade</a>  
+Copyright 2015-2019, <a href="http://www.adwmainz.de/">Academy of Sciences and Literature | Mainz</a>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

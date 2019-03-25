@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://expath.org/ns/pkg" name="http://xtriples.spatialhumanities.de/" abbrev="xtriples" version="1.3.0" spec="1.0">
+<package xmlns="http://expath.org/ns/pkg" name="https://xtriples.lod.academy/" abbrev="xtriples" version="1.4.0" spec="1.0">
     <title>XTriples</title>
     <dependency package="http://exist-db.org/apps/shared"/>
 </package>

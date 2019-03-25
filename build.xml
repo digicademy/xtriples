@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project default="xar" name="xtriples">
-    <property name="project.version" value="1.3"/>
+    <property name="project.version" value="1.4"/>
     <property name="project.app" value="xtriples"/>
     <property name="build.dir" value="build"/>
     <target name="xar">

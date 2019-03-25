@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model uri="http://xtriples.spatialhumanities.de/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model uri="https://xtriples.lod.academy/xtriples.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <xtriples>
     <configuration>
         <vocabularies>
-            <vocabulary prefix="gods" uri="http://xtriples.spatialhumanities.de/examples/gods/"/>
+            <vocabulary prefix="gods" uri="https://xtriples.lod.academy/examples/gods/"/>
             <vocabulary prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
             <vocabulary prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
             <vocabulary prefix="foaf" uri="http://xmlns.com/foaf/0.1/"/>
@@ -19,6 +18,6 @@
         </triples>
     </configuration>
     <collection>
-        <resource uri="http://xtriples.spatialhumanities.de/examples/gods/1.xml"/>
+        <resource uri="https://xtriples.lod.academy/examples/gods/1.xml"/>
     </collection>
 </xtriples>

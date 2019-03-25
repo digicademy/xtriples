@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
     <div class="row-fluid">
         <div class="span16">
@@ -19,7 +18,6 @@
                         <a href="examples/gods/configuration.xml" class="btn btn-info">Configuration</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/configuration.xml" data-template-class="btn btn-info">Result</a>
                         <a data-template="app:link" data-template-href="extract.xql?configuration=$baseUrl/examples/gods/configuration.xml&amp;format=svg" data-template-class="btn btn-info">SVG</a>
-                        <a href="http://graves.cl/visualRDF/?url=xtriples.spatialhumanities.de%2Fextract.xql%3Fconfiguration%3Dhttp%3A%2F%2Fxtriples.spatialhumanities.de%2Fexamples%2Fgods%2Fconfiguration.xml" class="btn btn-info">Graph</a>
                     </p>
                     <h3>Form-style POST requests</h3>
                     <p>Example for the form-style POST API. Set your output format, input your configuration and submit the form.</p>
@@ -52,7 +50,7 @@
                         </div>
                     </form>
                     <h3>Direct POST requests</h3>
-                    <p>You can also submit direct POST requests to <code>http://xtriples.spatialhumanities.de/extract.xql</code>
+                    <p>You can also submit direct POST requests to <code>https://xtriples.lod.academy/extract.xql</code>
                     </p>
                     <p>The request body should contain your XTriples configuration. Additionally, you need to send the <code>Content-Type</code> HTTP header with a value of <code>application/xml</code> and the <code>format</code> HTTP header with one of the following values:</p>
                     <table class="table table-bordered">
@@ -101,7 +99,7 @@
                     <h3>GET requests</h3>
                     <p>The most compact way to use the service is with HTTP GET requests. This is the URL scheme:</p>
                     <p>
-                        <code>http://xtriples.spatialhumanities.de/extract.xql?configuration=###YOUR_URI###&amp;format=###FORMAT_KEYWORD###</code>
+                        <code>https://xtriples.lod.academy/extract.xql?configuration=###YOUR_URI###&amp;format=###FORMAT_KEYWORD###</code>
                     </p>
                     <p>The keywords for the format parameter are the same as for direct POST requests (see above).</p>
                     <h3>Configuration Template</h3>
@@ -145,9 +143,9 @@
                 <div class="span4">
                     <h3>Documentation</h3>
                     <p>
-            			Check out the full <a href="documentation.html">documentation</a> with all configuration details. 
-                    	If you would like to create your own instance of this service you can clone the repository on <a href="https://github.com/spatialhumanities/xtriples">GitHub</a>
-                    	or download a prebuilt eXist-db XAR package right <a href="http://download.spatialhumanities.de/ibr/">here</a>.
+            			Check out the <a href="documentation.html">documentation</a> with all configuration details. 
+                    	If you would like to create your own instance of this service you can clone the repository on <a href="https://github.com/digicademy/xtriples">GitHub</a>
+                    	or download a prebuilt eXist-db XAR package right <a href="https://github.com/digicademy/xtriples/releases/latest">here</a>.
             		</p>
                 </div>
                 <div class="span4">
@@ -189,7 +187,7 @@
                             <a href="http://www.digitale-akademie.de/">http://www.digitale-akademie.de/</a>
                         </p>
                     </div>
-                    <h3>Funded by</h3>
+                    <h3>Originally funded by (2012-2015)</h3>
                     <div>
                         <h5>Federal Ministry of Education and Research</h5>
                         <a href="http://www.bmbf.de/">
