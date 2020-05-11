@@ -26,7 +26,7 @@ import module namespace transform   = "http://exist-db.org/xquery/transform";
 import module namespace util        = "http://exist-db.org/xquery/util";
 import module namespace xmldb       = "http://exist-db.org/xquery/xmldb";
 
-import module namespace config      = "http://xtriples.spatialhumanities.de/config" at "modules/config.xqm";
+import module namespace config      = "http://xtriples.lod.academy/config" at "modules/config.xqm";
 
 declare namespace xtriples = "https://xtriples.lod.academy/";
 
