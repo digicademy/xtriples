@@ -17,8 +17,8 @@ xquery version "3.0";
 
 (: ########## PROLOGUE ############################################################################# :)
 
-import module namespace functx      = "http://www.functx.com";
 import module namespace console     = "http://exist-db.org/xquery/console";
+import module namespace functx      = "http://www.functx.com";
 import module namespace httpclient  = "http://exist-db.org/xquery/httpclient";
 import module namespace request     = "http://exist-db.org/xquery/request";
 import module namespace response    = "http://exist-db.org/xquery/response";
@@ -34,9 +34,7 @@ declare variable $setConfiguration  := xtriples:getConfiguration();
 declare variable $setFormat         := xtriples:getFormat();
 
 
-
 (: ########## DEBUGGING FUNCTIONS ################################################################# :)
-
 
 
 declare function local:log($message as xs:string, $priority as xs:string?) {
